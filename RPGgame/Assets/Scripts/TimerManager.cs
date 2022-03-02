@@ -9,7 +9,8 @@ public class TimerManager : MonoBehaviour
     public Text[] text_time; //시간 표시할 text
     public Text btn_text; //상태에 따라 버튼의 text 변경하기 위한 text
     float time; //시간
-
+    float cooking_time = 10.0f;
+    float rest_time = 0.5f;
     void Start()
     {
         btn_active = false; //버튼 초기 상태 false로 만들기
@@ -24,7 +25,15 @@ public class TimerManager : MonoBehaviour
         else
         {
             SetTimerOff();
-            btn_text.text = "STOP!";
+            if (cooking_time- rest_time < time && time <cooking_time+ rest_time)
+            {
+                btn_text.text = "시간 일치 완료!";
+            }
+            else
+            {
+                btn_text.text = "시간 일치 실패..";
+            }
+            //btn_text.text = "STOP!";
             time = 0;
         }
     }
