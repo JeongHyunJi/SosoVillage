@@ -13,7 +13,7 @@ public class Pond : MonoBehaviour
     {
         transform.localScale = new Vector2(0.35f, 1f);
         gameObject.GetComponent<Renderer>().material.color = Color.blue;
-        transform.position = new Vector2(Random.Range(-9, 8),transform.localPosition.y);
+        transform.position = new Vector2(Random.Range(-8, 8),transform.localPosition.y);
     }
 
     // Update is called once per frame
