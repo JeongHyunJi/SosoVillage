@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4763651450137679830}
   - component: {fileID: 6030522996614493242}
-  - component: {fileID: 8124049877580671112}
-  - component: {fileID: -616007814061239021}
+  - component: {fileID: 1620952103418123991}
+  - component: {fileID: 5770369736075680181}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8124049877580671112
+--- !u!114 &1620952103418123991
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,20 +93,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 7358389483014935831}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e770fd71821471649a4e707261185c80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
---- !u!114 &-616007814061239021
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7358389483014935831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1a10825962cf5c47abe7fc1fad7b828, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a33b78069fb6074bb64cd8f6cad215c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MoveTime: 0
+--- !u!114 &5770369736075680181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7358389483014935831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7d5d9d5900557e47a253b4bd839738a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.7
