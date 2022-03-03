@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class GameFishing : MonoBehaviour
 {
-    private Rigidbody2D floatRigidbody; //낚시 찌
+    
+    public Rigidbody2D floatRigidbody; //낚시 찌
     Vector2 localScale;
-    float width = 5f;
+    float width = 9f;
     //float gaugebar = transform.localScale.y;
     public float lowSpeed = 3f; //찌의 속도 조절
     public float midSpeed = 5f;
@@ -19,6 +20,7 @@ public class GameFishing : MonoBehaviour
     void Start()
     {
         floatRigidbody = GetComponent<Rigidbody2D>();
+        floatRigidbody.constraints = RigidbodyConstraints2D.FreezePositionY; //y축 움직임 고정
         speed = lowSpeed;
     }
 
@@ -34,11 +36,7 @@ public class GameFishing : MonoBehaviour
         else
             GoLeft();
     }
-    //private void OnTriggerStay2D(Collider2D gaugebar)
-    //{
-    //    floatRigidbody
-    //}
-    
+
     void GoRight()
     {
         localScale.x = 1f;
@@ -48,5 +46,16 @@ public class GameFishing : MonoBehaviour
     {
         localScale.x = -1f;
         floatRigidbody.velocity = new Vector2(-speed, 0);
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        Debug.Log("?");
+        if (fishingButton.button && other.tag.Equals("GameController"))
+        {
+            Debug.Log("다음 레벨로 넘어감");
+        }
+        else
+            Debug.Log("하트 하나 감소");
     }
 }
