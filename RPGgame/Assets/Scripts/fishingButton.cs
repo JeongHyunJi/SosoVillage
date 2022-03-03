@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class fishingButton : MonoBehaviour
 {
-    bool button = false; // true¸é Âî°¡ ¸ØÃã
+    public static bool button = false; // true¸é Âî°¡ ¸ØÃã
     //public GameObject button;
-
+    
     public void stopFloat()
     {
         if (button)
