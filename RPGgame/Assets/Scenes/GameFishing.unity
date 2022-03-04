@@ -984,7 +984,7 @@ TilemapCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1882,8 +1882,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &196422401
-CircleCollider2D:
+--- !u!68 &196422401
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1896,8 +1896,15 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.084994555, y: 2.6000316}
+  - {x: -0.08441536, y: -2.1261244}
+  - {x: 0.08031654, y: -2.326346}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!212 &196422402
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1975,7 +1982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ad0d59c4243f41499b31bcd393a0383, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floatRigidbody: {fileID: 0}
+  floatRigidbody: {fileID: 196422400}
   lowSpeed: 3
   midSpeed: 5
   highSpeed: 8
@@ -2149,9 +2156,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 138.03, y: 37.903793}
-  m_SizeDelta: {x: 106.9, y: 103.42}
-  m_Pivot: {x: 0.34125286, y: 0.46039242}
+  m_AnchoredPosition: {x: 145.1, y: 42.6}
+  m_SizeDelta: {x: 84, y: 74.504}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &597338140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4761,7 +4768,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16

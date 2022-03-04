@@ -6,12 +6,13 @@ public class GameFishing : MonoBehaviour
 {
     
     public Rigidbody2D floatRigidbody; //낚시 찌
+    public static bool isInPond = false; //연못에 있는지 판단
     Vector2 localScale;
     float width = 9f;
-    //float gaugebar = transform.localScale.y;
     public float lowSpeed = 3f; //찌의 속도 조절
     public float midSpeed = 5f;
     public float highSpeed = 8f;
+
     public float speed;
 
     bool direction = true;
@@ -50,12 +51,11 @@ public class GameFishing : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        Debug.Log("?");
-        if (fishingButton.button && other.tag.Equals("GameController"))
+        if (other.tag.Equals("GameController"))
         {
-            Debug.Log("다음 레벨로 넘어감");
+            isInPond = true;
         }
         else
-            Debug.Log("하트 하나 감소");
+            isInPond = false;
     }
 }
