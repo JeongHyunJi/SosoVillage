@@ -29,4 +29,16 @@ public class GameLevel : MonoBehaviour
         }
         GameObject.FindWithTag("Pond").GetComponent<Pond>().Restart();
     }
+
+    public void NextLevel()
+    {
+        if (Pond.currentLevel < 3)
+        {
+            Pond.currentLevel++;
+        }
+        else
+        {
+            Debug.Log("success");
+        }
+    }
 }

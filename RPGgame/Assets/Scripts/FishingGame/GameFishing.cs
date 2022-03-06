@@ -17,9 +17,10 @@ public class GameFishing : MonoBehaviour
     {
         floatRigidbody = GetComponent<Rigidbody2D>();
         floatRigidbody.constraints = RigidbodyConstraints2D.FreezePositionY; //y축 움직임 고정
+        Move();
     }
 
-    private void FixedUpdate() //고정된 프레임마다 update
+    public void Move() //fixedupdate 고정된 프레임마다 update
     {
         if (transform.position.x > width)
             direction = false;
