@@ -20,7 +20,7 @@ public class TimerManager : MonoBehaviour
         if (!btn_active)
         {
             SetTimerOn();
-            btn_text.text = "Count..";
+            btn_text.text = "Stop!";
         }
         else
         {
@@ -51,7 +51,8 @@ public class TimerManager : MonoBehaviour
         if (btn_active)
         {
             time += Time.deltaTime;
-            text_time[0].text = ((int)time % 60).ToString() + "sec";
+            //text_time[0].text = ((int)time % 60).ToString() + "sec";
+            text_time[0].text = "Count...";
         }
 
         //줄어드는 타이머의 경우
