@@ -11,11 +11,13 @@ public class MolesFSM : MonoBehaviour
     // Update is called once per frame
     public float MoveTime = 0;
     private MoveMoles movemoles;
+    private MoleMagager molemanager;
     public MoleState MoleState { private set; get; }
 
     private void Awake()
     {
         movemoles = GetComponent<MoveMoles>();
+        molemanager = GetComponent<MoleMagager>();
         ChangeState(MoleState.UnderGround);
     }
 
@@ -39,7 +41,7 @@ public class MolesFSM : MonoBehaviour
         while (true)
         {
             MoveTime += Time.deltaTime;
-            if(MoveTime >= 0.5f)
+            if(MoveTime >= 0.7f)
             {
                 MoveTime = 0;
                 ChangeState(MoleState.MoveDown);
@@ -54,12 +56,23 @@ public class MolesFSM : MonoBehaviour
         while (true)
         {
             MoveTime += Time.deltaTime;
-            if (MoveTime >= 0.5f)
+            if (MoveTime >= 0.7f)
             {
                 MoveTime = 0;
                 ChangeState(MoleState.UnderGround);
             }
             yield return null;
         }
+    }
+
+   public void mole_click()
+    {
+        Debug.Log("Click");
+        if (MoleState.ToString() == "MoveUp" || MoleState.ToString() == "MoveDown")
+        {
+            molemanager.PlusScore();
+        }
+        else
+            return;
     }
 }

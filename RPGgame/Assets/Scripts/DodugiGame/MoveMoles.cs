@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoveMoles : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float speed = 0.7f;
+    public float speed = 1.3f;
     private Vector3 movedirection = Vector3.zero;
 
 
