@@ -9,6 +9,8 @@ public class MoleMagager : MonoBehaviour
     public GameObject gameoverText;
     public Text timeText;
     public Text scoreText;
+    public GameObject ClearText;
+    public GameObject FailText;
 
     private float time;
     private float score;
@@ -18,6 +20,8 @@ public class MoleMagager : MonoBehaviour
     {
         score = 0;
         gameoverText.SetActive(false);
+        ClearText.SetActive(false);
+        FailText.SetActive(false);
         StartCoroutine("TimeAttack");
     }
 
@@ -29,7 +33,7 @@ public class MoleMagager : MonoBehaviour
 
     private IEnumerator TimeAttack()
     {
-        time = 10;
+        time = 15;
         while (true)
         {
             time -= Time.deltaTime;
@@ -41,8 +45,25 @@ public class MoleMagager : MonoBehaviour
                 MoleSpawner moleSpawner = FindObjectOfType<MoleSpawner>();
                 moleSpawner.EndGame();
                 gameoverText.SetActive(true);
-                
+                CheckClear();
             }
+        }
+    }
+    public void PlusScore()
+    {
+        score += 10;
+        scoreText.text = "Score: " + (int)score;
+    }
+
+    void CheckClear()
+    {
+        if (score >= 70)
+        {
+            ClearText.SetActive(true);
+        }
+       else
+        {
+            FailText.SetActive(true);
         }
     }
 }

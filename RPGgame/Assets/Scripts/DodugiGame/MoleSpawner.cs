@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoleSpawner : MonoBehaviour
 {
     public MolesFSM[] moles;
-    private float spawnTime = 1f;
+    private float spawnTime = 1.5f;
     // Start is called before the first frame update
     void Start()
     {
