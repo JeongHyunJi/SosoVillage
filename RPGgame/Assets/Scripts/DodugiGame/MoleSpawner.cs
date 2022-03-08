@@ -19,7 +19,9 @@ public class MoleSpawner : MonoBehaviour
         {
             int index = Random.Range(0, moles.Length);
             moles[index].ChangeState(MoleState.MoveUp);
+            moles[index].isClickOk = true;
             yield return new WaitForSeconds(spawnTime);
+            moles[index].isClickOk = false;
         }
     }
     public void EndGame()
