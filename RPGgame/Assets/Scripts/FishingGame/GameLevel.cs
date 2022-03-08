@@ -8,37 +8,29 @@ public class GameLevel : MonoBehaviour
 {
     public static float speed = 3f;
     public static float size = 0.35f;
+    //public static int count = 0;
 
     public void SelectLevel()
     {
-        GameObject ClickFish = EventSystem.current.currentSelectedGameObject;
-        if (ClickFish.name == "Fish_S")
+        if (Pond.currentLevel==1)
         {
-            speed = 3f;
-            size = 0.35f;
-        }
-        else if (ClickFish.name == "Fish_M")
-        {
-            speed = 5f;
-            size = 0.25f;
-        }
-        else if (ClickFish.name == "Fish_L")
-        {
-            speed = 7f;
-            size = 0.15f;
-        }
-        GameObject.FindWithTag("Pond").GetComponent<Pond>().Restart();
-    }
-
-    public void NextLevel()
-    {
-        if (Pond.currentLevel < 3)
-        {
-            Pond.currentLevel++;
-        }
-        else
-        {
-            Debug.Log("success");
+            GameObject ClickFish = EventSystem.current.currentSelectedGameObject;
+            if (ClickFish.name == "Fish_S")
+            {
+                speed = 3f;
+                size = 0.35f;
+            }
+            else if (ClickFish.name == "Fish_M")
+            {
+                speed = 5f;
+                size = 0.25f;
+            }
+            else if (ClickFish.name == "Fish_L")
+            {
+                speed = 7f;
+                size = 0.15f;
+            }
+            GameObject.FindWithTag("Pond").GetComponent<Pond>().Restart();
         }
     }
 }

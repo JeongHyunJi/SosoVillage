@@ -169,6 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91a2a6f0cbe5a3043aff13962236981a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pond: {fileID: 0}
 --- !u!483693784 &4575148
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -2445,7 +2446,7 @@ GameObject:
   - component: {fileID: 597338141}
   - component: {fileID: 597338140}
   m_Layer: 5
-  m_Name: StopButton
+  m_Name: StopButton1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2515,7 +2516,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 245466365}
+      - m_Target: {fileID: 2035739655}
         m_TargetAssemblyTypeName: fishingButton, Assembly-CSharp
         m_MethodName: stopFloat
         m_Mode: 1
@@ -3663,9 +3664,10 @@ GameObject:
   - component: {fileID: 1083465533}
   - component: {fileID: 1083465532}
   - component: {fileID: 1083465534}
+  - component: {fileID: 1083465535}
   m_Layer: 0
   m_Name: stopPoint3
-  m_TagString: GameController
+  m_TagString: Pond
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4498,6 +4500,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91a2a6f0cbe5a3043aff13962236981a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pond: {fileID: 0}
+--- !u!19719996 &1083465535
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083465530}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!1 &1151471970
 GameObject:
   m_ObjectHideFlags: 0
@@ -5493,6 +5512,7 @@ GameObject:
   - component: {fileID: 1188749720}
   - component: {fileID: 1188749719}
   - component: {fileID: 1188749721}
+  - component: {fileID: 1188749722}
   m_Layer: 0
   m_Name: stopPoint2
   m_TagString: Pond
@@ -6328,6 +6348,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91a2a6f0cbe5a3043aff13962236981a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pond: {fileID: 0}
+--- !u!19719996 &1188749722
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188749717}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!1 &1330094270
 GameObject:
   m_ObjectHideFlags: 0
@@ -6826,6 +6863,7 @@ GameObject:
   - component: {fileID: 1386451141}
   - component: {fileID: 1386451140}
   - component: {fileID: 1386451139}
+  - component: {fileID: 1386451142}
   m_Layer: 5
   m_Name: StopButton2
   m_TagString: Untagged
@@ -6897,7 +6935,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 245466365}
+      - m_Target: {fileID: 1929920625}
         m_TargetAssemblyTypeName: fishingButton, Assembly-CSharp
         m_MethodName: stopFloat
         m_Mode: 1
@@ -6947,6 +6985,44 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1386451137}
   m_CullTransparentMesh: 1
+--- !u!1839735485 &1386451142
+Tilemap:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386451137}
+  m_Enabled: 1
+  m_Tiles: {}
+  m_AnimatedTiles: {}
+  m_TileAssetArray: []
+  m_TileSpriteArray: []
+  m_TileMatrixArray: []
+  m_TileColorArray: []
+  m_TileObjectToInstantiateArray: []
+  m_AnimationFrameRate: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Origin: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0, y: 0, z: 1}
+  m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
+  m_TileOrientation: 0
+  m_TileOrientationMatrix:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
 --- !u!1 &1518053847
 GameObject:
   m_ObjectHideFlags: 0
@@ -7144,6 +7220,7 @@ GameObject:
   - component: {fileID: 1581162553}
   - component: {fileID: 1581162552}
   - component: {fileID: 1581162551}
+  - component: {fileID: 1581162554}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -7232,6 +7309,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1581162554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581162549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd1457312f83a8142ae08fe742093dfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonControll: 0
+  button: {fileID: 0}
 --- !u!1 &1645632768
 GameObject:
   m_ObjectHideFlags: 0
@@ -16597,7 +16688,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 245466365}
+      - m_Target: {fileID: 1581162554}
         m_TargetAssemblyTypeName: fishingButton, Assembly-CSharp
         m_MethodName: stopFloat
         m_Mode: 1
@@ -16804,6 +16895,7 @@ GameObject:
   - component: {fileID: 2035739654}
   - component: {fileID: 2035739653}
   - component: {fileID: 2035739652}
+  - component: {fileID: 2035739655}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -16892,6 +16984,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &2035739655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035739650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd1457312f83a8142ae08fe742093dfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonControll: 1
+  button: {fileID: 0}
 --- !u!1 &2043619321
 GameObject:
   m_ObjectHideFlags: 0

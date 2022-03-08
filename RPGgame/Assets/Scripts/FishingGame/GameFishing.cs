@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameFishing : MonoBehaviour
 {
-    
+    public static GameObject[] floats;
     public Rigidbody2D floatRigidbody; //낚시 찌
     public static bool isInPond = false; //연못에 있는지 판단
     Vector2 localScale;
@@ -15,8 +15,18 @@ public class GameFishing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (Pond.currentLevel == 1)
+        {   floats = GameObject.FindGameObjectsWithTag("Player");
+            floats[1].SetActive(false);
+            floats[2].SetActive(false);
+        }
         floatRigidbody = GetComponent<Rigidbody2D>();
         floatRigidbody.constraints = RigidbodyConstraints2D.FreezePositionY; //y축 움직임 고정
+        Move();
+    }
+
+    private void FixedUpdate()
+    {
         Move();
     }
 
@@ -46,7 +56,7 @@ public class GameFishing : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.tag.Equals("GameController"))
+        if (other.tag.Equals("Pond"))
         {
             isInPond = true;
         }
