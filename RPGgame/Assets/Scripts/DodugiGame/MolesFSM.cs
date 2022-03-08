@@ -11,14 +11,33 @@ public class MolesFSM : MonoBehaviour
     // Update is called once per frame
     public float MoveTime = 0;
     private MoveMoles movemoles;
-    private MoleMagager molemanager;
+    private MoleManager molemanager;
     public MoleState MoleState { private set; get; }
+    public bool isClickOk = false;
 
     private void Awake()
     {
         movemoles = GetComponent<MoveMoles>();
-        molemanager = GetComponent<MoleMagager>();
         ChangeState(MoleState.UnderGround);
+        molemanager = GameObject.Find("MoleGameManager").GetComponent<MoleManager>();
+    }
+
+    void Update()
+    {
+        if(Input.GetMouseButtonDown(0))
+        {
+            Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
+            if(hit.collider != null)
+            {
+                GameObject click_obj = hit.transform.gameObject;
+                if(isClickOk)
+                {
+                    molemanager.PlusScore();
+                    isClickOk = false;
+                }
+            }
+        }
     }
 
     public void ChangeState(MoleState newState)
@@ -43,6 +62,7 @@ public class MolesFSM : MonoBehaviour
             MoveTime += Time.deltaTime;
             if(MoveTime >= 0.7f)
             {
+
                 MoveTime = 0;
                 ChangeState(MoleState.MoveDown);
             }
@@ -58,6 +78,7 @@ public class MolesFSM : MonoBehaviour
             MoveTime += Time.deltaTime;
             if (MoveTime >= 0.7f)
             {
+                isClickOk = false;
                 MoveTime = 0;
                 ChangeState(MoleState.UnderGround);
             }
@@ -65,14 +86,4 @@ public class MolesFSM : MonoBehaviour
         }
     }
 
-   public void mole_click()
-    {
-        Debug.Log("Click");
-        if (MoleState.ToString() == "MoveUp" || MoleState.ToString() == "MoveDown")
-        {
-            molemanager.PlusScore();
-        }
-        else
-            return;
-    }
 }

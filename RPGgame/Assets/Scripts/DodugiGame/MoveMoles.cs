@@ -6,7 +6,7 @@ public class MoveMoles : MonoBehaviour
 {
     // Start is called before the first frame update
     public float speed = 1.3f;
-    private Vector3 movedirection = Vector3.zero;
+    public Vector3 movedirection = Vector3.zero;
 
 
     // Update is called once per frame
