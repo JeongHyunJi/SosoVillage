@@ -11,26 +11,33 @@ public class fishingButton : MonoBehaviour
     
     public void stopFloat()
     {
-        Rigidbody2D floatS = GameObject.Find("float"+Pond.currentLevel).GetComponent<GameFishing>().floatRigidbody;
-        if (buttonControll)
+        if (!buttonControll)
         {
-            floatS.velocity = new Vector2(0, 0); //정지하는 기능 -> 1이면 시간경과. 0이면 정지
+            Time.timeScale = 1;
             buttonControll = false;
         }
         else
         {
             if (GameFishing.isInPond)
             {
-                Debug.Log("다음 레벨로");
-                GameObject.Find("FishingLevel").GetComponent<GameLevel>().NextLevel();
+                GameFishing.isInPond = false;
+                if (Pond.currentLevel < 3)
+                {
+                    Pond.currentLevel++;
+                    GameFishing.floats[Pond.currentLevel - 2].SetActive(false);
+                    GameFishing.floats[Pond.currentLevel-1].SetActive(true);
+                    GameObject.FindWithTag("Pond").GetComponent<Pond>().Restart();
+                }
+                else
+                {
+                    Debug.Log("success");
+                }
             }
             else
             {
-                
+                Debug.Log("이전 씬으로"); //씬 전환
             }
-            //정지하는 기능 -> 1이면 시간경과. 0이면 정지
-            GameObject.Find("float"+Pond.currentLevel).GetComponent<GameFishing>().Move();
-            //Time.timeScale = 0;
+            Time.timeScale = 0; //정지하는 기능 -> 1이면 시간경과. 0이면 정지
             buttonControll = true;
         }
     }
