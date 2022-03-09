@@ -7,14 +7,15 @@ using UnityEngine.EventSystems;
 
 public class fishingButton : MonoBehaviour
 {
-    public bool buttonControll = false; // false면 찌가 멈춤
+    public bool buttonControll = true; // false면 찌가 멈춤
     public GameObject button;
     
     public void stopButtonController()
     {
-        GameObject ThisButton = EventSystem.current.currentSelectedGameObject;
-        button = GameObject.FindGameObjectsWithTag("GameController")[Pond.currentLevel - 1];
-        if (ThisButton == button)
+        GameObject ThisButton = EventSystem.current.currentSelectedGameObject; //방금 선택한 오브젝트(버튼)
+        button = GameObject.FindGameObjectsWithTag("GameController")[Pond.currentLevel - 1]; //원하는 오브젝트
+        Debug.Log(ThisButton + " " + button);
+        if (ThisButton == button) // 이름이 같은지 확인
             stopFloat();
     }
 
