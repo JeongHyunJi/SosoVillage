@@ -2124,8 +2124,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 296094311}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: 9.6, z: 0}
-  m_LocalScale: {x: 10.436365, y: 10.436365, z: 10.436365}
+  m_LocalPosition: {x: 11.372, y: 10.587, z: -232.12}
+  m_LocalScale: {x: 12.9995365, y: 12.9995365, z: 12.9995365}
   m_Children:
   - {fileID: 1518053848}
   - {fileID: 592910211}
@@ -2447,7 +2447,7 @@ GameObject:
   - component: {fileID: 597338140}
   m_Layer: 5
   m_Name: StopButton1
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2469,7 +2469,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 177, y: 53}
+  m_AnchoredPosition: {x: 213, y: 65}
   m_SizeDelta: {x: 84, y: 74.504}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &597338140
@@ -2494,7 +2494,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -2518,7 +2518,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2035739655}
         m_TargetAssemblyTypeName: fishingButton, Assembly-CSharp
-        m_MethodName: stopFloat
+        m_MethodName: stopButtonController
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2579,7 +2579,7 @@ GameObject:
   - component: {fileID: 623494152}
   m_Layer: 0
   m_Name: pond2
-  m_TagString: GameController
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4530,7 +4530,7 @@ GameObject:
   - component: {fileID: 1151471972}
   m_Layer: 0
   m_Name: pond3
-  m_TagString: GameController
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6866,7 +6866,7 @@ GameObject:
   - component: {fileID: 1386451142}
   m_Layer: 5
   m_Name: StopButton2
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6888,7 +6888,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 176, y: 0.00000071526}
+  m_AnchoredPosition: {x: 214, y: -9}
   m_SizeDelta: {x: 84, y: 74.504}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1386451139
@@ -6937,7 +6937,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1929920625}
         m_TargetAssemblyTypeName: fishingButton, Assembly-CSharp
-        m_MethodName: stopFloat
+        m_MethodName: stopButtonController
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6992,7 +6992,7 @@ Tilemap:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1386451137}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Tiles: {}
   m_AnimatedTiles: {}
   m_TileAssetArray: []
@@ -7321,8 +7321,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd1457312f83a8142ae08fe742093dfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonControll: 0
-  button: {fileID: 0}
+  buttonControll: 1
+  button: {fileID: 1937009993}
 --- !u!1 &1645632768
 GameObject:
   m_ObjectHideFlags: 0
@@ -16542,8 +16542,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd1457312f83a8142ae08fe742093dfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonControll: 0
-  button: {fileID: 0}
+  buttonControll: 1
+  button: {fileID: 1386451137}
 --- !u!114 &1929920626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16619,7 +16619,7 @@ GameObject:
   - component: {fileID: 1937009995}
   m_Layer: 5
   m_Name: StopButton3
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16641,7 +16641,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 180, y: -61}
+  m_AnchoredPosition: {x: 216, y: -81}
   m_SizeDelta: {x: 84, y: 74.504}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1937009995
@@ -16690,7 +16690,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1581162554}
         m_TargetAssemblyTypeName: fishingButton, Assembly-CSharp
-        m_MethodName: stopFloat
+        m_MethodName: stopButtonController
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16997,7 +16997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonControll: 1
-  button: {fileID: 0}
+  button: {fileID: 597338138}
 --- !u!1 &2043619321
 GameObject:
   m_ObjectHideFlags: 0
@@ -17051,7 +17051,7 @@ Camera:
   far clip plane: 1000
   field of view: 102.2
   orthographic: 1
-  orthographic size: 11
+  orthographic size: 9
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

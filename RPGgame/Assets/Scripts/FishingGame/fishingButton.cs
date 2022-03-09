@@ -3,12 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class fishingButton : MonoBehaviour
 {
-    public bool buttonControll = false; // true∏È ¬Ó∞° ∏ÿ√„
+    public bool buttonControll = false; // false∏È ¬Ó∞° ∏ÿ√„
     public GameObject button;
     
+    public void stopButtonController()
+    {
+        GameObject ThisButton = EventSystem.current.currentSelectedGameObject;
+        button = GameObject.FindGameObjectsWithTag("GameController")[Pond.currentLevel - 1];
+        if (ThisButton == button)
+            stopFloat();
+    }
+
     public void stopFloat()
     {
         if (!buttonControll)
