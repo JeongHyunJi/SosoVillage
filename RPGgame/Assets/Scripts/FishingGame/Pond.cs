@@ -19,7 +19,7 @@ public class Pond : MonoBehaviour
         pond = GameObject.FindGameObjectsWithTag("Pond")[currentLevel - 1];
         pond.transform.localScale = new Vector2(GameLevel.size, 1f);
         pond.GetComponent<Renderer>().material.color = Color.blue;
-        pond.transform.position = new Vector2(Random.Range(-8, 7), transform.localPosition.y);
+        pond.transform.position = new Vector2(Random.Range(-4.5f, 3.5f), transform.localPosition.y);
     }
 
 }
