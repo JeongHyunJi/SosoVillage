@@ -6,12 +6,11 @@ public enum MoleState { UnderGround, MoveUp, MoveDown}
 
 public class MolesFSM : MonoBehaviour
 {
-    // Start is called before the first frame update
 
-    // Update is called once per frame
     public float MoveTime = 0;
     private MoveMoles movemoles;
     private MoleManager molemanager;
+    private MoleSpawner molespawner;
     public MoleState MoleState { private set; get; }
     public bool isClickOk = false;
 
@@ -20,7 +19,9 @@ public class MolesFSM : MonoBehaviour
         movemoles = GetComponent<MoveMoles>();
         ChangeState(MoleState.UnderGround);
         molemanager = GameObject.Find("MoleGameManager").GetComponent<MoleManager>();
+        molespawner = GameObject.Find("molespawner").GetComponent<MoleSpawner>();
     }
+
 
     void Update()
     {
@@ -31,11 +32,13 @@ public class MolesFSM : MonoBehaviour
             if(hit.collider != null)
             {
                 GameObject click_obj = hit.transform.gameObject;
-                if(isClickOk)
+                if(isClickOk && molespawner.checkName(click_obj.name))
                 {
+                    Debug.Log(click_obj.name);
                     molemanager.PlusScore();
                     isClickOk = false;
                 }
+
             }
         }
     }
