@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 
 public class fishingButton : MonoBehaviour
@@ -10,7 +9,13 @@ public class fishingButton : MonoBehaviour
     public bool buttonControll = false; // true∏È ¬Ó∞° ∏ÿ√„
     public GameObject button;
     public Text buttonText;
-    
+    public static bool isSuccess = false;
+    private Transform panel;
+
+    private void Start()
+    {
+        panel = GameObject.Find("ToggleCanvas").transform.Find("Panel");
+    }
     public void stopButtonController()
     {
         GameObject ThisButton = EventSystem.current.currentSelectedGameObject; //πÊ±› º±≈√«— ø¿∫Í¡ß∆Æ(πˆ∆∞)
@@ -42,20 +47,15 @@ public class fishingButton : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("success");
+                    isSuccess = true;
+                    panel.GetComponent<GameOver>().Gameover();
                 }
             }
             else
             {
-                Debug.Log("¿Ã¿¸ æ¿¿∏∑Œ"); //æ¿ ¿¸»Ø
+                panel.GetComponent<GameOver>().Gameover();
             }
         }
         buttonText.text = buttonControll ? "start" : "stop";
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
