@@ -11,7 +11,7 @@ public class TimerManager : MonoBehaviour
     public Text[] text_time; //시간 표시할 text
     public Text btn_text; //상태에 따라 버튼의 text 변경하기 위한 text
     float time; //시간
-    float cooking_time = 3.5f;
+    float cooking_time = 4.5f;
     float rest_time = 1.0f;
 
     //빵
@@ -50,7 +50,7 @@ public class TimerManager : MonoBehaviour
                 InvokeRepeating("PrintFinalN", 2f, 3f);
             }
             time = 0;
-            InvokeRepeating("SceneChange", 3f, 3f);
+            InvokeRepeating("SceneChange", 4f, 3f);
         }
     }
     public void PrintFinalY()
@@ -76,17 +76,17 @@ public class TimerManager : MonoBehaviour
         if (btn_active)
         {
             time += Time.deltaTime;
-            if (2.5f <= time && time <= 4.5f)
+            if (3.5f <= time && time <= 5.0f)
             {
                 text_time[0].text = "Nice Baking!";
                 sr.material.color = new Color(0.90f, 0.68f, 0.19f);
             }
-            else if (time > 4.5f && time<6.0f)
+            else if (time > 5.0f && time<7.5f)
             {
                 text_time[0].text = "Bread is Burning!";
                 sr.material.color = new Color(0.49f, 0.35f, 0.04f);
             }
-            else if (time >= 6.0f)
+            else if (time >= 7.5f)
             {
                 text_time[0].text = "Bread is All Burned..";
                 sr.material.color = new Color(0.0f, 0.0f, 0.0f);
