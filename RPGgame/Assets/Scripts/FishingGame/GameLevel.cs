@@ -3,16 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-
 public class GameLevel : MonoBehaviour
 {
     public static float speed = 3f;
     public static float size = 0.35f;
-    //public static int count = 0;
 
     public void SelectLevel()
     {
-        if (Pond.currentLevel==1)
+        if (Pond.currentLevel == 1)
         {
             GameObject ClickFish = EventSystem.current.currentSelectedGameObject;
             if (ClickFish.name == "Fish_S")

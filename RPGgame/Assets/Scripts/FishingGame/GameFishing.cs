@@ -8,7 +8,6 @@ public class GameFishing : MonoBehaviour
     public Rigidbody2D floatRigidbody; //낚시 찌
     public static bool isInPond = false; //연못에 있는지 판단
     Vector2 localScale;
-    float width = 9f;
 
     bool direction = true;
 
@@ -22,7 +21,7 @@ public class GameFishing : MonoBehaviour
         }
         floatRigidbody = GetComponent<Rigidbody2D>();
         floatRigidbody.constraints = RigidbodyConstraints2D.FreezePositionY; //y축 움직임 고정
-        Move();
+        //Move();
     }
 
     private void FixedUpdate()
@@ -32,9 +31,9 @@ public class GameFishing : MonoBehaviour
 
     public void Move() //fixedupdate 고정된 프레임마다 update
     {
-        if (transform.position.x > width)
+        if (transform.position.x > 4.5)
             direction = false;
-        else if (transform.position.x < -width)
+        else if (transform.position.x < -5.5)
             direction = true;
 
         if (direction)
