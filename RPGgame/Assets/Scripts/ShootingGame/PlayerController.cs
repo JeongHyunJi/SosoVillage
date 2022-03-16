@@ -34,6 +34,14 @@ public class PlayerController : MonoBehaviour
         if (x == 0 && y == 0)
             animator.SetBool("Walking", false);
 
+        if (x > 0) //좌우반전으로 오른쪽으로 걷기
+        {
+            transform.localScale = new Vector2(-1f, 1f);
+        }
+        else
+            transform.localScale = new Vector2(1f, 1f);
+
+
         RaycastHit2D hit;
         Vector2 start = transform.position;
         Vector2 end = start + new Vector2(x * movement2D.moveSpeed * Time.deltaTime, y * movement2D.moveSpeed * Time.deltaTime);
