@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     private Movement2D movement2D;
 
+    private Bow bow;
+
     private Animator animator;
 
     private BoxCollider2D boxCollider;
@@ -15,6 +17,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         movement2D = GetComponent<Movement2D>();
+        bow = GetComponent<Bow>();
         animator = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
     }
@@ -44,6 +47,15 @@ public class PlayerController : MonoBehaviour
         }
 
         movement2D.MoveTo(new Vector3(x, y, 0));
+
+        if(Input.GetMouseButtonDown(0))
+        {
+            bow.StartShooting();
+        }
+        else if(Input.GetMouseButtonUp(0))
+        {
+            bow.StopShooting();
+        }
     }
 
 }

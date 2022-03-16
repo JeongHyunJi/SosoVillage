@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movement2D : MonoBehaviour
 {
     public float moveSpeed = 0;
-    private Vector3 moveDirection = Vector3.zero;
+    public Vector3 moveDirection = Vector3.zero;
 
 
     // Start is called before the first frame update

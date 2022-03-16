@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 151465081}
   - component: {fileID: 151465083}
   - component: {fileID: 151465086}
+  - component: {fileID: 151465087}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -172,6 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 4
+  moveDirection: {x: 0, y: 0, z: 0}
 --- !u!61 &151465083
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -282,6 +284,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &151465087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151465080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9875dd3b656776d4583091c7fe2ac104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrowPrefab: {fileID: 3027347115175874996, guid: b45c219a8a2000849a69fc752909dd3d, type: 3}
+  attackRate: 0.5
 --- !u!1 &171720447
 GameObject:
   m_ObjectHideFlags: 0
