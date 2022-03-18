@@ -5,13 +5,16 @@ using UnityEngine;
 public class MonsterMove : MonoBehaviour
 {
     Rigidbody2D monster;
-    public int moveHorizontal;
-    public int moveVertical;
+    private SpriteRenderer render;
+    private Animator animator;
+    private float x;
+    private float y;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
+        render = GetComponent<SpriteRenderer>();
     }
 
     private void Awake()
@@ -22,14 +25,27 @@ public class MonsterMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        monster.velocity = new Vector2(moveVertical, moveHorizontal);
+        monster.velocity = new Vector2(x, y);
     }
-    
     // Update is called once per frame
     void Think()
     {
-        moveVertical = Random.Range(-1, 2);
-        moveHorizontal = Random.Range(-1, 2);
+        x = Random.Range(-1, 2);
+        y = Random.Range(-1, 2);
+
+        animator.SetFloat("DirX", x);
+        animator.SetFloat("DirY", y);
+        animator.SetBool("IsWalking", true);
+
+        if (x > 0) //좌우반전으로 오른쪽으로 걷기
+        {
+            render.flipX = false;
+        }
+        else
+            render.flipX = true;
+
+        monster.velocity = new Vector2(x, y);
+
         Invoke("Think", 3);
     }
 }

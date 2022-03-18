@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     private Movement2D movement2D;
 
     private Bow bow;
-
+    private SpriteRenderer render;
     private Animator animator;
 
     private BoxCollider2D boxCollider;
@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        render = GetComponent<SpriteRenderer>();
         movement2D = GetComponent<Movement2D>();
         bow = GetComponent<Bow>();
         animator = GetComponent<Animator>();
@@ -35,11 +36,9 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("Walking", false);
 
         if (x > 0) //좌우반전으로 오른쪽으로 걷기
-        {
-            transform.localScale = new Vector2(-1f, 1f);
-        }
+            render.flipX = true;
         else
-            transform.localScale = new Vector2(1f, 1f);
+            render.flipX = false;
 
 
         RaycastHit2D hit;
