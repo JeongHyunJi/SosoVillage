@@ -19,8 +19,7 @@ public class SceneChange : MonoBehaviour
 
         if (other.tag == "store")
         {
-            SceneManager.LoadScene("GameCookingPre");
+            SceneManager.LoadScene("Store");
         }
     }
-
 }
