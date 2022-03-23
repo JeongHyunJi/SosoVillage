@@ -9,4 +9,12 @@ public class SceneController : MonoBehaviour
     {
         SceneManager.LoadScene("GameFishing");
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("treants"))
+            SceneManager.LoadScene("GameShooting");
+        else if (other.gameObject.CompareTag("moles"))
+            SceneManager.LoadScene("GameDodugi");
+    }
 }
