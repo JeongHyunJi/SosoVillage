@@ -36,6 +36,8 @@ public class MonsterMove : MonoBehaviour
         animator.SetFloat("DirX", x);
         animator.SetFloat("DirY", y);
         animator.SetBool("IsWalking", true);
+        if (x == 0 && y == 0)
+            animator.SetBool("IsWalking", false);
 
         if (x > 0) //좌우반전으로 오른쪽으로 걷기
         {
