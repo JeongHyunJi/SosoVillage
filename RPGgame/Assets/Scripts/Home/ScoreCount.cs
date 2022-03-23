@@ -11,8 +11,15 @@ public class ScoreCount : MonoBehaviour
 
     void Update()
     {
-        scoreText.text = Score + "time";
-        if (Score >= 6)
+        if (Score == 0)
+        {
+            scoreText.text = "First Time";
+        }
+        else if (0 < Score && Score < 6)
+        {
+            scoreText.text = Score + " Time";
+        }
+        else
         {
             scoreText.text = "We get a Corn!";
         }
