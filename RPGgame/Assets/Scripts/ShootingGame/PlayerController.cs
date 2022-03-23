@@ -6,21 +6,25 @@ public class PlayerController : MonoBehaviour
 {
     private Movement2D movement2D;
 
-    private Bow bow;
     private SpriteRenderer render;
     private Animator animator;
 
     private BoxCollider2D boxCollider;
     public LayerMask layerMask;
 
+    private TreantController enemy;
+    public float playerHP = 10f;
+    private ShootingManager shootingManager;
+
     // Start is called before the first frame update
     void Start()
     {
         render = GetComponent<SpriteRenderer>();
         movement2D = GetComponent<Movement2D>();
-        bow = GetComponent<Bow>();
         animator = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
+        enemy = GameObject.Find("treant").GetComponent<TreantController>();
+        shootingManager = GameObject.Find("GameManager").GetComponent<ShootingManager>();
     }
 
     // Update is called once per frame
@@ -55,14 +59,24 @@ public class PlayerController : MonoBehaviour
 
         movement2D.MoveTo(new Vector3(x, y, 0));
 
-        if(Input.GetMouseButtonDown(0))
+    }
+
+    public void TakeDamage(float damage)
+    {
+        playerHP -= damage;
+        Debug.Log("PlayerHP : " + playerHP);
+        if(playerHP <= 0)
         {
-            bow.StartShooting();
-        }
-        else if(Input.GetMouseButtonUp(0))
-        {
-            bow.StopShooting();
-        }
+            Debug.Log("Player Dead");
+            enemy.StopEnemy();
+            shootingManager.gameOver(false);
+            Destroy(gameObject);
+        }    
+    }
+
+    public void StopMove()
+    {
+        Destroy(gameObject);
     }
 
 }

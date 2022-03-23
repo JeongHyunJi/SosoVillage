@@ -8,6 +8,18 @@ public class Bow : MonoBehaviour
     public float attackRate = 0.5f;
 
     // Start is called before the first frame update
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            StartShooting();
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            StopShooting();
+        }
+    }
+
     public void StartShooting()
     {
         StartCoroutine("TryAttack");
