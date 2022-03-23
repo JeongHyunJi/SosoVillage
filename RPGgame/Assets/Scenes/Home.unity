@@ -377,6 +377,7 @@ GameObject:
   - component: {fileID: 283783535}
   - component: {fileID: 283783534}
   - component: {fileID: 283783536}
+  - component: {fileID: 283783537}
   m_Layer: 0
   m_Name: building_house
   m_TagString: house
@@ -475,6 +476,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6, y: 2.3574815}
   m_EdgeRadius: 0
+--- !u!50 &283783537
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283783533}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &284300589
 GameObject:
   m_ObjectHideFlags: 0
@@ -10427,6 +10449,7 @@ GameObject:
   - component: {fileID: 919812508}
   - component: {fileID: 919812507}
   - component: {fileID: 919812509}
+  - component: {fileID: 919812510}
   m_Layer: 0
   m_Name: building_baking
   m_TagString: baking
@@ -10525,6 +10548,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 2.526413}
   m_EdgeRadius: 0
+--- !u!50 &919812510
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919812506}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &931902443
 GameObject:
   m_ObjectHideFlags: 0
@@ -11182,6 +11226,7 @@ GameObject:
   - component: {fileID: 1399675707}
   - component: {fileID: 1399675708}
   - component: {fileID: 1399675709}
+  - component: {fileID: 1399675710}
   m_Layer: 0
   m_Name: building_store
   m_TagString: store
@@ -11280,6 +11325,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.7190175, y: 0.4663499}
   m_EdgeRadius: 0
+--- !u!50 &1399675710
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399675706}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1519079822
 GameObject:
   m_ObjectHideFlags: 0
