@@ -65,8 +65,14 @@ public class MoleManager : MonoBehaviour
 
     }
 
+    public void clickExit()
+    {
+        SceneManager.LoadScene("Forest");
+    }
+
     void CheckClear()
     {
+        Hearts.heart--;
         if (score >= 70)
         {
             ClearText.SetActive(true);

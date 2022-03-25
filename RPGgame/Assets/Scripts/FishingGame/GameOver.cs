@@ -18,18 +18,19 @@ public class GameOver : MonoBehaviour
     {
         gameoverText.text = fishingButton.isSuccess ? "GAME CLEAR" : "GAMEOVER";
         gameoverPanel.SetActive(true);
+        Hearts.heart--;
         fishingButton.isSuccess = false;
     }
 
     public void BackToMap()
     {
-        gameoverPanel.SetActive(false);
+        Time.timeScale = 1;
         SceneManager.LoadScene("Forest");
     }
 
     public void PlayAgain()
     {
-        gameoverPanel.SetActive(false);
+        Time.timeScale = 1;
         SceneManager.LoadScene("GameFishing");
     }
 }

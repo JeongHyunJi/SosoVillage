@@ -12,6 +12,7 @@ public class SceneController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        Debug.Log(other.gameObject);
         if (other.gameObject.CompareTag("treants"))
             SceneManager.LoadScene("GameShooting");
         else if (other.gameObject.CompareTag("moles"))
