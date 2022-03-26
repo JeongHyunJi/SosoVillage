@@ -2,9 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public static class Hearts
 {
     public static int heart = 5;
+    public static void HeartControll()
+    {
+        if (Hearts.heart == 0)
+        {
+            Time.timeScale = 1;
+            SceneManager.LoadScene("Forest");
+        }
+    }
 }
 
 public class HeartController : MonoBehaviour

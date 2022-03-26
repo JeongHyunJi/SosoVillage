@@ -19,6 +19,7 @@ public class GameOver : MonoBehaviour
         gameoverText.text = fishingButton.isSuccess ? "GAME CLEAR" : "GAMEOVER";
         gameoverPanel.SetActive(true);
         Hearts.heart--;
+        Hearts.HeartControll();
         fishingButton.isSuccess = false;
     }
 

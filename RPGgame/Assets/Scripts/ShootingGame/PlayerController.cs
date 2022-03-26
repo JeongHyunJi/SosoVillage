@@ -35,6 +35,8 @@ public class PlayerController : MonoBehaviour
 
         animator.SetFloat("DirX", x);
         animator.SetFloat("DirY", y);
+        animator.SetFloat("Right", x);
+        animator.SetFloat("Up", y);
         animator.SetBool("Walking", true);
         if (x == 0 && y == 0)
             animator.SetBool("Walking", false);

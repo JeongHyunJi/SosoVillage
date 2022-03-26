@@ -47,6 +47,7 @@ public class ShootingManager : MonoBehaviour
     public void gameOver(bool isPlayerWin)
     {
         gameGoing = false;
+        Hearts.heart--;
         if(isPlayerWin)
         {
             Color playerColor = player_image.color;

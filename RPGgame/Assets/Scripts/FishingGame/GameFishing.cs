@@ -20,7 +20,6 @@ public class GameFishing : MonoBehaviour
             floats[2].SetActive(false);
         }
         floatRigidbody = GetComponent<Rigidbody2D>();
-        floatRigidbody.constraints = RigidbodyConstraints2D.FreezePositionY; //y축 움직임 고정
         Time.timeScale = 0;
         //Move();
     }

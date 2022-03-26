@@ -28,13 +28,30 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("DirX", x);
         animator.SetFloat("DirY", y);
         animator.SetBool("Walking", true);
+        if (x > 0 && y == 0)
+        {
+            animator.SetFloat("Right", 1);
+            animator.SetFloat("Up", 0);
+            render.flipX = true;
+        }
+        else if (x < 0 && y == 0)
+        {
+            render.flipX = false;
+            animator.SetFloat("Right", -1);
+            animator.SetFloat("Up", 0);
+        }
+        else if (x == 0 && y > 0)
+        {
+            animator.SetFloat("Right", 0);
+            animator.SetFloat("Up", 1);
+        }
+        else if (x == 0 && y < 0)
+        {
+            animator.SetFloat("Right", 0);
+            animator.SetFloat("Up", -1);
+        }
         if (x == 0 && y == 0)
             animator.SetBool("Walking", false);
-
-        if (x > 0) //좌우반전으로 오른쪽으로 걷기
-            render.flipX = true;
-        else
-            render.flipX = false;
 
         RaycastHit2D hit;
         Vector2 start = transform.position;
