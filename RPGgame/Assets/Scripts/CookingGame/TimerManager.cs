@@ -113,7 +113,7 @@ public class TimerManager : MonoBehaviour
 
     public void SceneChange()
     {
-        SceneManager.LoadScene("GameCookingPre");
+        SceneManager.LoadScene("Home");
         count += 1;
     }
 }

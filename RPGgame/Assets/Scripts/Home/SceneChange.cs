@@ -9,16 +9,19 @@ public class SceneChange : MonoBehaviour
     {
         if (other.tag == "house")
         {
+            print("house");
             SceneManager.LoadScene("Room");
         }
 
         if (other.tag == "baking")
         {
+            print("baking");
             SceneManager.LoadScene("GameCookingPre");
         }
 
         if (other.tag == "store")
         {
+            print("store");
             SceneManager.LoadScene("Store");
         }
     }
