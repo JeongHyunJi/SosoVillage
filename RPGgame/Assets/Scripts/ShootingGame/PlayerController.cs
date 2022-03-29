@@ -66,19 +66,34 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(float damage)
     {
         playerHP -= damage;
-        Debug.Log("PlayerHP : " + playerHP);
+        StopCoroutine("HitColorAnimation");
+        StartCoroutine("HitColorAnimation");
         if(playerHP <= 0)
         {
+            //player ав╢б х©╟З
             Debug.Log("Player Dead");
             enemy.StopEnemy();
-            shootingManager.gameOver(false);
+            shootingManager.GameOver(false);
             Destroy(gameObject);
         }    
     }
 
+    private IEnumerator HitColorAnimation()
+    {
+        render.color = Color.red;
+        yield return new WaitForSeconds(0.05f);
+        render.color = Color.white;
+        yield return new WaitForSeconds(0.05f);
+        render.color = Color.red;
+        yield return new WaitForSeconds(0.05f);
+        render.color = Color.white;
+
+    }
     public void StopMove()
     {
-        Destroy(gameObject);
+        gameObject.GetComponent<Movement2D>().enabled = false;
+        gameObject.GetComponent<Bow>().StopShooting();
+        gameObject.GetComponent<Bow>().enabled = false;
     }
 
 }

@@ -10,11 +10,11 @@ public class Bow : MonoBehaviour
     // Start is called before the first frame update
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             StartShooting();
         }
-        else if (Input.GetMouseButtonUp(0))
+        else if (Input.GetKeyUp(KeyCode.Space))
         {
             StopShooting();
         }

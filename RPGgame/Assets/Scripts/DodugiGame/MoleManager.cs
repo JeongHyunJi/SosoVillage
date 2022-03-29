@@ -72,8 +72,8 @@ public class MoleManager : MonoBehaviour
 
     void CheckClear()
     {
-        Hearts.heart--;
-        Hearts.HeartControll();
+        //Hearts.heart--;
+       //Hearts.HeartControll();
         if (score >= 70)
         {
             ClearText.SetActive(true);

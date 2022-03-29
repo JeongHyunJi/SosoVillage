@@ -32,11 +32,6 @@ public class TreantController : MonoBehaviour
         StartCoroutine("AttackPlayer");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     private IEnumerator FollowPlayer()
     {
@@ -92,21 +87,34 @@ public class TreantController : MonoBehaviour
     public void TakeDamage(float damage)
     {
         treantHP -= damage;
-        Debug.Log("TreantHP : " + treantHP);
+        StopCoroutine("HitColorAnimation");
+        StartCoroutine("HitColorAnimation");
         if (treantHP <= 0)
         {
-            Debug.Log("Player Dead");
+            Debug.Log("Treant Dead");
+            //treant Á×´ÂÈ¿°ú
             player.StopMove();
-            shootingManager.gameOver(true);
+            shootingManager.GameOver(true);
             Destroy(gameObject);
         }
     }
 
+    private IEnumerator HitColorAnimation()
+    {
+        render.color = Color.red;
+        yield return new WaitForSeconds(0.05f);
+        render.color = Color.white;
+        yield return new WaitForSeconds(0.05f);
+        render.color = Color.red;
+        yield return new WaitForSeconds(0.05f);
+        render.color = Color.white;
+    }
+
     public void StopEnemy()
     {
+        movement2D.MoveTo(new Vector3(0, 0, 0));
         StopCoroutine("FollowPlayer");
         StopCoroutine("AttackPlayer");
-        Destroy(gameObject);
     }
 
 }

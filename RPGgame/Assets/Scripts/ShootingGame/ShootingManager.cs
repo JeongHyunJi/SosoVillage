@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ShootingManager : MonoBehaviour
 {
@@ -13,8 +14,11 @@ public class ShootingManager : MonoBehaviour
     public Slider slider_playerHP;
     public Slider slider_enemyHP;
 
-    public Image player_image;
-    public Image enemy_image;
+    public GameObject gameoverText;
+    public GameObject RetryText;
+    public GameObject ExitText;
+    public GameObject ClearText;
+    public GameObject FailText;
 
     private bool gameGoing = true;
     // Start is called before the first frame update
@@ -24,12 +28,11 @@ public class ShootingManager : MonoBehaviour
         enemy = GameObject.Find("treant").GetComponent<TreantController>();
         playerStartHP = player.playerHP;
         enemyStartHP = enemy.treantHP;
-        Color playerColor = player_image.color;
-        playerColor.a = 0;
-        player_image.color = playerColor;
-        Color enemyColor = enemy_image.color;
-        enemyColor.a = 0;
-        enemy_image.color = enemyColor;
+        gameoverText.SetActive(false);
+        ClearText.SetActive(false);
+        FailText.SetActive(false);
+        RetryText.SetActive(false);
+        ExitText.SetActive(false);
     }
 
     // Update is called once per frame
@@ -37,30 +40,40 @@ public class ShootingManager : MonoBehaviour
     {
         if(gameGoing)
         {
-            player_image.transform.position = player.transform.position;
-            enemy_image.transform.position = enemy.transform.position;
+            slider_playerHP.transform.position = player.transform.position +new Vector3(0, 0.7f, 0);
+            slider_enemyHP.transform.position = enemy.transform.position + new Vector3(0, 0.7f, 0);
             slider_playerHP.value = player.playerHP / playerStartHP;
             slider_enemyHP.value = enemy.treantHP / enemyStartHP;
         }
     }
 
-    public void gameOver(bool isPlayerWin)
+    public void GameOver(bool isPlayerWin)
     {
         gameGoing = false;
-        Hearts.heart--;
-        if(isPlayerWin)
+        //Hearts.heart--;
+        gameoverText.SetActive(true);
+        RetryText.SetActive(true);
+        ExitText.SetActive(true);
+        if (isPlayerWin)
         {
-            Color playerColor = player_image.color;
-            playerColor.a = 1f;
-            player_image.color = playerColor;
+            ClearText.SetActive(true);
             slider_enemyHP.gameObject.SetActive(false);
         }
         else
         {
-            Color enemyColor = enemy_image.color;
-            enemyColor.a = 1f;
-            enemy_image.color = enemyColor;
+            FailText.SetActive(true);
             slider_playerHP.gameObject.SetActive(false);
         }
     }
+
+    public void clickRetry()
+    {
+        SceneManager.LoadScene("GameShooting");
+
+    }
+    public void clickExit()
+    {
+        SceneManager.LoadScene("Forest");
+    }
+
 }
