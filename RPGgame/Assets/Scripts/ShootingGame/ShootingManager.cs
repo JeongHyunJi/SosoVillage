@@ -50,7 +50,7 @@ public class ShootingManager : MonoBehaviour
     public void GameOver(bool isPlayerWin)
     {
         gameGoing = false;
-        //Hearts.heart--;
+        Hearts.heart--;
         gameoverText.SetActive(true);
         RetryText.SetActive(true);
         ExitText.SetActive(true);
