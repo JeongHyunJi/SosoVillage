@@ -9,6 +9,7 @@ public class MoleManager : MonoBehaviour
     public GameObject gameoverText;
     public Text timeText;
     public Text scoreText;
+    public Text startTime;
     public GameObject RetryText;
     public GameObject ExitText;
     public GameObject ClearText;
@@ -36,6 +37,15 @@ public class MoleManager : MonoBehaviour
 
     private IEnumerator TimeAttack()
     {
+        time = 3;
+        while (time != 0)
+        {
+            time -= Time.deltaTime;
+            startTime.text = "" + (int)time;
+        }
+        startTime.text = "START!";
+        yield return new WaitForSeconds(1);
+        startTime.text = "";
         time = 15;
         while (true)
         {

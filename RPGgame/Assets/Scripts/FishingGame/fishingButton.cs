@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class fishingButton : MonoBehaviour
 {
-    public bool buttonControll = false; // true면 찌가 멈춤
+    public static bool buttonControll = false; // true면 찌가 멈춤
     public GameObject button;
     public Text buttonText;
     public static bool isSuccess = false;
@@ -28,12 +28,12 @@ public class fishingButton : MonoBehaviour
     {
         if (buttonControll)
         {
-            Time.timeScale = 1;
+            GameFishing.floats[Pond.currentLevel-1].GetComponent<GameFishing>().Move(); 
             buttonControll = false;
         }
         else
         {
-            Time.timeScale = 0; //정지하는 기능 -> 1이면 시간경과. 0이면 정지
+            GameFishing.floats[Pond.currentLevel-1].GetComponent<GameFishing>().Stop(); //정지하는 기능 -> 1이면 시간경과. 0이면 정지
             buttonControll = true;
             if (GameFishing.isInPond)
             {

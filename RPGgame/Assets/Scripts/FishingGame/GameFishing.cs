@@ -20,13 +20,16 @@ public class GameFishing : MonoBehaviour
             floats[2].SetActive(false);
         }
         floatRigidbody = GetComponent<Rigidbody2D>();
-        Time.timeScale = 0;
+        Stop();
         //Move();
     }
 
     private void FixedUpdate()
     {
-        Move();
+        if (fishingButton.buttonControll)
+            Stop();
+        else
+            Move();
     }
 
     public void Move() //fixedupdate 고정된 프레임마다 update
@@ -52,7 +55,11 @@ public class GameFishing : MonoBehaviour
         localScale.x = -1f;
         floatRigidbody.velocity = new Vector2(-GameLevel.speed, 0);
     }
-
+    
+    public void Stop()
+    {
+        floatRigidbody.velocity = new Vector2(0, 0);
+    }
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.tag.Equals("Pond"))

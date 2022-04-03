@@ -25,13 +25,11 @@ public class GameOver : MonoBehaviour
 
     public void BackToMap()
     {
-        Time.timeScale = 1;
         SceneManager.LoadScene("Forest");
     }
 
     public void PlayAgain()
     {
-        Time.timeScale = 1;
         SceneManager.LoadScene("GameFishing");
     }
 }

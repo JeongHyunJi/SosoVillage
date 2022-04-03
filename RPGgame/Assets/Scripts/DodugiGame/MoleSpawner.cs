@@ -17,6 +17,7 @@ public class MoleSpawner : MonoBehaviour
     // Update is called once per frame
     private IEnumerator SpawnMole()
     {
+        yield return new WaitForSeconds(3);
         while (true)
         {
             int index = Random.Range(0, moles.Length);
