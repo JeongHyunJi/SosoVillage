@@ -34,7 +34,6 @@ public class MolesFSM : MonoBehaviour
                 GameObject click_obj = hit.transform.gameObject;
                 if(isClickOk && molespawner.checkName(click_obj.name))
                 {
-                    Debug.Log(click_obj.name);
                     molemanager.PlusScore();
                     isClickOk = false;
                 }
