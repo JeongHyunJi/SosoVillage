@@ -37,12 +37,11 @@ public class MoleManager : MonoBehaviour
 
     private IEnumerator TimeAttack()
     {
-        time = 3;
-        while (time != 0)
-        {
-            time -= Time.deltaTime;
-            startTime.text = "" + (int)time;
-        }
+        yield return new WaitForSeconds(1);
+        startTime.text = "2";
+        yield return new WaitForSeconds(1);
+        startTime.text = "1";
+        yield return new WaitForSeconds(1);
         startTime.text = "START!";
         yield return new WaitForSeconds(1);
         startTime.text = "";
