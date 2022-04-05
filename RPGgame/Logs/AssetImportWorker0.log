@@ -15,11 +15,11 @@ D:/Users/minji/Documents/GitHub/RPGgame
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-58775
+59492
 Successfully changed project path to: D:/Users/minji/Documents/GitHub/RPGgame
 D:/Users/minji/Documents/GitHub/RPGgame
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 104.23 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 83.93 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.26f1 (7298b473bc1a)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.26f1/Editor/Data/Resources/UnitySubsystems
@@ -35,91 +35,89 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.26f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.26f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.26f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56340
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56976
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.26f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
 Registered in 0.002485 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 78.40 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 82.55 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.774 seconds
+- Completed reload, in  0.744 seconds
 Domain Reload Profiling:
-	ReloadAssembly (774ms)
-		BeginReloadAssembly (80ms)
+	ReloadAssembly (744ms)
+		BeginReloadAssembly (104ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (591ms)
-			LoadAssemblies (78ms)
+		EndReloadAssembly (550ms)
+			LoadAssemblies (99ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (184ms)
+			SetupTypeCache (162ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (35ms)
-			SetupLoadedEditorAssemblies (232ms)
+			RebuildScriptCaches (32ms)
+			SetupLoadedEditorAssemblies (231ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
+				InitializePlatformSupportModulesInManaged (6ms)
 				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (79ms)
-				BeforeProcessingInitializeOnLoad (27ms)
-				ProcessInitializeOnLoadAttributes (92ms)
-				ProcessInitializeOnLoadMethodAttributes (29ms)
+				RefreshPlugins (83ms)
+				BeforeProcessingInitializeOnLoad (20ms)
+				ProcessInitializeOnLoadAttributes (90ms)
+				ProcessInitializeOnLoadMethodAttributes (32ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.004851 seconds.
+Registered in 0.005006 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file data-0000023D72B08040 doesn't match image D:\Users\minji\Documents\GitHub\RPGgame\Library\ScriptAssemblies\Assembly-CSharp.dll
-Symbol file LoadedFromMemory is not a mono symbol file
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 77.24 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 82.85 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.410 seconds
+- Completed reload, in  1.401 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1412ms)
-		BeginReloadAssembly (229ms)
+	ReloadAssembly (1403ms)
+		BeginReloadAssembly (179ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (8ms)
+			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (36ms)
-		EndReloadAssembly (1113ms)
-			LoadAssemblies (136ms)
+			CreateAndSetChildDomain (23ms)
+		EndReloadAssembly (1148ms)
+			LoadAssemblies (133ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (387ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (52ms)
-			SetupLoadedEditorAssemblies (434ms)
+			SetupTypeCache (398ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (51ms)
+			SetupLoadedEditorAssemblies (457ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (77ms)
-				BeforeProcessingInitializeOnLoad (103ms)
-				ProcessInitializeOnLoadAttributes (221ms)
-				ProcessInitializeOnLoadMethodAttributes (20ms)
-				AfterProcessingInitializeOnLoad (8ms)
+				RefreshPlugins (83ms)
+				BeforeProcessingInitializeOnLoad (84ms)
+				ProcessInitializeOnLoadAttributes (252ms)
+				ProcessInitializeOnLoadMethodAttributes (24ms)
+				AfterProcessingInitializeOnLoad (10ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.11 seconds
-Refreshing native plugins compatible for Editor in 0.62 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
+Refreshing native plugins compatible for Editor in 0.71 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2229 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 119.2 MB.
 System memory in use after: 119.3 MB.
 
 Unloading 27 unused Assets to reduce memory usage. Loaded Objects now: 2687.
-Total: 3.670000 ms (FindLiveObjects: 0.142200 ms CreateObjectMapping: 0.060000 ms MarkObjects: 3.382700 ms  DeleteObjects: 0.083800 ms)
+Total: 3.955900 ms (FindLiveObjects: 0.204300 ms CreateObjectMapping: 0.089900 ms MarkObjects: 3.626600 ms  DeleteObjects: 0.033400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -133,331 +131,233 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Scenes/MenuScene.unity
-  artifactKey: Guid(b0b98d929f3be474bad95157dfbe6907) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/MenuScene.unity using Guid(b0b98d929f3be474bad95157dfbe6907) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3685b31e0ce7aefeadb2d8c9e568008e') in 0.036993 seconds 
-  Import took 0.042004 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006488 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-0000023D6EFCF6F0 doesn't match image D:\Users\minji\Documents\GitHub\RPGgame\Library\ScriptAssemblies\Assembly-CSharp.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.20 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.340 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1341ms)
-		BeginReloadAssembly (203ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (8ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (43ms)
-		EndReloadAssembly (1043ms)
-			LoadAssemblies (193ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (389ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (48ms)
-			SetupLoadedEditorAssemblies (366ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (7ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (106ms)
-				ProcessInitializeOnLoadAttributes (231ms)
-				ProcessInitializeOnLoadMethodAttributes (12ms)
-				AfterProcessingInitializeOnLoad (7ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (10ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.85 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2218 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 118.6 MB.
-System memory in use after: 118.7 MB.
-
-Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 2689.
-Total: 2.833600 ms (FindLiveObjects: 0.131400 ms CreateObjectMapping: 0.059200 ms MarkObjects: 2.625000 ms  DeleteObjects: 0.016800 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 1958.984126 seconds.
-  path: Assets/Scenes/MenuScene.unity
-  artifactKey: Guid(b0b98d929f3be474bad95157dfbe6907) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/MenuScene.unity using Guid(b0b98d929f3be474bad95157dfbe6907) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9a4648b95cfae1bb1d44d3fa117316d') in 0.040363 seconds 
-  Import took 0.047940 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006243 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-0000023D74B61020 doesn't match image D:\Users\minji\Documents\GitHub\RPGgame\Library\ScriptAssemblies\Assembly-CSharp.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.88 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.159 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1159ms)
-		BeginReloadAssembly (134ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (9ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (38ms)
-		EndReloadAssembly (944ms)
-			LoadAssemblies (124ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (343ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (50ms)
-			SetupLoadedEditorAssemblies (342ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (89ms)
-				ProcessInitializeOnLoadAttributes (228ms)
-				ProcessInitializeOnLoadMethodAttributes (12ms)
-				AfterProcessingInitializeOnLoad (7ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (11ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.67 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2218 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 118.7 MB.
-System memory in use after: 118.8 MB.
-
-Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 2691.
-Total: 3.101300 ms (FindLiveObjects: 0.174100 ms CreateObjectMapping: 0.101400 ms MarkObjects: 2.793400 ms  DeleteObjects: 0.030700 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 418.445170 seconds.
-  path: Assets/Scenes/MenuScene.unity
-  artifactKey: Guid(b0b98d929f3be474bad95157dfbe6907) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/MenuScene.unity using Guid(b0b98d929f3be474bad95157dfbe6907) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2663d2e2b695b02f3d2af11741cef75f') in 0.031114 seconds 
-  Import took 0.037113 seconds .
+  path: Assets/Tiles/LPC Submissions/Interior.png
+  artifactKey: Guid(8663699876abb13459ede50e7fc27927) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tiles/LPC Submissions/Interior.png using Guid(8663699876abb13459ede50e7fc27927) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b46c00a3e7fbab18e5c30938323d181d') in 0.149240 seconds 
+  Import took 0.153718 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 990.278426 seconds.
-  path: Assets/Scenes/Home.unity
-  artifactKey: Guid(71bda5d021a6d884b8747a6196c2fc01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Home.unity using Guid(71bda5d021a6d884b8747a6196c2fc01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '427ef27c96fe0623a5e0cd87dad1b1ab') in 0.016070 seconds 
-  Import took 0.025628 seconds .
+  Time since last request: 255.269369 seconds.
+  path: Assets/Tiles/Coins/coin_05.png
+  artifactKey: Guid(1a774b3d868ed074e8762e792829e32f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tiles/Coins/coin_05.png using Guid(1a774b3d868ed074e8762e792829e32f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '001e5919c47373f4feb72a232aa9c8fc') in 0.081552 seconds 
+  Import took 0.089567 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 7.165604 seconds.
-  path: Assets/Scenes/MenuScene.unity
-  artifactKey: Guid(b0b98d929f3be474bad95157dfbe6907) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/MenuScene.unity using Guid(b0b98d929f3be474bad95157dfbe6907) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34b828e33627f4342da338245582a182') in 0.007345 seconds 
-  Import took 0.012344 seconds .
+  Time since last request: 0.000323 seconds.
+  path: Assets/Tiles/Coins/Coins.psd
+  artifactKey: Guid(fc4e5c0c3cd3f4b42a203eaa3e963e77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tiles/Coins/Coins.psd using Guid(fc4e5c0c3cd3f4b42a203eaa3e963e77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a25073bfa564153b102c05e7df40417c') in 0.048375 seconds 
+  Import took 0.054554 seconds .
 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.004177 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-0000023D74B61020 doesn't match image D:\Users\minji\Documents\GitHub\RPGgame\Library\ScriptAssemblies\Assembly-CSharp.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.69 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.158 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1158ms)
-		BeginReloadAssembly (136ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (37ms)
-		EndReloadAssembly (949ms)
-			LoadAssemblies (109ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (325ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (44ms)
-			SetupLoadedEditorAssemblies (373ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (106ms)
-				ProcessInitializeOnLoadAttributes (233ms)
-				ProcessInitializeOnLoadMethodAttributes (17ms)
-				AfterProcessingInitializeOnLoad (11ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (10ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.71 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2218 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 118.7 MB.
-System memory in use after: 118.9 MB.
+Received Import Request.
+  Time since last request: 0.000358 seconds.
+  path: Assets/Tiles/Coins/coin_07.png
+  artifactKey: Guid(ace9295d630baf841997e1e119fa9102) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tiles/Coins/coin_07.png using Guid(ace9295d630baf841997e1e119fa9102) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc8f8a6a43b1ef1daaf991f8f1f23876') in 0.035666 seconds 
+  Import took 0.044280 seconds .
 
-Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 2693.
-Total: 2.873700 ms (FindLiveObjects: 0.151600 ms CreateObjectMapping: 0.068600 ms MarkObjects: 2.619900 ms  DeleteObjects: 0.031900 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.004297 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-0000023D74B61020 doesn't match image D:\Users\minji\Documents\GitHub\RPGgame\Library\ScriptAssemblies\Assembly-CSharp.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.70 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.100 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1100ms)
-		BeginReloadAssembly (134ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (30ms)
-		EndReloadAssembly (901ms)
-			LoadAssemblies (116ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (340ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (41ms)
-			SetupLoadedEditorAssemblies (325ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (90ms)
-				ProcessInitializeOnLoadAttributes (211ms)
-				ProcessInitializeOnLoadMethodAttributes (12ms)
-				AfterProcessingInitializeOnLoad (7ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (9ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.70 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2218 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 118.8 MB.
-System memory in use after: 118.9 MB.
+Received Import Request.
+  Time since last request: 0.000576 seconds.
+  path: Assets/Tiles/Coins/coin_06.png
+  artifactKey: Guid(f7203b29925d51e4f95c5aef54500336) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tiles/Coins/coin_06.png using Guid(f7203b29925d51e4f95c5aef54500336) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f67f7b60e7f2f0c78345c7488e4f4e94') in 0.035902 seconds 
+  Import took 0.044909 seconds .
 
-Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 2695.
-Total: 2.726900 ms (FindLiveObjects: 0.145200 ms CreateObjectMapping: 0.063500 ms MarkObjects: 2.495900 ms  DeleteObjects: 0.020500 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.004088 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-0000023D74B61020 doesn't match image D:\Users\minji\Documents\GitHub\RPGgame\Library\ScriptAssemblies\Assembly-CSharp.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.74 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.029 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1029ms)
-		BeginReloadAssembly (124ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (30ms)
-		EndReloadAssembly (843ms)
-			LoadAssemblies (103ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (294ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (38ms)
-			SetupLoadedEditorAssemblies (318ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (85ms)
-				ProcessInitializeOnLoadAttributes (205ms)
-				ProcessInitializeOnLoadMethodAttributes (14ms)
-				AfterProcessingInitializeOnLoad (8ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (10ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.93 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2218 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 118.8 MB.
-System memory in use after: 118.9 MB.
+Received Import Request.
+  Time since last request: 0.000389 seconds.
+  path: Assets/Tiles/Coins/Full Coins.png
+  artifactKey: Guid(20f4cfe78e35ca64e8f2b93c27adbdf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tiles/Coins/Full Coins.png using Guid(20f4cfe78e35ca64e8f2b93c27adbdf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c74a0dcee7343e64bfcb9e2de9cd3041') in 0.034944 seconds 
+  Import took 0.042491 seconds .
 
-Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 2697.
-Total: 2.668300 ms (FindLiveObjects: 0.137000 ms CreateObjectMapping: 0.058000 ms MarkObjects: 2.454800 ms  DeleteObjects: 0.017300 ms)
+========================================================================
+Received Import Request.
+  Time since last request: 0.000417 seconds.
+  path: Assets/Tiles/Coins/coin_08.png
+  artifactKey: Guid(0dd253c8dd80c2843832ff6571308e67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tiles/Coins/coin_08.png using Guid(0dd253c8dd80c2843832ff6571308e67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f693740c1a723d7a299bfdbfe1191a3') in 0.035493 seconds 
+  Import took 0.041596 seconds .
 
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 0.616074 seconds.
+  path: Assets/Tiles/Coins/coin_04.png
+  artifactKey: Guid(bd0163b4ad2a9834490a0fb657c21e70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tiles/Coins/coin_04.png using Guid(bd0163b4ad2a9834490a0fb657c21e70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '121aa104592b9eb5dc47a9247ac75327') in 0.040514 seconds 
+  Import took 0.046569 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.331719 seconds.
+  path: Assets/Tiles/Coins/coin_03.png
+  artifactKey: Guid(09a50053600e29645a5e74d431c9ae0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tiles/Coins/coin_03.png using Guid(09a50053600e29645a5e74d431c9ae0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd80c8476e943e62799183866dac94ff') in 0.036382 seconds 
+  Import took 0.045828 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000447 seconds.
+  path: Assets/Tiles/Coins/coin_02.png
+  artifactKey: Guid(9955fe9d315509c4ca9c735c72b109a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tiles/Coins/coin_02.png using Guid(9955fe9d315509c4ca9c735c72b109a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c2c83de41e41a0b915d6d2c329307db') in 0.029994 seconds 
+  Import took 0.039456 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.308749 seconds.
+  path: Assets/Tiles/Coins/coin_01.png
+  artifactKey: Guid(c5d2921a6b7660241b8c4f50b91dea6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tiles/Coins/coin_01.png using Guid(c5d2921a6b7660241b8c4f50b91dea6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d033d607e9d18296426801eaf55ac83') in 0.042844 seconds 
+  Import took 0.049239 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 352.498706 seconds.
+  path: Assets/Tiles/Houses/frogatto-house.png
+  artifactKey: Guid(fdb7188f8cf39d84296e0e43a21adcff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tiles/Houses/frogatto-house.png using Guid(fdb7188f8cf39d84296e0e43a21adcff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9102c44ea23d67ce45e76851e8068e9') in 0.053153 seconds 
+  Import took 0.062824 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 241.753501 seconds.
+  path: Assets/Tiles/TinyRPGTown/Artwork/tileset.png
+  artifactKey: Guid(61bda409e13a345bcb9e55db18b42f74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tiles/TinyRPGTown/Artwork/tileset.png using Guid(61bda409e13a345bcb9e55db18b42f74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38eaacb04dabda93bef353d3dc0cad16') in 0.304840 seconds 
+  Import took 0.311549 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.450635 seconds.
+  path: Assets/Tiles/TinyRPGTown/Artwork/Sprites/Materials
+  artifactKey: Guid(8f3c0f50b7ad8094a82cb089199230f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tiles/TinyRPGTown/Artwork/Sprites/Materials using Guid(8f3c0f50b7ad8094a82cb089199230f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e3a48bb6050768c9cb8db22ea7eb169') in 0.011467 seconds 
+  Import took 0.017122 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 60.013127 seconds.
+  path: Assets/Tiles/TinyRPGTown/Artwork/Sprites/wall-tile-right.png
+  artifactKey: Guid(255326d2aba8941f5baf052c05ffd47b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tiles/TinyRPGTown/Artwork/Sprites/wall-tile-right.png using Guid(255326d2aba8941f5baf052c05ffd47b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84d7d3766a9e5eb6ce2209235703a9cd') in 0.027266 seconds 
+  Import took 0.033051 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.214796 seconds.
+  path: Assets/Tiles/TinyRPGTown/Artwork/Sprites/wall-tile.png
+  artifactKey: Guid(3eb4f6ccdc9a240028824dffc4cf46d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tiles/TinyRPGTown/Artwork/Sprites/wall-tile.png using Guid(3eb4f6ccdc9a240028824dffc4cf46d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3c4376652b2aa152b9e70f9c5373979') in 0.040428 seconds 
+  Import took 0.046123 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 477.502211 seconds.
+  path: Assets/Tiles/Tiny RPG Forest/Artwork/Environment/waterfall animation
+  artifactKey: Guid(a9b87a1d2e53c4e6789106ac6536b371) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tiles/Tiny RPG Forest/Artwork/Environment/waterfall animation using Guid(a9b87a1d2e53c4e6789106ac6536b371) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0692033bc92868618b81a9a4a02bd791') in 0.020506 seconds 
+  Import took 0.027773 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.916030 seconds.
+  path: Assets/Tiles/Tiny RPG Forest/Artwork/Environment/tileset_slice_forest/tileset-sliced_0.asset
+  artifactKey: Guid(37aeba79af3b3b24e86ad1a707d752fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tiles/Tiny RPG Forest/Artwork/Environment/tileset_slice_forest/tileset-sliced_0.asset using Guid(37aeba79af3b3b24e86ad1a707d752fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab5a4a944cbbc3f6df0851d5dd7e12d3') in 0.048557 seconds 
+  Import took 0.052241 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000295 seconds.
+  path: Assets/Tiles/Tiny RPG Forest/Artwork/Environment/tileset_slice_forest/tileset-sliced_1.asset
+  artifactKey: Guid(e258c33a03be3b043a596225432b6733) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tiles/Tiny RPG Forest/Artwork/Environment/tileset_slice_forest/tileset-sliced_1.asset using Guid(e258c33a03be3b043a596225432b6733) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ccbd4e9599fdeddfe0305df8bbd2308') in 0.030004 seconds 
+  Import took 0.033833 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000259 seconds.
+  path: Assets/Tiles/Tiny RPG Forest/Artwork/Environment/tileset_slice_forest/tileset-sliced_5.asset
+  artifactKey: Guid(36b01a1594c70e249869c62711a3b605) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tiles/Tiny RPG Forest/Artwork/Environment/tileset_slice_forest/tileset-sliced_5.asset using Guid(36b01a1594c70e249869c62711a3b605) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cfe3104c285021644958c79eea5938ee') in 0.033063 seconds 
+  Import took 0.037159 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000267 seconds.
+  path: Assets/Tiles/Tiny RPG Forest/Artwork/Environment/tileset_slice_forest/tileset-sliced_4.asset
+  artifactKey: Guid(ab79cb5006bf8644f857342b04704439) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tiles/Tiny RPG Forest/Artwork/Environment/tileset_slice_forest/tileset-sliced_4.asset using Guid(ab79cb5006bf8644f857342b04704439) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f020b42ef2d48821a2085865a1cd776') in 0.034487 seconds 
+  Import took 0.041685 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000484 seconds.
+  path: Assets/Tiles/Tiny RPG Forest/Artwork/Environment/tileset_slice_forest/tileset-sliced_2.asset
+  artifactKey: Guid(c8645f1c9f1093043b43f115f6c29a79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tiles/Tiny RPG Forest/Artwork/Environment/tileset_slice_forest/tileset-sliced_2.asset using Guid(c8645f1c9f1093043b43f115f6c29a79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d696aacbf50814992a077f3cdcf53c1') in 0.032467 seconds 
+  Import took 0.042237 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001018 seconds.
+  path: Assets/Tiles/Tiny RPG Forest/Artwork/Environment/tileset_slice_forest/tileset-sliced_3.asset
+  artifactKey: Guid(262b755a06be6e24c8c2cbd31233328e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tiles/Tiny RPG Forest/Artwork/Environment/tileset_slice_forest/tileset-sliced_3.asset using Guid(262b755a06be6e24c8c2cbd31233328e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f757b9a33cdddbfecffa1623bb6a4075') in 0.033787 seconds 
+  Import took 0.039175 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.439925 seconds.
+  path: Assets/Tiles/Tiny RPG Forest/Artwork/Environment/tileset_slice_forest/tileset-sliced_6.asset
+  artifactKey: Guid(ae4c004a274d7674ebcb94798205f960) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tiles/Tiny RPG Forest/Artwork/Environment/tileset_slice_forest/tileset-sliced_6.asset using Guid(ae4c004a274d7674ebcb94798205f960) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63c1ea9c33d552c9a9367b0b2d90e5ad') in 0.024600 seconds 
+  Import took 0.028307 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000258 seconds.
+  path: Assets/Tiles/Tiny RPG Forest/Artwork/Environment/tileset_slice_forest/tileset-sliced_7.asset
+  artifactKey: Guid(9deeae64eb29f8a42b52746e8aa5f4d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tiles/Tiny RPG Forest/Artwork/Environment/tileset_slice_forest/tileset-sliced_7.asset using Guid(9deeae64eb29f8a42b52746e8aa5f4d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d3f40556fa7c804e4b08684abe2a01b') in 0.033415 seconds 
+  Import took 0.037773 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.249020 seconds.
+  path: Assets/Tiles/Tiny RPG Forest/Artwork/Environment/tileset_slice_forest/tileset-sliced_8.asset
+  artifactKey: Guid(bace57d45284b9e4caad17d09869ab4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tiles/Tiny RPG Forest/Artwork/Environment/tileset_slice_forest/tileset-sliced_8.asset using Guid(bace57d45284b9e4caad17d09869ab4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e557939c99be649ada3bde33812900c') in 0.021075 seconds 
+  Import took 0.026378 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000287 seconds.
+  path: Assets/Tiles/Tiny RPG Forest/Artwork/Environment/tileset_slice_forest/tileset-sliced_9.asset
+  artifactKey: Guid(7b5096c6ce259644d9a151c684be4f94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tiles/Tiny RPG Forest/Artwork/Environment/tileset_slice_forest/tileset-sliced_9.asset using Guid(7b5096c6ce259644d9a151c684be4f94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e91d4e491ed5542b4c1730ff2c7767e') in 0.032342 seconds 
+  Import took 0.037548 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003546 seconds.
+  path: Assets/Tiles/Tiny RPG Forest/Artwork/Environment/tileset_slice_forest/tileset-sliced_10.asset
+  artifactKey: Guid(fb8488bbc11c51d408efd016437ff672) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tiles/Tiny RPG Forest/Artwork/Environment/tileset_slice_forest/tileset-sliced_10.asset using Guid(fb8488bbc11c51d408efd016437ff672) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ffec5d337de8b54e0b96b748d344437') in 0.036397 seconds 
+  Import took 0.043226 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.286383 seconds.
+  path: Assets/Tiles/Tiny RPG Forest/Artwork/Environment/sliced-objects/Materials
+  artifactKey: Guid(3a214e12408136f44b32a69e96b35744) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tiles/Tiny RPG Forest/Artwork/Environment/sliced-objects/Materials using Guid(3a214e12408136f44b32a69e96b35744) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b96235909e282f6a5b033c64047b924') in 0.015449 seconds 
+  Import took 0.019512 seconds .
+
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
