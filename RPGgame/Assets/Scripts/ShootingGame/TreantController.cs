@@ -35,6 +35,7 @@ public class TreantController : MonoBehaviour
 
     private IEnumerator FollowPlayer()
     {
+        yield return new WaitForSeconds(3);
         while (true)
         {
             float dirX = 0;
@@ -76,6 +77,7 @@ public class TreantController : MonoBehaviour
 
     private IEnumerator AttackPlayer()
     {
+        yield return new WaitForSeconds(3);
         while (true)
         {
             Instantiate(fireballPrefab, transform.position, Quaternion.identity);

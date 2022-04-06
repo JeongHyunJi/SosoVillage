@@ -10,18 +10,21 @@ public class SceneChange : MonoBehaviour
         if (other.tag == "house")
         {
             print("house");
+            SavePosition.setPosition(this.gameObject);
             SceneManager.LoadScene("Room");
         }
 
         if (other.tag == "baking")
         {
             print("baking");
+            SavePosition.setPosition(this.gameObject);
             SceneManager.LoadScene("GameCookingPre");
         }
 
         if (other.tag == "store")
         {
             print("store");
+            SavePosition.setPosition(this.gameObject);
             SceneManager.LoadScene("Store");
         }
     }

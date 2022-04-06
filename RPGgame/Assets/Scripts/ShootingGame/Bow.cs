@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class Bow : MonoBehaviour
 {
+    private float DestroyTime = 3f;
+    private float TickTime;
     public GameObject arrowPrefab;
     public float attackRate = 0.5f;
 
     // Start is called before the first frame update
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        TickTime += Time.deltaTime;
+        if (TickTime >= DestroyTime)
         {
-            StartShooting();
-        }
-        else if (Input.GetKeyUp(KeyCode.Space))
-        {
-            StopShooting();
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                StartShooting();
+            }
+            else if (Input.GetKeyUp(KeyCode.Space))
+            {
+                StopShooting();
+            }
         }
     }
 

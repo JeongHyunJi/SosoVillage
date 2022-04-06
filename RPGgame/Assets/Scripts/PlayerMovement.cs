@@ -2,6 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public static class SavePosition
+{
+    public static Vector2 currentPosition;
+
+    public static void setPosition(GameObject gameObject){
+        SavePosition.currentPosition = gameObject.transform.position;
+        SavePosition.currentPosition.y = SavePosition.currentPosition.y - (float)0.5;
+    }
+}
+
 public class PlayerMovement : MonoBehaviour
 {
     private Movement2D movement2D;
@@ -17,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         movement2D = GetComponent<Movement2D>();
         boxCollider = GetComponent<BoxCollider2D>();
+        transform.position = SavePosition.currentPosition;
     }
 
     // Update is called once per frame
