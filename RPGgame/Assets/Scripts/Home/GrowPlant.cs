@@ -21,7 +21,7 @@ public class GrowPlant : MonoBehaviour
     Vector2 v_four = new Vector2(120, 240);
     Vector2 v_finish = new Vector2(140, 100);
 
-    public void Change_image()
+    public void Update()
     {
         if (ScoreCount.Score >= 6)
         {
