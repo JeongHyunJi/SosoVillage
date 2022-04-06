@@ -25,8 +25,8 @@ public class GrowPlant : MonoBehaviour
     {
         if (ScoreCount.Score >= 6)
         {
-            Plant.GetComponent<Image>().sprite = finish;
             transform.gameObject.GetComponent<RectTransform>().sizeDelta = v_finish;
+            Plant.GetComponent<Image>().sprite = finish;
         }
         else if (ScoreCount.Score>=5)
         {
@@ -39,18 +39,18 @@ public class GrowPlant : MonoBehaviour
         }
         else if (ScoreCount.Score >= 3)
         {
-            Plant.GetComponent<Image>().sprite = three;
             transform.gameObject.GetComponent<RectTransform>().sizeDelta = v_three;
+            Plant.GetComponent<Image>().sprite = three;
         }
         else if (ScoreCount.Score >= 2)
         {
-            Plant.GetComponent<Image>().sprite = two;
             transform.gameObject.GetComponent<RectTransform>().sizeDelta = v_two;
+            Plant.GetComponent<Image>().sprite = two;  
         }
         else if (ScoreCount.Score >= 1)
         {
-            Plant.GetComponent<Image>().sprite = one;
             transform.gameObject.GetComponent<RectTransform>().sizeDelta = v_one;
+            Plant.GetComponent<Image>().sprite = one;
         }
     }
 }
