@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class SavePosition
 {
-    public static Vector2 currentPosition;
+    public static Vector2 currentPosition = new Vector2(6,-16);
 
     public static void setPosition(GameObject gameObject){
         SavePosition.currentPosition = gameObject.transform.position;

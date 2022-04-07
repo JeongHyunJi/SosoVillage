@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-
+    public GameObject player;
     //public GameObject StatusText;
     //public GameObject MapText;
     //public GameObject PausedText;
@@ -27,7 +27,7 @@ public class MenuManager : MonoBehaviour
     {
         Paused.SetActive(false);
         Map.SetActive(false);
-
+        player.transform.position = new Vector3(-0.330833197f, 0.218274787f, 0);
     }
 
     public void openPaused()
