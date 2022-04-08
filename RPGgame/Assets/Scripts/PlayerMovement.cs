@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public static class SavePosition
 {
@@ -27,7 +28,8 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         movement2D = GetComponent<Movement2D>();
         boxCollider = GetComponent<BoxCollider2D>();
-        transform.position = SavePosition.currentPosition;
+        if(SceneManager.GetActiveScene().name == "Home")
+            transform.position = SavePosition.currentPosition;
     }
 
     // Update is called once per frame
