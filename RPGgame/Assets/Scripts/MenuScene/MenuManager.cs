@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
@@ -21,10 +22,13 @@ public class MenuManager : MonoBehaviour
     //public GameObject ForestText;
     //public GameObject StoreText;
 
+    public Texture2D cursorImg;
+
     // Start is called before the first frame update
 
     private void Start()
     {
+        Cursor.SetCursor(cursorImg, Vector2.zero, CursorMode.ForceSoftware);
         Paused.SetActive(false);
         Map.SetActive(false);
     }
@@ -46,5 +50,27 @@ public class MenuManager : MonoBehaviour
         Paused.SetActive(false);
         Map.SetActive(true);
         Main.SetActive(false);
+    }
+
+    public void GotoHome()
+    {
+        Debug.Log("Click Home");
+        SceneManager.LoadScene("Home");
+    }
+    public void GotoForest()
+    {
+        Debug.Log("Click Forest");
+        SceneManager.LoadScene("Forest");
+    }
+    public void GotoStore()
+    {
+        Debug.Log("Click Store");
+        SceneManager.LoadScene("Store");
+    }
+
+    public void GameQuit()
+    {
+        Debug.Log("Game Quit");
+        Application.Quit();
     }
 }
