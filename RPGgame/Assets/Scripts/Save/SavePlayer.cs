@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,9 +6,9 @@ using UnityEngine;
 public class SavePlayer : MonoBehaviour
 {
     private string playerName;
-    private int coin;
-    private int[] inventory;
-    private int[] times;
+    private static int coin;
+    private int[] inventory = new int[5];
+    private int[] times = new int[5];
 
     private bool IsSave;
     // Start is called before the first frame update
@@ -19,10 +20,11 @@ public class SavePlayer : MonoBehaviour
         {
             Debug.Log("저장된 데이터가 없습니다.");
             playerName = "guest"; //나중에 입력받도록 수정
-            coin = 0;
+            PlayerPrefs.SetString("saved_name", playerName);
+            coin = 5;
             inventory = new int[] { 0, 0, 0, 0, 0 };
-            times = new int[] {2022,4,10,0,0 }; //yyyy,mm,dd,hh,mm
-            Debug.Log(playerName);
+            times = new int[] { 2022, 4, 10, 0, 0 }; //yyyy,mm,dd,hh,mm
+            //Debug.Log(playerName);
         }
         else
         {
@@ -44,9 +46,9 @@ public class SavePlayer : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public string GetName()
     {
-        
+        return PlayerPrefs.GetString("saved_name");
     }
 
     public void GetCoins(int num)
@@ -59,6 +61,16 @@ public class SavePlayer : MonoBehaviour
         coin -= num;
     }
 
+    public int ReturnCoins()
+    {
+        return coin;
+    }
+
+    public DateTime ReturnTime()
+    {
+        return new DateTime(times[0], times[1], times[2], times[3], times[4], 0);
+    }
+
     public void SaveContent()
     {
         PlayerPrefs.SetInt("saved_coin", coin);
@@ -67,11 +79,11 @@ public class SavePlayer : MonoBehaviour
         PlayerPrefs.SetInt("saved_3", inventory[2]);
         PlayerPrefs.SetInt("saved_4", inventory[3]);
         PlayerPrefs.SetInt("saved_5", inventory[4]);
-        PlayerPrefs.SetInt("saved_year", times[0]);
-        PlayerPrefs.SetInt("saved_month", times[1]);
-        PlayerPrefs.SetInt("saved_day", times[2]);
-        PlayerPrefs.SetInt("saved_hour", times[3]);
-        PlayerPrefs.SetInt("saved_minite", times[4]);
+        PlayerPrefs.SetInt("saved_year", TimeController.time.Year);
+        PlayerPrefs.SetInt("saved_month", TimeController.time.Month);
+        PlayerPrefs.SetInt("saved_day", TimeController.time.Day);
+        PlayerPrefs.SetInt("saved_hour", TimeController.time.Hour);
+        PlayerPrefs.SetInt("saved_minite", TimeController.time.Minute);
         PlayerPrefs.Save();
     }
 }
