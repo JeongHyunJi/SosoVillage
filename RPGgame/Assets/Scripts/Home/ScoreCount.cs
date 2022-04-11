@@ -11,9 +11,9 @@ public class ScoreCount : MonoBehaviour
 
     void Update()
     {
-        if (Score == 0)
+        if (Score == 0&&FarmTimeController.diffSec!=-1)
         {
-            scoreText.text = "First Time";
+            scoreText.text = "Crop is Growing Now!";
         }
         else if (0 < Score && Score < 6)
         {

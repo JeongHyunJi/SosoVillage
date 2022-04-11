@@ -10852,7 +10852,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: FarmText?
+  m_Text: FarmTimer
 --- !u!222 &317516886
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20267,33 +20267,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1333791921}
-        m_TargetAssemblyTypeName: ScoreCount, Assembly-CSharp
-        m_MethodName: ScoreUp
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GrowPlant, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1333791923}
         m_TargetAssemblyTypeName: CountFarmTime, Assembly-CSharp
-        m_MethodName: Btn_Click
+        m_MethodName: BtnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21055,13 +21031,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textTimer: {fileID: 317516885}
-  diffSecond: 0
-  n1: 0
-  n2: 0
-  n3: 0
-  n4: 0
-  n5: 0
-  n6: 0
 --- !u!1 &1399675706
 GameObject:
   m_ObjectHideFlags: 0
