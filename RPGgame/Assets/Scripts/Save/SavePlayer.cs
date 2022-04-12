@@ -6,7 +6,7 @@ using UnityEngine;
 public class SavePlayer : MonoBehaviour
 {
     private string playerName;
-    private static int coin;
+    private int coin;
     private int[] inventory = new int[5];
     private int[] times = new int[5];
 
@@ -14,7 +14,7 @@ public class SavePlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        IsSave = PlayerPrefs.HasKey("saved_name");
+        IsSave = PlayerPrefs.HasKey("saved_year");
 
         if (!IsSave)
         {
@@ -22,9 +22,9 @@ public class SavePlayer : MonoBehaviour
             playerName = "guest"; //나중에 입력받도록 수정
             PlayerPrefs.SetString("saved_name", playerName);
             coin = 5;
-            inventory = new int[] { 0, 0, 0, 0, 0 };
+            inventory = new int[] { 1, 1, 1, 1, 1 };
             times = new int[] { 2022, 4, 10, 0, 0 }; //yyyy,mm,dd,hh,mm
-            //Debug.Log(playerName);
+            Debug.Log(playerName);
         }
         else
         {
@@ -48,7 +48,7 @@ public class SavePlayer : MonoBehaviour
     // Update is called once per frame
     public string GetName()
     {
-        return PlayerPrefs.GetString("saved_name");
+        return playerName;
     }
 
     public void GetCoins(int num)
@@ -68,7 +68,16 @@ public class SavePlayer : MonoBehaviour
 
     public DateTime ReturnTime()
     {
-        return new DateTime(times[0], times[1], times[2], times[3], times[4], 0);
+        Debug.Log(playerName);
+        Debug.Log("실행됨");
+        Debug.Log("times[0]" + times[0]);
+        Debug.Log("times[1]" + times[1]);
+        Debug.Log("times[2]" + times[2]);
+        Debug.Log("times[3]" + times[3]);
+        Debug.Log("times[4]" + times[4]);
+
+        DateTime tmpTime = new DateTime(times[0], times[1], times[2], times[3], times[4], 0);
+        return tmpTime;
     }
 
     public void SaveContent()

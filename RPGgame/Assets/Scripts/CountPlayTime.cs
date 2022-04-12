@@ -10,7 +10,8 @@ public static class TimeController
     //public static DateTime time = new DateTime(PlayerPrefs.GetInt("saved_year"), PlayerPrefs.GetInt("saved_month"), PlayerPrefs.GetInt("saved_day"),
     //    PlayerPrefs.GetInt("saved_hour"), PlayerPrefs.GetInt("saved_minite"), 0);
 
-    public static DateTime time = DateTime.Now;
+    public static DateTime time;
+    public static bool isStart = true;
 
     public static void TimeCount()
     {
@@ -26,19 +27,16 @@ public class CountPlayTime : MonoBehaviour
     //처음 시작 시간을 카운트 할 수 있도록
     //public string check = "None";
 
-    //void Start()
-    //{
-    //    //set start time
-    //    if (SceneManager.GetActiveScene().name == "Home")
-    //    {
-    //        if (check != "Complete")
-    //        {
-    //            DateTime startTime = DateTime.Now;
-    //            PlayerPrefs.SetString("stTime_1", startTime.ToString());
-    //            check = "Complete";
-    //        }
-    //    }
-    //}
+    void Start()
+    {
+        if (TimeController.isStart)
+        {
+            Debug.Log("if문 실행 확인");
+            TimeController.time = savePlayer.GetComponent<SavePlayer>().ReturnTime();
+            TimeController.isStart = false;
+        }
+    }
+
     //void Update()
     //{
     //    string timeStr = PlayerPrefs.GetString("stTime_1");
