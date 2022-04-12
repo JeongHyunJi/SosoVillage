@@ -4,15 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+public static class Variables
+{
+    public static string asName = "MenuScene";
+}
+
 public class MenuController : MonoBehaviour
 {
     //public Texture2D cursorImg;
 
-    private void Start()
-    {
-        //Cursor.SetCursor(cursorImg, Vector2.zero, CursorMode.ForceSoftware);
-        //Cursor.lockState = CursorLockMode.Confined;
-    }
     // Start is called before the first frame update
     void Update()
     {
@@ -25,6 +25,7 @@ public class MenuController : MonoBehaviour
 
     public void clickMenu()
     {
+        Variables.asName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene("MenuScene");
     }
 }
