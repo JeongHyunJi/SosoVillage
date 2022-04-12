@@ -4,96 +4,118 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
+public static class FarmTimeController
+{
+    public static DateTime stTime;
+    public static DateTime curTime;
+    public static int diffHour;
+    public static int diffMin;
+    public static int diffSec;
+
+    //작물 수확하기
+    public static int crop;
+}
+
 public class CountFarmTime : MonoBehaviour
 {
     public Text textTimer;
-    bool checkClick = false;
-    public int diffSecond = 0;
+    bool ClickCheck = false;
+    int[] Check = { 0, 0, 0, 0, 0, 0 }; //시간 중복 체크
 
-    //Score에서 중복되지 않도록
-    public int n1 = 0;
-    public int n2 = 0;
-    public int n3 = 0;
-    public int n4 = 0;
-    public int n5 = 0;
-    public int n6 = 0;
-
-    public void Btn_Click()
+    public void BtnClick()
     {
-        DateTime startTime = DateTime.Now;
-        PlayerPrefs.SetString("stTime", startTime.ToString());
-        checkClick = true;
+        ClickCheck = true;
+        FarmTimeController.stTime = DateTime.Now;
+        PlayerPrefs.SetString("BtnClickTime", FarmTimeController.stTime.ToString());
     }
-    public void Update()
+
+    public void Reset()
     {
-        if (checkClick)
+        FarmTimeController.crop++;
+        ClickCheck = false;
+        ScoreCount.Score = 0;
+        for(int i=0; i<6; i++)
         {
-            string timeStr = PlayerPrefs.GetString("stTime");
-            DateTime startTime = Convert.ToDateTime(timeStr);
-
-            //update current time
-            DateTime currentTime = DateTime.Now;
-            TimeSpan timeDiff = currentTime - startTime;
-
-            //int diffMinute = timeDiff.Minutes;
-            diffSecond = timeDiff.Seconds;
-            if (ScoreCount.Score == 6)
-            {
-                textTimer.text = "Finish Growing!";
-            }
-            else
-            {
-                textTimer.text = "초 차이: " + diffSecond.ToString();
-            }
+            Check[i] = 0;
         }
+        FarmTimeController.diffSec = -1;
+    }
 
-        switch (diffSecond)
+    public void FixedUpdate()
+    {
+        //Button이 클릭된 경우
+        if (ClickCheck == true)
         {
-            case 1:
-                if (n1 == 0)
+            //start time 설정
+            string ClickTime = PlayerPrefs.GetString("BtnClickTime");
+            FarmTimeController.stTime = Convert.ToDateTime(ClickTime);
+
+            //current time 설정
+            FarmTimeController.curTime = DateTime.Now;
+
+            //current time과 start time의 차이 정의
+            TimeSpan timeDiff = FarmTimeController.curTime - FarmTimeController.stTime;
+            FarmTimeController.diffHour = timeDiff.Hours;
+            FarmTimeController.diffMin = timeDiff.Minutes;
+            FarmTimeController.diffSec = timeDiff.Seconds;
+
+            //시간차에 따른 Score 상승
+            if (FarmTimeController.diffHour == 0 && FarmTimeController.diffMin==0)
+            {
+                switch (FarmTimeController.diffSec)
                 {
-                    ScoreCount.Score++;
-                    n1++;
+                    case 1:
+                        if (Check[0] == 0)
+                        {
+                            ScoreCount.Score++;
+                            Check[0] = 1;
+                        }
+                        break;
+                    case 2:
+                        if (Check[1] == 0)
+                        {
+                            ScoreCount.Score++;
+                            Check[1] = 1;
+                        }
+                        break;
+                    case 3:
+                        if (Check[2] == 0)
+                        {
+                            ScoreCount.Score++;
+                            Check[2] = 1;
+                        }
+                        break;
+                    case 4:
+                        if (Check[3] == 0)
+                        {
+                            ScoreCount.Score++;
+                            Check[3] = 1;
+                        }
+                        break;
+                    case 5:
+                        if (Check[4] == 0)
+                        {
+                            ScoreCount.Score++;
+                            Check[4] = 1;
+                        }
+                        break;
+                    case 6:
+                        if (Check[5] == 0)
+                        {
+                            ScoreCount.Score++;
+                            Check[5] = 1;
+                        }
+                        break;
+                    case 7:
+                        Reset();
+                        break;
+                    default:
+                        break;
                 }
-                break;
-            case 2:
-                if (n2 == 0)
-                {
-                    ScoreCount.Score++;
-                    n2++;
-                }
-                break;
-            case 3:
-                if (n3 == 0)
-                {
-                    ScoreCount.Score++;
-                    n3++;
-                }
-                break;
-            case 4:
-                if (n4 == 0)
-                {
-                    ScoreCount.Score++;
-                    n4++;
-                }
-                break;
-            case 5:
-                if (n5 == 0)
-                {
-                    ScoreCount.Score++;
-                    n5++;
-                }
-                break;
-            case 6:
-                if (n6 == 0)
-                {
-                    ScoreCount.Score++;
-                    n6++;
-                }
-                break;
-            default:
-                //Debug.Log("defaul");
-                break;
+            }
+
+            //확인
+            textTimer.text = FarmTimeController.curTime.ToString("hh:mm:ss");
         }
     }
 }

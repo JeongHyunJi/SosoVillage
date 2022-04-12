@@ -7,8 +7,11 @@ using System;
 
 public static class TimeController
 {
+    //public static DateTime time = new DateTime(PlayerPrefs.GetInt("saved_year"), PlayerPrefs.GetInt("saved_month"), PlayerPrefs.GetInt("saved_day"),
+    //    PlayerPrefs.GetInt("saved_hour"), PlayerPrefs.GetInt("saved_minite"), 0);
+
     public static DateTime time = DateTime.Now;
-    
+
     public static void TimeCount()
     {
         time = time.AddSeconds(1);
@@ -18,6 +21,7 @@ public static class TimeController
 public class CountPlayTime : MonoBehaviour
 {
     public Text textTimer;
+    public GameObject savePlayer;
 
     //처음 시작 시간을 카운트 할 수 있도록
     //public string check = "None";
@@ -39,7 +43,7 @@ public class CountPlayTime : MonoBehaviour
     //{
     //    string timeStr = PlayerPrefs.GetString("stTime_1");
     //    DateTime startTime = Convert.ToDateTime(timeStr);
-        
+
     //    //update current time
     //    DateTime currentTime = DateTime.Now;
     //    TimeSpan timeDiff = currentTime - startTime;

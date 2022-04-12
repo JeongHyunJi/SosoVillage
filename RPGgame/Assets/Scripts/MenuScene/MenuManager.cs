@@ -24,11 +24,17 @@ public class MenuManager : MonoBehaviour
 
     public Texture2D cursorImg;
 
+    public Text playerName;
+    public Text coins;
+    public GameObject savePlayer;
+
     // Start is called before the first frame update
 
     private void Start()
     {
         Cursor.SetCursor(cursorImg, Vector2.zero, CursorMode.ForceSoftware);
+        playerName.text = "Name : " + savePlayer.GetComponent<SavePlayer>().GetName();
+        coins.text = savePlayer.GetComponent<SavePlayer>().ReturnCoins().ToString() + " $";
         Paused.SetActive(false);
         Map.SetActive(false);
     }
@@ -71,6 +77,7 @@ public class MenuManager : MonoBehaviour
     public void GameQuit()
     {
         Debug.Log("Game Quit");
+        savePlayer.GetComponent<SavePlayer>().SaveContent();
         Application.Quit();
     }
 }
