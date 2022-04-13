@@ -28,7 +28,20 @@ public class TimerManager : MonoBehaviour
         btn_active = false; //버튼 초기 상태 false로 만들기
         sr = go.GetComponent<SpriteRenderer>();
     }
-    public void Btn_Click() //버튼 클릭 이벤트
+
+    //버튼 활성화 메소드
+    public void SetTimerOn() 
+    {
+        btn_active = true;
+    }
+    //버튼 비활성화 메소드
+    public void SetTimerOff()
+    {
+        btn_active = false;
+    }
+
+    //버튼 클릭 이벤트
+    public void Btn_Click() 
     {
         if (!btn_active)
         {
@@ -41,36 +54,32 @@ public class TimerManager : MonoBehaviour
             SetTimerOff();
             if (cooking_time- rest_time <= time && time <= cooking_time+ rest_time)
             {
-                btn_text.text = "Game Complete!";
+                btn_text.text = "<color=#ffe650> Game Complete! </color>";
                 InvokeRepeating("PrintFinalY", 2f, 3f);
             }
             else
             {
-                btn_text.text = "Game Fail..";
+                btn_text.text = "<color=#68d168> Game Fail.. </color>";
                 InvokeRepeating("PrintFinalN", 2f, 3f);
             }
             time = 0;
             InvokeRepeating("SceneChange", 4f, 3f);
         }
     }
+
+    //성공시 최종 text
     public void PrintFinalY()
     {
         btn_text.text = "You can get a bread!";
         countY += 1;
     }
+    //실패시 최종 text
     public void PrintFinalN()
     {
         btn_text.text = "You can't get a bread!";
         countN += 1;
     }
-    public void SetTimerOn() //버튼 활성화 메소드
-    {
-        btn_active = true;
-    }
-    public void SetTimerOff() //버튼 비활성화 메소드
-    {
-        btn_active = false;
-    }
+
     public void Update() //바뀌는 시간 text에 반영하는 update 생명주기
     {
         if (btn_active)

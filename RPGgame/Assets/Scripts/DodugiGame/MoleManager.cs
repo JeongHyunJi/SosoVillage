@@ -30,11 +30,6 @@ public class MoleManager : MonoBehaviour
         StartCoroutine("TimeAttack");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     private IEnumerator TimeAttack()
     {
         yield return new WaitForSeconds(1);
