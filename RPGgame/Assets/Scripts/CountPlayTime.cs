@@ -31,7 +31,6 @@ public class CountPlayTime : MonoBehaviour
     {
         if (TimeController.isStart)
         {
-            Debug.Log("if문 실행 확인");
             TimeController.time = savePlayer.GetComponent<SavePlayer>().ReturnTime();
             TimeController.isStart = false;
         }

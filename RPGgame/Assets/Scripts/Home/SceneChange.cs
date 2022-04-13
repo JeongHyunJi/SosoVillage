@@ -18,7 +18,7 @@ public class SceneChange : MonoBehaviour
         {
             print("baking");
             SavePosition.setPosition(this.gameObject);
-            SceneManager.LoadScene("GameCookingPre");
+            SceneManager.LoadScene("GameCookingReal");
         }
 
         if (other.tag == "store")
