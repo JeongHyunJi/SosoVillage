@@ -5,25 +5,32 @@ using UnityEngine.EventSystems;
 
 public class BuyObjects : MonoBehaviour
 {
-    public static int Item1 = 0;
-    public static int Item2 = 0;
-    public static int Item3 = 0;
-    
+    int one;
+    int two;
+    int three;
+
     public void BtnClick()
     {
         string BtnName = EventSystem.current.currentSelectedGameObject.name;
+        one = PlayerPrefs.GetInt("saved_1");
+        two = PlayerPrefs.GetInt("saved_2");
+        three = PlayerPrefs.GetInt("saved_3");
+
         if (BtnName == "item1")
         {
-            Item1++;
+            one++;
+            PlayerPrefs.SetInt("saved_1", one);
         }
         else if (BtnName == "item2")
         {
-            Item2++;
+            two++;
+            PlayerPrefs.SetInt("saved_2", two);
         }
         else if (BtnName == "item3")
         {
-            Item3++;
+            three++;
+            PlayerPrefs.SetInt("saved_3", three);
         }
-        Debug.Log(Item1 + ":" + Item2 + ":" + Item3);
+        Debug.Log(one + ":" + two + ":" + three);
     }
 }
