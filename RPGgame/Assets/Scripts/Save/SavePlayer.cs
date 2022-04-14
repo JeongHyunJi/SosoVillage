@@ -73,8 +73,24 @@ public class SavePlayer : MonoBehaviour
         return tmpTime;
     }
 
+    public int ReturnInvent1()
+    {
+        return inventory[0];
+    }
+
+    public int ReturnInvent2()
+    {
+        return inventory[1];
+    }
+
+    public int ReturnInvent3()
+    {
+        return inventory[2];
+    }
+
     public void SaveContent()
     {
+        PlayerPrefs.SetString("saved_name", playerName);
         PlayerPrefs.SetInt("saved_coin", coin);
         PlayerPrefs.SetInt("saved_1", inventory[0]);
         PlayerPrefs.SetInt("saved_2", inventory[1]);
