@@ -8,11 +8,12 @@ public class BuyObjects : MonoBehaviour
     int one;
     int two;
     int three;
+    public GameObject GameManager;
 
     public void BtnClick()
     {
         string BtnName = EventSystem.current.currentSelectedGameObject.name;
-        one = PlayerPrefs.GetInt("saved_1");
+        //one = SavePlayer.ReturnInvent1();
         two = PlayerPrefs.GetInt("saved_2");
         three = PlayerPrefs.GetInt("saved_3");
 
