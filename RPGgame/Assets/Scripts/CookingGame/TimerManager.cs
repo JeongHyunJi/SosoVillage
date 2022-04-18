@@ -7,7 +7,10 @@ using UnityEngine.SceneManagement;
 public class TimerManager : MonoBehaviour
 {
 
-    public GameObject FontEffect;
+    //public GameObject FontEffect;
+
+    //버튼
+    static int BtnChk = 0;
 
     //시간
     bool btn_active; //버튼 활성화 상태 유무 검사
@@ -46,11 +49,18 @@ public class TimerManager : MonoBehaviour
     //버튼 클릭 이벤트
     public void Btn_Click() 
     {
-        if (!btn_active)
+        if (BtnChk == 1)
+        {
+            SetTimerOff();
+        }
+
+        if (!btn_active && BtnChk==0)
         {
             SetTimerOn();
             btn_text.text = "Stop!";
-            FontEffect.GetComponent<FontEffect>().tartgetCall(btn_text.text);
+            //FontEffect.GetComponent<FontEffect>().tartgetCall(btn_text.text);
+
+            BtnChk = 1;
         }
         else
         {
@@ -58,13 +68,13 @@ public class TimerManager : MonoBehaviour
             if (cooking_time- rest_time <= time && time <= cooking_time+ rest_time)
             {
                 btn_text.text = "<color=#ffe650> Game Complete! </color>";
-                FontEffect.GetComponent<FontEffect>().tartgetCall(btn_text.text);
+                //FontEffect.GetComponent<FontEffect>().tartgetCall(btn_text.text);
                 InvokeRepeating("PrintFinalY", 2f, 3f);
             }
             else
             {
                 btn_text.text = "<color=#68d168> Game Fail.. </color>";
-                FontEffect.GetComponent<FontEffect>().tartgetCall(btn_text.text);
+                //FontEffect.GetComponent<FontEffect>().tartgetCall(btn_text.text);
                 InvokeRepeating("PrintFinalN", 2f, 3f);
             }
             time = 0;
@@ -76,14 +86,14 @@ public class TimerManager : MonoBehaviour
     public void PrintFinalY()
     {
         btn_text.text = "You can get a bread!";
-        FontEffect.GetComponent<FontEffect>().tartgetCall(btn_text.text);
+        //FontEffect.GetComponent<FontEffect>().tartgetCall(btn_text.text);
         countY += 1;
     }
     //실패시 최종 text
     public void PrintFinalN()
     {
         btn_text.text = "You can't get a bread!";
-        FontEffect.GetComponent<FontEffect>().tartgetCall(btn_text.text);
+        //FontEffect.GetComponent<FontEffect>().tartgetCall(btn_text.text);
         countN += 1;
     }
 
@@ -131,5 +141,6 @@ public class TimerManager : MonoBehaviour
     {
         SceneManager.LoadScene("Home");
         count += 1;
+        BtnChk = 0;
     }
 }
