@@ -2715,6 +2715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a7fd6343428dd144b7bb21cdad2cb14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sr: {fileID: 0}
   go: {fileID: 0}
 --- !u!114 &556661619
 MonoBehaviour:
@@ -2728,7 +2729,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f37de3b31c0b664995a163ff4bf6368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FontEffect: {fileID: 0}
   text_time: []
   btn_text: {fileID: 1479906234}
   go: {fileID: 556661615}
@@ -4030,7 +4030,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f37de3b31c0b664995a163ff4bf6368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FontEffect: {fileID: 1479906232}
   text_time:
   - {fileID: 1578172407}
   btn_text: {fileID: 1479906234}
@@ -4144,7 +4143,6 @@ GameObject:
   - component: {fileID: 1479906234}
   - component: {fileID: 1479906236}
   - component: {fileID: 1479906237}
-  - component: {fileID: 1479906238}
   - component: {fileID: 1479906239}
   m_Layer: 5
   m_Name: text_button
@@ -4170,7 +4168,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -171}
-  m_SizeDelta: {x: 350, y: 52.1898}
+  m_SizeDelta: {x: 500, y: 52.1898}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1479906234
 MonoBehaviour:
@@ -4285,19 +4283,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1479906238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1479906232}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba6fcb3832b4fb446b939832e2de8ffa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetText: {fileID: 1479906234}
 --- !u!65 &1479906239
 BoxCollider:
   m_ObjectHideFlags: 0
