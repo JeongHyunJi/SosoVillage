@@ -7,7 +7,7 @@ public class SavePlayer : MonoBehaviour
 {
     private static string playerName; //매 씬마다 값이 초기화 되는 것을 방지하기 위해 static으로 변수 선언
     private static int coin;
-    private static int[] inventory = new int[5];
+    private static int[] inventory = new int[5]; //씨앗, 옥수수, 빵(안익음), 빵(잘익음), 빵(탐)
     private static int[] times = new int[5];
 
     private bool IsSave;
@@ -86,6 +86,16 @@ public class SavePlayer : MonoBehaviour
     public int ReturnInvent3()
     {
         return inventory[2];
+    }
+
+    public int ReturnInvent4()
+    {
+        return inventory[3];
+    }
+
+    public int ReturnInvent5()
+    {
+        return inventory[4];
     }
 
     public void SaveContent()

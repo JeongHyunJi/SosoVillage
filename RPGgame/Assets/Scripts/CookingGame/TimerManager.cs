@@ -23,6 +23,10 @@ public class TimerManager : MonoBehaviour
     //빵
     SpriteRenderer sr;
     public GameObject go;
+    int two;
+    int three;
+    int four;
+    int five;
 
     //씬 이동
     private int count = 0;
@@ -49,6 +53,7 @@ public class TimerManager : MonoBehaviour
     //버튼 클릭 이벤트
     public void Btn_Click() 
     {
+
         if (BtnChk == 1)
         {
             SetTimerOff();
@@ -61,6 +66,8 @@ public class TimerManager : MonoBehaviour
             //FontEffect.GetComponent<FontEffect>().tartgetCall(btn_text.text);
 
             BtnChk = 1;
+            two--;
+            PlayerPrefs.SetInt("saved_2", two);
         }
         else
         {
@@ -75,7 +82,14 @@ public class TimerManager : MonoBehaviour
             {
                 btn_text.text = "<color=#68d168> Game Fail.. </color>";
                 //FontEffect.GetComponent<FontEffect>().tartgetCall(btn_text.text);
-                InvokeRepeating("PrintFinalN", 2f, 3f);
+                if (cooking_time - rest_time > time)
+                {
+                    InvokeRepeating("PrintFinalN_Not", 2f, 3f);
+                }
+                else
+                {
+                    InvokeRepeating("PrintFinalN_Burn", 2f, 3f);
+                }
             }
             time = 0;
             InvokeRepeating("SceneChange", 4f, 3f);
@@ -88,17 +102,37 @@ public class TimerManager : MonoBehaviour
         btn_text.text = "You can get a bread!";
         //FontEffect.GetComponent<FontEffect>().tartgetCall(btn_text.text);
         countY += 1;
+        four++;
+        PlayerPrefs.SetInt("saved_4", four);
+        Debug.Log(four + ": 성공");
     }
     //실패시 최종 text
-    public void PrintFinalN()
+    public void PrintFinalN_Not()
     {
-        btn_text.text = "You can't get a bread!";
+        btn_text.text = "You get a Not Baked Bread!";
         //FontEffect.GetComponent<FontEffect>().tartgetCall(btn_text.text);
         countN += 1;
+        three++;
+        PlayerPrefs.SetInt("saved_3", three);
+        Debug.Log(four + ": 아직");
+    }
+    public void PrintFinalN_Burn()
+    {
+        btn_text.text = "You get a Burned Bread!";
+        //FontEffect.GetComponent<FontEffect>().tartgetCall(btn_text.text);
+        countN += 1;
+        five++;
+        PlayerPrefs.SetInt("saved_5", five);
+        Debug.Log(four + ": 탐");
     }
 
     public void Update() //바뀌는 시간 text에 반영하는 update 생명주기
     {
+        two = PlayerPrefs.GetInt("saved_2");
+        three = PlayerPrefs.GetInt("saved_3");
+        four = PlayerPrefs.GetInt("saved_4");
+        five = PlayerPrefs.GetInt("saved_5");
+
         if (btn_active)
         {
             time += Time.deltaTime;
