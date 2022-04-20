@@ -15,9 +15,9 @@ public class BuyObjects : MonoBehaviour
     private static void BringInv()
     {
         SavePlayer sp = new SavePlayer();
-        one = sp.ReturnInvent1();
-        two = sp.ReturnInvent2();
-        three = sp.ReturnInvent3();
+        //one = sp.ReturnInvent1();
+        //two = sp.ReturnInvent2();
+        //three = sp.ReturnInvent3();
         four = sp.ReturnInvent4();
         five = sp.ReturnInvent5();
     }
