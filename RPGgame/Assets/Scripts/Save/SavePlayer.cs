@@ -80,19 +80,59 @@ public class SavePlayer : MonoBehaviour
         return tmpTime;
     }
 
+    public void UseInvent(int num)
+    {
+        if (num == 1)
+        {
+            inventory[0]--;
+        }
+        else if (num == 2)
+        {
+            inventory[1]--;
+        }
+        else if (num == 3)
+        {
+            inventory[2]--;
+        }
+        else if (num == 4)
+        {
+            inventory[3]--;
+        }
+        else if (num == 5)
+        {
+            inventory[4]--;
+        }
+        SaveContent();
+    }
+
+    public void GetInvent(int num)
+    {
+        if (num == 1)
+        {
+            inventory[0]++;
+        }
+        else if (num == 2)
+        {
+            inventory[1]++;
+        }
+        else if (num == 3)
+        {
+            inventory[2]++;
+        }
+        else if (num == 4)
+        {
+            inventory[3]++;
+        }
+        else if (num == 5)
+        {
+            inventory[4]++;
+        }
+        SaveContent();
+    }
+
     public int[] ReturnInvent()
     {
         return inventory;
-    }
-
-    public int ReturnInvent4()
-    {
-        return inventory[3];
-    }
-
-    public int ReturnInvent5()
-    {
-        return inventory[4];
     }
 
     public void SaveContent()
