@@ -50,6 +50,11 @@ public class SavePlayer : MonoBehaviour
     {
         return playerName;
     }
+    public void SetName(string newName)
+    {
+        playerName = newName;
+
+    }
     public void GetCorn()
     {
         inventory[1]++;

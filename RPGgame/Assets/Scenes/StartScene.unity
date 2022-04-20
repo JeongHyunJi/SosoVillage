@@ -260,8 +260,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_Font: {fileID: 12800000, guid: b6349d08a5335cd4aa534282435d11cc, type: 3}
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -3247,6 +3247,8 @@ GameObject:
   - component: {fileID: 1708332219}
   - component: {fileID: 1708332218}
   - component: {fileID: 1708332221}
+  - component: {fileID: 1708332223}
+  - component: {fileID: 1708332222}
   m_Layer: 5
   m_Name: StartText
   m_TagString: Untagged
@@ -3386,6 +3388,32 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!65 &1708332222
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708332216}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 70, y: 25, z: 1}
+  m_Center: {x: 1, y: 0, z: 0}
+--- !u!114 &1708332223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708332216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba6fcb3832b4fb446b939832e2de8ffa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetText: {fileID: 1708332219}
 --- !u!1 &1736321218
 GameObject:
   m_ObjectHideFlags: 0
@@ -3398,6 +3426,8 @@ GameObject:
   - component: {fileID: 1736321221}
   - component: {fileID: 1736321220}
   - component: {fileID: 1736321222}
+  - component: {fileID: 1736321224}
+  - component: {fileID: 1736321223}
   m_Layer: 5
   m_Name: BackText
   m_TagString: Untagged
@@ -3522,6 +3552,32 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!65 &1736321223
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736321218}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 70, y: 25, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1736321224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736321218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba6fcb3832b4fb446b939832e2de8ffa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetText: {fileID: 1736321220}
 --- !u!1 &1818184500
 GameObject:
   m_ObjectHideFlags: 0
@@ -3532,6 +3588,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1818184501}
   - component: {fileID: 1818184502}
+  - component: {fileID: 1818184503}
   m_Layer: 0
   m_Name: StartManager
   m_TagString: Untagged
@@ -3569,6 +3626,18 @@ MonoBehaviour:
   NameCheckScene: {fileID: 1640420849}
   inputField_Name: {fileID: 1846294067}
   NameCheckText: {fileID: 156234131}
+--- !u!114 &1818184503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818184500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0c52a1e6c9fac248891c45be8caa9d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1846294065
 GameObject:
   m_ObjectHideFlags: 0

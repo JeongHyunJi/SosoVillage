@@ -13,10 +13,13 @@ public class StartManager : MonoBehaviour
     public Text NameCheckText;
     string playerName = "";
 
+    private SavePlayer savePlayer;
+
     // Start is called before the first frame update
     void Start()
     {
         NameCheckScene.SetActive(false);
+        savePlayer = GameObject.Find("StartManager").GetComponent<SavePlayer>();
     }
 
     // Update is called once per frame
@@ -38,7 +41,8 @@ public class StartManager : MonoBehaviour
 
     public void ClickStart()
     {
-        //이름저장
+        savePlayer.SetName(playerName);
+        savePlayer.SaveContent();
         SceneManager.LoadScene("Home");
     }
     public void ClickBack()

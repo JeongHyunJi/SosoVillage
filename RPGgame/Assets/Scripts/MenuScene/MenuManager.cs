@@ -90,6 +90,10 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+    public void ClickSave()
+    {
+        savePlayer.GetComponent<SavePlayer>().SaveContent();
+    }
     public void GameQuit()
     {
         Debug.Log("Game Quit");
