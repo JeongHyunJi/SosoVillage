@@ -17,7 +17,6 @@ public class FontEffect : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        textValue = targetText.text;
         targetText.text = "<size=" + (targetText.fontSize + 5) + ">" + textValue + "</size>";
     }
     private void OnMouseExit()

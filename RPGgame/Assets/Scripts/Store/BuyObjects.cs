@@ -5,57 +5,47 @@ using UnityEngine.EventSystems;
 
 public class BuyObjects : MonoBehaviour
 {
-    static int one;
-    static int two;
-    static int three;
-    static int four;
-    static int five;
     public GameObject GameManager;
+    int[] invent;
 
-    private static void BringInv()
-    {
-        SavePlayer sp = new SavePlayer();
-        //one = sp.ReturnInvent1();
-        //two = sp.ReturnInvent2();
-        //three = sp.ReturnInvent3();
-        four = sp.ReturnInvent4();
-        five = sp.ReturnInvent5();
-    }
     public void BtnClick()
     {
         string BtnName = EventSystem.current.currentSelectedGameObject.name;
-        //BringInv();
-        one = PlayerPrefs.GetInt("saved_1");
-        two = PlayerPrefs.GetInt("saved_2");
-        three = PlayerPrefs.GetInt("saved_3");
-        four = PlayerPrefs.GetInt("saved_4");
-        five = PlayerPrefs.GetInt("saved_5");
+
+        //SavePlayer에서 가져오기
+        SavePlayer inventorys = FindObjectOfType<SavePlayer>();
+        invent = inventorys.ReturnInvent();
 
         if (BtnName == "item1") //씨앗
         {
-            one++;
-            PlayerPrefs.SetInt("saved_1", one);
+            Debug.Log("1사용전: "+invent[0]);
+            inventorys.UseInvent(1);
+            Debug.Log("1사용후:"+invent[0]);
+
         }
         else if (BtnName == "item2") //옥수수
         {
-            two++;
-            PlayerPrefs.SetInt("saved_2", two);
+            Debug.Log("2추가전: " + invent[1]);
+            inventorys.GetInvent(2);
+            Debug.Log("2추가후:" + invent[1]);
         }
         else if (BtnName == "item3") //안구워진 빵
         {
-            three++;
-            PlayerPrefs.SetInt("saved_3", three);
+            Debug.Log("3추가전: " + invent[2]);
+            inventorys.GetInvent(3);
+            Debug.Log("3추가후:" + invent[2]);
         }
         else if (BtnName == "item4") //잘구워진 빵
         {
-            four++;
-            PlayerPrefs.SetInt("saved_4", four);
+            Debug.Log("4추가전: " + invent[3]);
+            inventorys.GetInvent(4);
+            Debug.Log("4추가후:" + invent[3]);
         }
         else if (BtnName == "item5") //탄 빵
         {
-            five++;
-            PlayerPrefs.SetInt("saved_5", five);
+            Debug.Log("5추가전: " + invent[4]);
+            inventorys.GetInvent(5);
+            Debug.Log("5추가후:" + invent[4]);
         }
-        Debug.Log(one + ":" + two + ":" + three + ":" + four + ":" + five);
     }
 }
