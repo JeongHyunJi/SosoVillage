@@ -11,7 +11,7 @@ public class BuyObjects : MonoBehaviour
     static int four;
     static int five;
     public GameObject GameManager;
-
+ 
     private static void BringInv()
     {
         SavePlayer sp = new SavePlayer();
@@ -24,12 +24,12 @@ public class BuyObjects : MonoBehaviour
     public void BtnClick()
     {
         string BtnName = EventSystem.current.currentSelectedGameObject.name;
-        //BringInv();
-        one = PlayerPrefs.GetInt("saved_1");
-        two = PlayerPrefs.GetInt("saved_2");
-        three = PlayerPrefs.GetInt("saved_3");
-        four = PlayerPrefs.GetInt("saved_4");
-        five = PlayerPrefs.GetInt("saved_5");
+        BringInv();
+        //one = PlayerPrefs.GetInt("saved_1");
+        //two = PlayerPrefs.GetInt("saved_2");
+        //three = PlayerPrefs.GetInt("saved_3");
+        //four = PlayerPrefs.GetInt("saved_4");
+        //five = PlayerPrefs.GetInt("saved_5");
 
         if (BtnName == "item1") //¾¾¾Ñ
         {
