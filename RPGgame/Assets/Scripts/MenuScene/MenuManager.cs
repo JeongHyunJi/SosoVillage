@@ -26,8 +26,14 @@ public class MenuManager : MonoBehaviour
 
     public Text playerName;
     public Text coins;
+    public Text inventory1;
+    public Text inventory2;
+    public Text inventory3;
+    public Text inventory4;
+    public Text inventory5;
     public GameObject savePlayer;
     string sceneName;
+    int[] inventory = new int[5];
 
     // Start is called before the first frame update
 
@@ -38,6 +44,12 @@ public class MenuManager : MonoBehaviour
         Cursor.SetCursor(cursorImg, Vector2.zero, CursorMode.ForceSoftware);
         playerName.text = "Name : " + savePlayer.GetComponent<SavePlayer>().GetName();
         coins.text = savePlayer.GetComponent<SavePlayer>().ReturnCoins().ToString() + " $";
+        inventory = savePlayer.GetComponent<SavePlayer>().ReturnInvent();
+        inventory1.text = "x " + inventory[0];
+        inventory2.text = "x " + inventory[1];
+        inventory3.text = "x " + inventory[2];
+        inventory4.text = "x " + inventory[3];
+        inventory5.text = "x " + inventory[4];
         Paused.SetActive(false);
         Map.SetActive(false);
         Debug.Log(playerName.font.fontSize);
@@ -77,6 +89,10 @@ public class MenuManager : MonoBehaviour
     public void GotoBack()
     {
         SceneManager.LoadScene(sceneName);
+    }
+    public void ClickSave()
+    {
+        savePlayer.GetComponent<SavePlayer>().SaveContent();
     }
     public void GameQuit()
     {

@@ -50,17 +50,24 @@ public class SavePlayer : MonoBehaviour
     {
         return playerName;
     }
+    public void SetName(string newName)
+    {
+        playerName = newName;
 
+    }
+    public void GetCorn()
+    {
+        inventory[1]++;
+    }
     public void GetCoins(int num)
     {
         coin += num;
     }
 
-    public void UseCoind(int num) 
+    public void UseCoins(int num) 
     {
         coin -= num;
     }
-
     public int ReturnCoins()
     {
         Debug.Log(coin);
@@ -73,19 +80,9 @@ public class SavePlayer : MonoBehaviour
         return tmpTime;
     }
 
-    public int ReturnInvent1()
+    public int[] ReturnInvent()
     {
-        return inventory[0];
-    }
-
-    public int ReturnInvent2()
-    {
-        return inventory[1];
-    }
-
-    public int ReturnInvent3()
-    {
-        return inventory[2];
+        return inventory;
     }
 
     public int ReturnInvent4()

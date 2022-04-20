@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GrowPlant : MonoBehaviour
 {
     public GameObject Plant;
-    public Text scoreText;
+    public FarmTimeController farmTimeController;
 
     public Sprite one;
     public Sprite two;
@@ -20,34 +20,33 @@ public class GrowPlant : MonoBehaviour
     Vector2 v_three = new Vector2(120, 180);
     Vector2 v_four = new Vector2(120, 240);
     Vector2 v_finish = new Vector2(140, 100);
-
     public void Update()
     {
-        if (ScoreCount.Score >= 6)
+        if (farmTimeController.score >= 6)
         {
             transform.gameObject.GetComponent<RectTransform>().sizeDelta = v_finish;
             Plant.GetComponent<Image>().sprite = finish;
         }
-        else if (ScoreCount.Score>=5)
+        else if (farmTimeController.score >= 5)
         {
             Plant.GetComponent<Image>().sprite = five;
         }
-        else if (ScoreCount.Score >= 4)
+        else if (farmTimeController.score >= 4)
         {
             Plant.GetComponent<Image>().sprite = four;
             transform.gameObject.GetComponent<RectTransform>().sizeDelta = v_four;
         }
-        else if (ScoreCount.Score >= 3)
+        else if (farmTimeController.score >= 3)
         {
             transform.gameObject.GetComponent<RectTransform>().sizeDelta = v_three;
             Plant.GetComponent<Image>().sprite = three;
         }
-        else if (ScoreCount.Score >= 2)
+        else if (farmTimeController.score >= 2)
         {
             transform.gameObject.GetComponent<RectTransform>().sizeDelta = v_two;
             Plant.GetComponent<Image>().sprite = two;  
         }
-        else if (ScoreCount.Score >= 1)
+        else if (farmTimeController.score >= 1)
         {
             transform.gameObject.GetComponent<RectTransform>().sizeDelta = v_one;
             Plant.GetComponent<Image>().sprite = one;
