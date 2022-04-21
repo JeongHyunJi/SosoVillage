@@ -102,7 +102,7 @@ public class SavePlayer : MonoBehaviour
         {
             inventory[4]--;
         }
-        SaveContent();
+        //SaveContent();
     }
 
     public void GetInvent(int num)
@@ -127,7 +127,7 @@ public class SavePlayer : MonoBehaviour
         {
             inventory[4]++;
         }
-        SaveContent();
+        //SaveContent();
     }
 
     public int[] ReturnInvent()

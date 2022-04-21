@@ -54,6 +54,9 @@ public class CountPlayTime : MonoBehaviour
     private void FixedUpdate()
     {
         TimeController.TimeCount();
-        textTimer.text = "time " + TimeController.time.ToString("yyyy년 MM월 dd일\n tt hh:mm");
+        if (textTimer)
+        {
+            textTimer.text = "time " + TimeController.time.ToString("yyyy년 MM월 dd일\n tt hh:mm");
+        }
     }
 }
