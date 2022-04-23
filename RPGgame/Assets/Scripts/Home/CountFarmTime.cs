@@ -9,49 +9,58 @@ using UnityEngine.EventSystems;
 
 public class CountFarmTime : MonoBehaviour
 {
-    static FarmTimeController[] farmTimeControllers = new FarmTimeController[3];
-    public Text textTimer;
+    public static FarmTimeController[] farmTimeControllers = new FarmTimeController[3];
     static bool[] ClickCheck = { false, false, false };
-    int cur = 0;
-    static int[][] Check = new int[3][] {
+    int[][] Check = new int[3][] {
         new int[] { 0, 0, 0, 0, 0, 0 },
         new int[] { 0, 0, 0, 0, 0, 0 },
         new int[] { 0, 0, 0, 0, 0, 0 } }; //시간 중복 체크
+    int cur = 0;
+
     public GameObject savePlayer;
-    public GameObject growPlant;
     private GameObject ThisButton;
 
-    private void Start()
-    { 
-        farmTimeControllers[0] = GameObject.FindGameObjectsWithTag("Farm")[0].GetComponent<FarmTimeController>();
-        farmTimeControllers[1] = GameObject.FindGameObjectsWithTag("Farm")[1].GetComponent<FarmTimeController>();
-        farmTimeControllers[2] = GameObject.FindGameObjectsWithTag("Farm")[2].GetComponent<FarmTimeController>();
-    }
+    private void Awake()
+    {
+        if (TimeController.isStart)
+        {
+            farmTimeControllers[0] = GameObject.FindGameObjectsWithTag("Farm")[0].GetComponent<FarmTimeController>();
+            farmTimeControllers[1] = GameObject.FindGameObjectsWithTag("Farm")[1].GetComponent<FarmTimeController>();
+            farmTimeControllers[2] = GameObject.FindGameObjectsWithTag("Farm")[2].GetComponent<FarmTimeController>();
+        }
+       }
     public void BtnClick()
     {
         ThisButton = EventSystem.current.currentSelectedGameObject;
         
-        if (ThisButton.name == "hole1")
+        if (ThisButton.name == "hole0")
             cur = 0;
-        else if (ThisButton.name == "hole2")
+        else if (ThisButton.name == "hole1")
             cur = 1;
-        else if (ThisButton.name == "hole3")
+        else if (ThisButton.name == "hole2")
             cur = 2;
-        ClickCheck[cur] = true;
-        farmTimeControllers[cur].stTime = DateTime.Now;
-        PlayerPrefs.SetString("BtnClickTime"+cur, farmTimeControllers[cur].stTime.ToString());
+        if (!ClickCheck[cur])
+        {
+            ClickCheck[cur] = true;
+            farmTimeControllers[cur].stTime = DateTime.Now;
+            PlayerPrefs.SetString("BtnClickTime" + cur, farmTimeControllers[cur].stTime.ToString());
+        }
+        else
+        {
+            savePlayer.GetComponent<SavePlayer>().GetCorn();
+            farmTimeControllers[cur].score = 0;
+            ClickCheck[cur] = false;
+
+        }
     }
 
     public void Reset(int i)
     {
-        savePlayer.GetComponent<SavePlayer>().GetCorn();
-        ClickCheck[i] = false;
         Check[i] = new int[] { 0,0,0,0,0,0};
         farmTimeControllers[i].diffSec = -1;
-        farmTimeControllers[i].score = 0;
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
         for (int i=0;i<3;i++) {
             //Button이 클릭된 경우
@@ -59,7 +68,7 @@ public class CountFarmTime : MonoBehaviour
             {
                 //start time 설정
                 string ClickTime = PlayerPrefs.GetString("BtnClickTime"+i);
-                farmTimeControllers[cur].stTime = Convert.ToDateTime(ClickTime);
+                farmTimeControllers[i].stTime = Convert.ToDateTime(ClickTime);
 
                 //current time 설정
                 farmTimeControllers[i].curTime = DateTime.Now;
@@ -124,9 +133,6 @@ public class CountFarmTime : MonoBehaviour
                             break;
                     }
                 }
-
-                //확인
-                textTimer.text = farmTimeControllers[i].curTime.ToString("hh:mm:ss");
             }
         }
 

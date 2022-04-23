@@ -19430,7 +19430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 808970150}
   m_Layer: 5
-  m_Name: hole2
+  m_Name: hole1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19963,7 +19963,7 @@ GameObject:
   - component: {fileID: 1139068205}
   - component: {fileID: 1139068209}
   m_Layer: 5
-  m_Name: hole1
+  m_Name: hole0
   m_TagString: Farm
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20058,12 +20058,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Plant: {fileID: 1139068203}
   farmTimeController: {fileID: 1139068209}
+  zero: {fileID: 6265315932471578986, guid: e5faeabea49232347a9a0d9dc4b12966, type: 3}
   one: {fileID: 4635528558716661545, guid: e5faeabea49232347a9a0d9dc4b12966, type: 3}
   two: {fileID: 6323554675034267388, guid: e5faeabea49232347a9a0d9dc4b12966, type: 3}
   three: {fileID: 1054833903641789681, guid: e5faeabea49232347a9a0d9dc4b12966, type: 3}
   four: {fileID: -8959217295791921423, guid: e5faeabea49232347a9a0d9dc4b12966, type: 3}
   five: {fileID: -5354240661027602575, guid: e5faeabea49232347a9a0d9dc4b12966, type: 3}
   finish: {fileID: -1873608379760951685, guid: e5faeabea49232347a9a0d9dc4b12966, type: 3}
+  cur: 0
 --- !u!114 &1139068207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20778,9 +20780,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 880c7bed8e26d464a857d146f389af3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textTimer: {fileID: 207401280}
   savePlayer: {fileID: 1988798497}
-  growPlant: {fileID: 0}
 --- !u!1 &1399675706
 GameObject:
   m_ObjectHideFlags: 0
@@ -20988,7 +20988,7 @@ GameObject:
   - component: {fileID: 1561398109}
   - component: {fileID: 1561398113}
   m_Layer: 5
-  m_Name: hole3
+  m_Name: hole2
   m_TagString: Farm
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21083,12 +21083,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Plant: {fileID: 1561398107}
   farmTimeController: {fileID: 1561398113}
+  zero: {fileID: 6265315932471578986, guid: e5faeabea49232347a9a0d9dc4b12966, type: 3}
   one: {fileID: 4635528558716661545, guid: e5faeabea49232347a9a0d9dc4b12966, type: 3}
   two: {fileID: 6323554675034267388, guid: e5faeabea49232347a9a0d9dc4b12966, type: 3}
   three: {fileID: 1054833903641789681, guid: e5faeabea49232347a9a0d9dc4b12966, type: 3}
   four: {fileID: -8959217295791921423, guid: e5faeabea49232347a9a0d9dc4b12966, type: 3}
   five: {fileID: -5354240661027602575, guid: e5faeabea49232347a9a0d9dc4b12966, type: 3}
   finish: {fileID: -1873608379760951685, guid: e5faeabea49232347a9a0d9dc4b12966, type: 3}
+  cur: 2
 --- !u!114 &1561398111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21581,7 +21583,7 @@ GameObject:
   - component: {fileID: 1744911391}
   - component: {fileID: 1744911390}
   m_Layer: 5
-  m_Name: hole2
+  m_Name: hole1
   m_TagString: Farm
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21658,12 +21660,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Plant: {fileID: 1744911385}
   farmTimeController: {fileID: 1744911390}
+  zero: {fileID: 6265315932471578986, guid: e5faeabea49232347a9a0d9dc4b12966, type: 3}
   one: {fileID: 4635528558716661545, guid: e5faeabea49232347a9a0d9dc4b12966, type: 3}
   two: {fileID: 6323554675034267388, guid: e5faeabea49232347a9a0d9dc4b12966, type: 3}
   three: {fileID: 1054833903641789681, guid: e5faeabea49232347a9a0d9dc4b12966, type: 3}
   four: {fileID: -8959217295791921423, guid: e5faeabea49232347a9a0d9dc4b12966, type: 3}
   five: {fileID: -5354240661027602575, guid: e5faeabea49232347a9a0d9dc4b12966, type: 3}
   finish: {fileID: -1873608379760951685, guid: e5faeabea49232347a9a0d9dc4b12966, type: 3}
+  cur: 1
 --- !u!114 &1744911390
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,9 +7,6 @@ using System;
 
 public static class TimeController
 {
-    //public static DateTime time = new DateTime(PlayerPrefs.GetInt("saved_year"), PlayerPrefs.GetInt("saved_month"), PlayerPrefs.GetInt("saved_day"),
-    //    PlayerPrefs.GetInt("saved_hour"), PlayerPrefs.GetInt("saved_minite"), 0);
-
     public static DateTime time;
     public static bool isStart = true;
 

@@ -52,7 +52,6 @@ public class MenuManager : MonoBehaviour
         inventory5.text = "x " + inventory[4];
         Paused.SetActive(false);
         Map.SetActive(false);
-        Debug.Log(playerName.font.fontSize);
     }
 
     public void openPaused()
