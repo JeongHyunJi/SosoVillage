@@ -97,52 +97,11 @@ public class SavePlayer : MonoBehaviour
     public void UseInvent(int num)
     {
         inventory[num - 1]--;
-        //if (num == 1)
-        //{
-        //    inventory[0]--;
-        //}
-        //else if (num == 2)
-        //{
-        //    inventory[1]--;
-        //}
-        //else if (num == 3)
-        //{
-        //    inventory[2]--;
-        //}
-        //else if (num == 4)
-        //{
-        //    inventory[3]--;
-        //}
-        //else if (num == 5)
-        //{
-        //    inventory[4]--;
-        //}
-        //SaveContent();
     }
 
     public void GetInvent(int num)
     {
-        if (num == 1)
-        {
-            inventory[0]++;
-        }
-        else if (num == 2)
-        {
-            inventory[1]++;
-        }
-        else if (num == 3)
-        {
-            inventory[2]++;
-        }
-        else if (num == 4)
-        {
-            inventory[3]++;
-        }
-        else if (num == 5)
-        {
-            inventory[4]++;
-        }
-        //SaveContent();
+        inventory[num - 1]++;
     }
 
     public int[] ReturnInvent()

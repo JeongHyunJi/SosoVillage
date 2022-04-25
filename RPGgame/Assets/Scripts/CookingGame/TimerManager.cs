@@ -39,12 +39,12 @@ public class TimerManager : MonoBehaviour
         sr = go.GetComponent<SpriteRenderer>();
     }
 
-
     //¹öÆ° Å¬¸¯ ÀÌº¥Æ®
     public void Btn_Click() 
     {
-        //SavePlayer invent = FindObjectOfType<SavePlayer>();
-
+        //SavePlayer¿¡¼­ °¡Á®¿À±â
+        SavePlayer inventorys = FindObjectOfType<SavePlayer>();
+        //int[] inv= inventorys.ReturnInvent();
         if (BtnChk == 1)
         {
             SetTimerOff();
@@ -55,7 +55,7 @@ public class TimerManager : MonoBehaviour
             SetTimerOn();
             btn_text.text = "Stop!";
             BtnChk = 1;
-            //invent.UseInvent(2); //¿Á¼ö¼ö »ç¿ë
+            inventorys.UseInvent(2); //¿Á¼ö¼ö »ç¿ë
         }
         else
         {
@@ -64,20 +64,20 @@ public class TimerManager : MonoBehaviour
             {
                 btn_text.text = "<color=#ffe650> Game Complete! </color>";
                 Invoke("PrintFinalY", 3f);
-                //invent.GetInvent(4);
+                inventorys.GetInvent(4); //ÀÍÀº »§
             }
             else
             {
                 btn_text.text = "<color=#68d168> Game Fail.. </color>";
-                if (cooking_time - rest_time > time) //ÀÍÁö ¾ÊÀº »§
+                if (cooking_time - rest_time > time)
                 {
                     Invoke("PrintFinalN_Not", 3f);
-                    //invent.GetInvent(3);
+                    inventorys.GetInvent(3); //ÀÍÁö ¾ÊÀº »§
                 }
-                else //Åº »§
+                else
                 {
                     Invoke("PrintFinalN_Burn", 3f);
-                    //invent.GetInvent(5);
+                    inventorys.GetInvent(5); //Åº »§
                 }
             }
             time = 0;
