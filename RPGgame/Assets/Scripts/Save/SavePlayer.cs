@@ -46,6 +46,21 @@ public class SavePlayer : MonoBehaviour
         }
     }
     // Update is called once per frame
+
+    public void startNewGame(string newName)
+    {
+        PlayerPrefs.DeleteAll();
+        Debug.Log("newgame name: "+newName);
+        playerName = newName;
+        coin = 5;
+        inventory = new int[] { 1, 1, 1, 1, 1 };
+        times = new int[] { 1900, 1, 1, 9, 0 }; //yyyy,mm,dd,hh,mm -> 초기세팅 : 1900/1/1/ am 9:00 
+    }
+
+    public bool IsSaveExist()
+    {
+        return IsSave;
+    }
     public string GetName()
     {
         return playerName;

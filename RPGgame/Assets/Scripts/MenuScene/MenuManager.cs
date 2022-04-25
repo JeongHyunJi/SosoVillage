@@ -7,20 +7,12 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
     public GameObject player;
-    //public GameObject StatusText;
-    //public GameObject MapText;
-    //public GameObject PausedText;
 
     public GameObject Paused;
-    //public GameObject ContinueText;
-    //public GameObject QuitText;
 
     public GameObject Main;
 
     public GameObject Map;
-    //public GameObject HomeText;
-    //public GameObject ForestText;
-    //public GameObject StoreText;
 
     public Texture2D cursorImg;
 
@@ -91,6 +83,7 @@ public class MenuManager : MonoBehaviour
     }
     public void ClickSave()
     {
+        Debug.Log("Save");
         savePlayer.GetComponent<SavePlayer>().SaveContent();
     }
     public void GameQuit()

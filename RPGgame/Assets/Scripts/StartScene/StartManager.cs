@@ -8,9 +8,12 @@ public class StartManager : MonoBehaviour
 {
     public GameObject NameScene;
     public GameObject NameCheckScene;
+    public GameObject NOName;
+    public GameObject NameOK;
 
     public InputField inputField_Name;
     public Text NameCheckText;
+    public Text NameCheckText2;
     string playerName = "";
 
     private SavePlayer savePlayer;
@@ -19,33 +22,62 @@ public class StartManager : MonoBehaviour
     void Start()
     {
         NameCheckScene.SetActive(false);
+        NOName.SetActive(false);
+        NameOK.SetActive(false);
+        NameScene.SetActive(false);
         savePlayer = GameObject.Find("StartManager").GetComponent<SavePlayer>();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void ClickStartGame()
     {
-        
+        if(savePlayer.IsSaveExist())
+        {
+            NameOK.SetActive(true);
+            NameCheckText2.text = "Start Gmae with\n\"" + savePlayer.GetName() + "\" ?";
+        }
+        else
+        {
+            NOName.SetActive(true);
+        }
     }
+    public void ClickNewGame()
+    {
+        NameScene.SetActive(true);
+    }
+    public void ClickCloseNameScene()
+    {
+        NameScene.SetActive(false);
+    }    
 
     public void ClickNext()
     {
         if(inputField_Name.text != "")
         {
             playerName = inputField_Name.text;
-        }
-        NameScene.SetActive(false);
-        NameCheckText.text = "Would you like to set the character's name to\n\"" + playerName + "\" ?";
-        NameCheckScene.SetActive(true);
+            NameScene.SetActive(false);
+            NameCheckText.text = "Would you like to set the character's name to\n\"" + playerName + "\" ?";
+            NameCheckScene.SetActive(true);
+        };
     }
 
     public void ClickStart()
     {
-        savePlayer.SetName(playerName);
+        SceneManager.LoadScene("Home");
+    }
+    public void ClickStartNewGame()
+    {
+        savePlayer.startNewGame(playerName); // 새로운 이름과 함께 정보초기화
         savePlayer.SaveContent();
         SceneManager.LoadScene("Home");
     }
-    public void ClickBack()
+    public void ClickBackStartScene()
+    {
+        NameOK.SetActive(false);
+        NOName.SetActive(false);
+    }
+
+    public void ClickBackNameScene()
     {
         NameCheckScene.SetActive(false);
         NameScene.SetActive(true);
