@@ -34,7 +34,7 @@ public class MenuManager : MonoBehaviour
         sceneName = Variables.asName;;
         Variables.asName = SceneManager.GetActiveScene().name;
         Cursor.SetCursor(cursorImg, Vector2.zero, CursorMode.ForceSoftware);
-        playerName.text = "Name : " + savePlayer.GetComponent<SavePlayer>().GetName();
+        playerName.text = "Name :   " + savePlayer.GetComponent<SavePlayer>().GetName();
         coins.text = savePlayer.GetComponent<SavePlayer>().ReturnCoins().ToString() + " $";
         inventory = savePlayer.GetComponent<SavePlayer>().ReturnInvent();
         inventory1.text = "x " + inventory[0];
