@@ -14,6 +14,7 @@ public class Save : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
+        print("ontrigger ¿€µø");
         if (other.tag == "bed")
         {
             print("bed");
