@@ -37,6 +37,7 @@ public class GrowPlant : MonoBehaviour
         }
         else if (farmTimeController.score >= 5)
         {
+            transform.gameObject.GetComponent<RectTransform>().sizeDelta = v_four;
             Plant.GetComponent<Image>().sprite = five;
         }
         else if (farmTimeController.score >= 4)
