@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 14986088}
   - component: {fileID: 14986087}
   - component: {fileID: 14986086}
+  - component: {fileID: 14986085}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -145,6 +146,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &14986085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14986084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9759e0b723cb7d4e86e721e634fa862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  suggest: {fileID: 404870792}
 --- !u!114 &14986086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1406,7 +1420,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1510151333}
+      - m_Target: {fileID: 14986085}
         m_TargetAssemblyTypeName: Save, Assembly-CSharp
         m_MethodName: BtnClick
         m_Mode: 1
@@ -2610,7 +2624,6 @@ GameObject:
   - component: {fileID: 723307702}
   - component: {fileID: 723307701}
   - component: {fileID: 723307700}
-  - component: {fileID: 723307703}
   m_Layer: 6
   m_Name: Bed
   m_TagString: bed
@@ -2709,27 +2722,6 @@ Transform:
   m_Father: {fileID: 1809555537}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &723307703
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 723307699}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &805880237
 GameObject:
   m_ObjectHideFlags: 0
@@ -4335,7 +4327,6 @@ GameObject:
   - component: {fileID: 1510151329}
   - component: {fileID: 1510151332}
   - component: {fileID: 1510151331}
-  - component: {fileID: 1510151333}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4395,19 +4386,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0c52a1e6c9fac248891c45be8caa9d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1510151333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1510151328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9759e0b723cb7d4e86e721e634fa862, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  suggest: {fileID: 404870792}
 --- !u!1 &1641670053
 GameObject:
   m_ObjectHideFlags: 0
@@ -4787,7 +4765,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1510151333}
+      - m_Target: {fileID: 14986085}
         m_TargetAssemblyTypeName: Save, Assembly-CSharp
         m_MethodName: BtnClick
         m_Mode: 1
