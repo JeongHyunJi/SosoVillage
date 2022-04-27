@@ -6,19 +6,21 @@ using UnityEngine.EventSystems;
 public class Save : MonoBehaviour
 {
     public GameObject suggest;
+    Vector3 pos;
 
     void Start()
     {
         suggest.SetActive(false);
+        //pos = this.GameObject.transform.position;
+        //print(pos);
     }
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        print("ontrigger 작동");
         if (other.tag == "bed")
         {
-            print("bed");
             suggest.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 
@@ -37,5 +39,6 @@ public class Save : MonoBehaviour
             suggest.SetActive(false);
             print("저장하지않음");
         }
+        Time.timeScale = 1;
     }
 }
