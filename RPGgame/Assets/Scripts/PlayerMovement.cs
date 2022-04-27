@@ -11,6 +11,10 @@ public static class SavePosition
         SavePosition.currentPosition = gameObject.transform.position;
         SavePosition.currentPosition.y = SavePosition.currentPosition.y - (float)0.5;
     }
+    public static void SaveCurrentPosition(GameObject gameObject)
+    {
+        SavePosition.currentPosition = gameObject.transform.position;
+    }
 }
 
 public class PlayerMovement : MonoBehaviour
@@ -28,8 +32,7 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         movement2D = GetComponent<Movement2D>();
         boxCollider = GetComponent<BoxCollider2D>();
-        if(SceneManager.GetActiveScene().name == "Home")
-            transform.position = SavePosition.currentPosition;
+        transform.position = SavePosition.currentPosition;
     }
 
     // Update is called once per frame

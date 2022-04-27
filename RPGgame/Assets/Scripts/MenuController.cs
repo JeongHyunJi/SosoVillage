@@ -18,14 +18,16 @@ public class MenuController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Debug.Log("go to menu");
-            SceneManager.LoadScene("MenuScene");
+            //Debug.Log("go to menu");
+            //SceneManager.LoadScene("MenuScene");
+            clickMenu();
         }
     }
 
     public void clickMenu()
     {
         Variables.asName = SceneManager.GetActiveScene().name;
+        SavePosition.SaveCurrentPosition(this.gameObject);
         SceneManager.LoadScene("MenuScene");
     }
 }
