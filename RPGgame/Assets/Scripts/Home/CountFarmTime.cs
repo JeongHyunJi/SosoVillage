@@ -11,7 +11,7 @@ public class CountFarmTime : MonoBehaviour
 {
     public static FarmTimeController[] farmTimeControllers = new FarmTimeController[3];
     static bool[] ClickCheck = { false, false, false };
-    int[][] Check = new int[3][] {
+    static int[][] Check = new int[3][] {
         new int[] { 0, 0, 0, 0, 0, 0 },
         new int[] { 0, 0, 0, 0, 0, 0 },
         new int[] { 0, 0, 0, 0, 0, 0 } }; //시간 중복 체크
@@ -28,7 +28,7 @@ public class CountFarmTime : MonoBehaviour
             farmTimeControllers[1] = GameObject.FindGameObjectsWithTag("Farm")[1].GetComponent<FarmTimeController>();
             farmTimeControllers[2] = GameObject.FindGameObjectsWithTag("Farm")[2].GetComponent<FarmTimeController>();
         }
-       }
+    }
     public void BtnClick()
     {
         ThisButton = EventSystem.current.currentSelectedGameObject;
@@ -47,10 +47,12 @@ public class CountFarmTime : MonoBehaviour
         }
         else
         {
-            savePlayer.GetComponent<SavePlayer>().GetCorn();
+            if (farmTimeControllers[cur].score == 6)
+            {
+                savePlayer.GetComponent<SavePlayer>().GetCorn();
+            }
             farmTimeControllers[cur].score = 0;
             ClickCheck[cur] = false;
-
         }
     }
 
