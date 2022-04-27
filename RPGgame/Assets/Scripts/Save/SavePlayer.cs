@@ -9,7 +9,6 @@ public class SavePlayer : MonoBehaviour
     private static int coin;
     private static int[] inventory = new int[5]; //æææ—, ø¡ºˆºˆ, ªß(æ»¿Õ¿Ω), ªß(¿ﬂ¿Õ¿Ω), ªß(≈Ω)
     private static int[] times = new int[5];
-
     private bool IsSave;
     // Start is called before the first frame update
     void Awake()
@@ -24,6 +23,7 @@ public class SavePlayer : MonoBehaviour
                 coin = 5;
                 inventory = new int[] { 1, 1, 1, 1, 1 };
                 times = new int[] { 1900, 1, 1, 9, 0 }; //yyyy,mm,dd,hh,mm -> √ ±‚ºº∆√ : 1900/1/1/ am 9:00 
+                Hearts.heart = 5;
                 Debug.Log(coin);
             }
             else
@@ -41,7 +41,7 @@ public class SavePlayer : MonoBehaviour
                 times[2] = PlayerPrefs.GetInt("saved_day");
                 times[3] = PlayerPrefs.GetInt("saved_hour");
                 times[4] = PlayerPrefs.GetInt("saved_minite");
-
+                Hearts.heart = PlayerPrefs.GetInt("saved_hearts");
             }
         }
     }
@@ -55,6 +55,7 @@ public class SavePlayer : MonoBehaviour
         coin = 5;
         inventory = new int[] { 1, 1, 1, 1, 1 };
         times = new int[] { 1900, 1, 1, 9, 0 }; //yyyy,mm,dd,hh,mm -> √ ±‚ºº∆√ : 1900/1/1/ am 9:00 
+        Hearts.heart = 5;
     }
 
     public bool IsSaveExist()
@@ -123,6 +124,7 @@ public class SavePlayer : MonoBehaviour
         PlayerPrefs.SetInt("saved_day", TimeController.time.Day);
         PlayerPrefs.SetInt("saved_hour", TimeController.time.Hour);
         PlayerPrefs.SetInt("saved_minite", TimeController.time.Minute);
+        PlayerPrefs.SetInt("saved_hearts", Hearts.heart);
         PlayerPrefs.Save();
     }
 }

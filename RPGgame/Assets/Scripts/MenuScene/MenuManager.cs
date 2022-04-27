@@ -31,7 +31,7 @@ public class MenuManager : MonoBehaviour
 
     private void Start()
     {
-        sceneName = Variables.asName;;
+        sceneName = Variables.asName;
         Variables.asName = SceneManager.GetActiveScene().name;
         Cursor.SetCursor(cursorImg, Vector2.zero, CursorMode.ForceSoftware);
         playerName.text = "Name :   " + savePlayer.GetComponent<SavePlayer>().GetName();
@@ -67,10 +67,14 @@ public class MenuManager : MonoBehaviour
 
     public void GotoHome()
     {
+        if(sceneName!="Home")
+            SavePosition.currentPosition = new Vector2(6, -16);
         SceneManager.LoadScene("Home");
     }
     public void GotoForest()
     {
+        if (sceneName != "Forest")
+            SavePosition.currentPosition = new Vector2(0, 0);
         SceneManager.LoadScene("Forest");
     }
     public void GotoStore()
