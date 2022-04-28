@@ -63,12 +63,14 @@ public class StartManager : MonoBehaviour
 
     public void ClickStart()
     {
+        SavePosition.currentPosition = new Vector2(6, -16);
         SceneManager.LoadScene("Home");
     }
     public void ClickStartNewGame()
     {
         savePlayer.startNewGame(playerName); // 새로운 이름과 함께 정보초기화
         savePlayer.SaveContent();
+        SavePosition.currentPosition = new Vector2(6, -16);
         SceneManager.LoadScene("Home");
     }
     public void ClickBackStartScene()

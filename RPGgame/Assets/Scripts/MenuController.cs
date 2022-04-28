@@ -26,8 +26,9 @@ public class MenuController : MonoBehaviour
 
     public void clickMenu()
     {
+        GameObject player = GameObject.FindWithTag("Player");
         Variables.asName = SceneManager.GetActiveScene().name;
-        SavePosition.SaveCurrentPosition(this.gameObject);
+        SavePosition.SaveCurrentPosition(player);
         SceneManager.LoadScene("MenuScene");
     }
 }
