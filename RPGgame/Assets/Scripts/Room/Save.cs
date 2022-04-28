@@ -6,13 +6,13 @@ using UnityEngine.EventSystems;
 public class Save : MonoBehaviour
 {
     public GameObject suggest;
-    Vector3 pos;
+    Vector2 pos;
 
     void Start()
     {
         suggest.SetActive(false);
-        //pos = this.GameObject.transform.position;
-        //print(pos);
+        pos = this.gameObject.transform.position;
+        print(pos);
     }
 
     public void OnTriggerEnter2D(Collider2D other)
@@ -33,6 +33,7 @@ public class Save : MonoBehaviour
         {
             sp.SaveContent();
             print("저장완료");
+            suggest.SetActive(false);
         }
         else if (BtnName == "Button_n") //저장X
         {
@@ -40,5 +41,8 @@ public class Save : MonoBehaviour
             print("저장하지않음");
         }
         Time.timeScale = 1;
+        Vector2 changeXY = new Vector2(6.5f, -8.5f);
+        this.gameObject.transform.position = changeXY;
+        //Vector3(6.30131817,-8.10491562,0)
     }
 }
