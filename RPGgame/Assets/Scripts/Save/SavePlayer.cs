@@ -62,6 +62,7 @@ public class SavePlayer : MonoBehaviour
     {
         return IsSave;
     }
+
     public string GetName()
     {
         return playerName;
@@ -69,17 +70,18 @@ public class SavePlayer : MonoBehaviour
     public void SetName(string newName)
     {
         playerName = newName;
-
     }
+
     public void GetCorn()
     {
         inventory[1]++;
     }
+
+    //coin
     public void GetCoins(int num)
     {
         coin += num;
     }
-
     public void UseCoins(int num) 
     {
         coin -= num;
@@ -89,22 +91,22 @@ public class SavePlayer : MonoBehaviour
         return coin;
     }
 
+    //time
     public DateTime ReturnTime()
     {
         DateTime tmpTime = new DateTime(times[0], times[1], times[2], times[3], times[4], 0);
         return tmpTime;
     }
 
+    //inventory
     public void UseInvent(int num)
     {
         inventory[num - 1]--;
     }
-
     public void GetInvent(int num)
     {
         inventory[num - 1]++;
     }
-
     public int[] ReturnInvent()
     {
         return inventory;

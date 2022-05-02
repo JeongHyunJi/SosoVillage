@@ -26,6 +26,7 @@ public class MenuManager : MonoBehaviour
     public GameObject savePlayer;
     string sceneName;
     int[] inventory = new int[5];
+    int coin;
 
     // Start is called before the first frame update
 
@@ -35,7 +36,8 @@ public class MenuManager : MonoBehaviour
         Variables.asName = SceneManager.GetActiveScene().name;
         Cursor.SetCursor(cursorImg, Vector2.zero, CursorMode.ForceSoftware);
         playerName.text = "Name :   " + savePlayer.GetComponent<SavePlayer>().GetName();
-        coins.text = savePlayer.GetComponent<SavePlayer>().ReturnCoins().ToString() + " $";
+        coin = savePlayer.GetComponent<SavePlayer>().ReturnCoins();
+        coins.text = coin + " $";
         inventory = savePlayer.GetComponent<SavePlayer>().ReturnInvent();
         inventory1.text = "x " + inventory[0];
         inventory2.text = "x " + inventory[1];
