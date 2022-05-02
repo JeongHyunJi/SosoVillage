@@ -28,7 +28,8 @@ public class MenuController : MonoBehaviour
     {
         GameObject player = GameObject.FindWithTag("Player");
         Variables.asName = SceneManager.GetActiveScene().name;
-        SavePosition.SaveCurrentPosition(player);
+        if (Variables.asName != "Store") 
+            SavePosition.SaveCurrentPosition(player);
         SceneManager.LoadScene("MenuScene");
     }
 }

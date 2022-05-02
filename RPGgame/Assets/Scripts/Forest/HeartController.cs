@@ -38,7 +38,6 @@ public class HeartController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Debug.Log(Hearts.heart);
         if (Hearts.heart < 5)
             HeartsIncrese();
         if (num <= Hearts.heart) 
