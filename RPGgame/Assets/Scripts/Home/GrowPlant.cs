@@ -17,7 +17,7 @@ public class GrowPlant : MonoBehaviour
     public Sprite finish;
     public int cur;
 
-    Vector2 v_zero = new Vector2(50, 70);
+    Vector2 v_zero = new Vector2(100, 100);
     Vector2 v_one = new Vector2(140, 70);
     Vector2 v_two = new Vector2(140, 120);
     Vector2 v_three = new Vector2(120, 180);
@@ -30,32 +30,32 @@ public class GrowPlant : MonoBehaviour
     }
     public void Update()
     {
-        if (farmTimeController.score >= 6)
+        if (farmTimeController.score >= 12)
         {
             transform.gameObject.GetComponent<RectTransform>().sizeDelta = v_finish;
             Plant.GetComponent<Image>().sprite = finish;
         }
-        else if (farmTimeController.score >= 5)
+        else if (farmTimeController.score >= 10)
         {
             transform.gameObject.GetComponent<RectTransform>().sizeDelta = v_four;
             Plant.GetComponent<Image>().sprite = five;
         }
-        else if (farmTimeController.score >= 4)
+        else if (farmTimeController.score >= 8)
         {
             Plant.GetComponent<Image>().sprite = four;
             transform.gameObject.GetComponent<RectTransform>().sizeDelta = v_four;
         }
-        else if (farmTimeController.score >= 3)
+        else if (farmTimeController.score >= 6)
         {
             transform.gameObject.GetComponent<RectTransform>().sizeDelta = v_three;
             Plant.GetComponent<Image>().sprite = three;
         }
-        else if (farmTimeController.score >= 2)
+        else if (farmTimeController.score >= 4)
         {
             transform.gameObject.GetComponent<RectTransform>().sizeDelta = v_two;
             Plant.GetComponent<Image>().sprite = two;  
         }
-        else if (farmTimeController.score >= 1)
+        else if (farmTimeController.score >= 2)
         {
             transform.gameObject.GetComponent<RectTransform>().sizeDelta = v_one;
             Plant.GetComponent<Image>().sprite = one;

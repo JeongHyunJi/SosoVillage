@@ -7,6 +7,7 @@ public class SceneController : MonoBehaviour
 {
     public void GoToFishingGame()
     {
+        SavePosition.SaveCurrentPosition(this.gameObject);
         SceneManager.LoadScene("GameFishing");
     }
 
@@ -14,7 +15,7 @@ public class SceneController : MonoBehaviour
     {
         if (Hearts.heart != 0)
         {
-            Debug.Log(other.gameObject);
+            SavePosition.SaveCurrentPosition(this.gameObject);
             if (other.gameObject.CompareTag("treants"))
                 SceneManager.LoadScene("GameShooting");
             else if (other.gameObject.CompareTag("moles"))
