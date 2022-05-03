@@ -7,7 +7,8 @@ public class SceneController : MonoBehaviour
 {
     public void GoToFishingGame()
     {
-        SavePosition.SaveCurrentPosition(this.gameObject);
+        GameObject player = GameObject.FindWithTag("Player");
+        SavePosition.SaveCurrentPosition(player);
         SceneManager.LoadScene("GameFishing");
     }
 

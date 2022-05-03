@@ -96,62 +96,7 @@ public class CountFarmTime : MonoBehaviour
                     else
                     {
                         farmTimeControllers[i].score=(int)farmTimeControllers[i].diffSec;
-                        //while(farmTimeControllers[i].score < farmTimeControllers[i].diffSec)
-                        //{
-                        //    farmTimeControllers[i].score++;
-                        //}
                     }
-
-                    //switch (farmTimeControllers[i].diffSec)
-                    //{
-                    //    case 1:
-                    //        if (Check[i][0] == 0)
-                    //        {
-                    //            farmTimeControllers[i].score++;
-                    //            Check[i][0] = 1;
-                    //        }
-                    //        break;
-                    //    case 2:
-                    //        if (Check[i][1] == 0)
-                    //        {
-                    //            farmTimeControllers[i].score++;
-                    //            Check[i][1] = 1;
-                    //        }
-                    //        break;
-                    //    case 3:
-                    //        if (Check[i][2] == 0)
-                    //        {
-                    //            farmTimeControllers[i].score++;
-                    //            Check[i][2] = 1;
-                    //        }
-                    //        break;
-                    //    case 4:
-                    //        if (Check[i][3] == 0)
-                    //        {
-                    //            farmTimeControllers[i].score++;
-                    //            Check[i][3] = 1;
-                    //        }
-                    //        break;
-                    //    case 5:
-                    //        if (Check[i][4] == 0)
-                    //        {
-                    //            farmTimeControllers[i].score++;
-                    //            Check[i][4] = 1;
-                    //        }
-                    //        break;
-                    //    case 6:
-                    //        if (Check[i][5] == 0)
-                    //        {
-                    //            farmTimeControllers[i].score++;
-                    //            Check[i][5] = 1;
-                    //        }
-                    //        break;
-                    //    case 7:
-                    //        Reset(i);
-                    //        break;
-                    //    default:
-                    //        break;
-                    //}
                 }
             }
         }
