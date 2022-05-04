@@ -9,13 +9,8 @@ using UnityEngine.EventSystems;
 
 public class CountFarmTime : MonoBehaviour
 {
-    public static FarmTimeController[] farmTimeControllers = new FarmTimeController[3];
-    static bool[] ClickCheck = { false, false, false };
-    static int[][] Check = 
-        new int[3][] {
-            new int[] { 0, 0, 0, 0, 0, 0 },
-            new int[] { 0, 0, 0, 0, 0, 0 },
-            new int[] { 0, 0, 0, 0, 0, 0 } }; //시간 중복 체크
+    public static FarmTimeController[] farmTimeControllers = new FarmTimeController[6];
+    static bool[] ClickCheck = { false, false, false, false, false, false };
     int cur = 0;
 
     public GameObject savePlayer;
@@ -28,20 +23,18 @@ public class CountFarmTime : MonoBehaviour
             farmTimeControllers[0] = GameObject.FindGameObjectsWithTag("Farm")[0].GetComponent<FarmTimeController>();
             farmTimeControllers[1] = GameObject.FindGameObjectsWithTag("Farm")[1].GetComponent<FarmTimeController>();
             farmTimeControllers[2] = GameObject.FindGameObjectsWithTag("Farm")[2].GetComponent<FarmTimeController>();
+            farmTimeControllers[3] = GameObject.FindGameObjectsWithTag("Farm")[3].GetComponent<FarmTimeController>();
+            farmTimeControllers[4] = GameObject.FindGameObjectsWithTag("Farm")[4].GetComponent<FarmTimeController>();
+            farmTimeControllers[5] = GameObject.FindGameObjectsWithTag("Farm")[5].GetComponent<FarmTimeController>();
         }
     }
     public void BtnClick()
     {
         ThisButton = EventSystem.current.currentSelectedGameObject;
-        
-        if (ThisButton.name == "hole0")
-            cur = 0;
-        else if (ThisButton.name == "hole1")
-            cur = 1;
-        else if (ThisButton.name == "hole2")
-            cur = 2;
+
+        cur = (int)ThisButton.name[4] - 48;
         //이부분 수정 필요
-        if (farmTimeControllers[cur].score == 12)
+        if (farmTimeControllers[cur].score == 24)
         {
             savePlayer.GetComponent<SavePlayer>().GetCorn();
         }
@@ -60,14 +53,13 @@ public class CountFarmTime : MonoBehaviour
 
     public void Reset(int i)
     {
-        Check[i] = new int[] { 0, 0, 0, 0, 0, 0 };
         farmTimeControllers[i].diffSec = -1;
         ClickCheck[i] = false;
     }
 
     public void Update()
     {
-        for (int i=0;i<3;i++) {
+        for (int i=0;i<6;i++) {
             //Button이 클릭된 경우
             if (ClickCheck[i] == true)
             {
@@ -80,24 +72,22 @@ public class CountFarmTime : MonoBehaviour
 
                 //current time과 start time의 차이 정의
                 TimeSpan timeDiff = farmTimeControllers[i].curTime - farmTimeControllers[i].stTime;
+                farmTimeControllers[i].totalMin = timeDiff.TotalMinutes;
                 farmTimeControllers[i].diffHour = timeDiff.Hours;
                 farmTimeControllers[i].diffMin = timeDiff.Minutes;
                 farmTimeControllers[i].diffSec = timeDiff.Seconds;
-                //print(Check[i][0]+" "+Check[i][1]+ " " + Check[i][2]+ " " + Check[i][3]+ " " + Check[i][4]+ " " + Check[i][5]);
                 //시간차에 따른 Score 상승
-                // 다른 공간에 갔다오면 그만큼의 공백동안 check 가 안돼서 문제가 발생했던 것.
-                // check의 의미 알아야 하고 코드 수정내용 공유
-                if (farmTimeControllers[i].diffHour == 0 && farmTimeControllers[i].diffMin == 0)
-                {
-                    if (farmTimeControllers[i].diffSec >= 13)
+                //if (farmTimeControllers[i].diffHour == 0 && farmTimeControllers[i].diffMin == 0)
+                //{
+                    if (farmTimeControllers[i].totalMin >= 25)
                     {
                         Reset(i);
                     }
                     else
                     {
-                        farmTimeControllers[i].score=(int)farmTimeControllers[i].diffSec;
+                        farmTimeControllers[i].score=(int)farmTimeControllers[i].totalMin;
                     }
-                }
+                //}
             }
         }
 

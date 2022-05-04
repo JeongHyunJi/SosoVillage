@@ -60,10 +60,10 @@ public class HeartController : MonoBehaviour
 
         //current time과 start time의 차이 정의
         TimeSpan timeDiff = curTime - stTime;
-        if (timeDiff.TotalMinutes > 1 && Hearts.heart < 5) //5분에 한개씩 충전
+        if (timeDiff.TotalMinutes > 5 && Hearts.heart < 5) //5분에 한개씩 충전
         {
             Hearts.heart++;
-            stTime.AddMinutes(1);
+            stTime.AddMinutes(5);
             timeDiff = curTime - stTime;
             PlayerPrefs.SetString("Heart_time", DateTime.Now.ToString());
         }

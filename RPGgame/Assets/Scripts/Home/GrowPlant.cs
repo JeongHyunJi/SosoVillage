@@ -30,32 +30,32 @@ public class GrowPlant : MonoBehaviour
     }
     public void Update()
     {
-        if (farmTimeController.score >= 12)
+        if (farmTimeController.score >= 24)
         {
             transform.gameObject.GetComponent<RectTransform>().sizeDelta = v_finish;
             Plant.GetComponent<Image>().sprite = finish;
         }
-        else if (farmTimeController.score >= 10)
+        else if (farmTimeController.score >= 20)
         {
             transform.gameObject.GetComponent<RectTransform>().sizeDelta = v_four;
             Plant.GetComponent<Image>().sprite = five;
         }
-        else if (farmTimeController.score >= 8)
+        else if (farmTimeController.score >= 16)
         {
             Plant.GetComponent<Image>().sprite = four;
             transform.gameObject.GetComponent<RectTransform>().sizeDelta = v_four;
         }
-        else if (farmTimeController.score >= 6)
+        else if (farmTimeController.score >= 12)
         {
             transform.gameObject.GetComponent<RectTransform>().sizeDelta = v_three;
             Plant.GetComponent<Image>().sprite = three;
         }
-        else if (farmTimeController.score >= 4)
+        else if (farmTimeController.score >= 8)
         {
             transform.gameObject.GetComponent<RectTransform>().sizeDelta = v_two;
             Plant.GetComponent<Image>().sprite = two;  
         }
-        else if (farmTimeController.score >= 2)
+        else if (farmTimeController.score >= 4)
         {
             transform.gameObject.GetComponent<RectTransform>().sizeDelta = v_one;
             Plant.GetComponent<Image>().sprite = one;

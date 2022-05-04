@@ -11,6 +11,7 @@ public class fishingButton : MonoBehaviour
     public Text buttonText;
     public static bool isSuccess = false;
     private Transform panel;
+    public GameObject savePlayer;
 
     private void Start()
     {
@@ -42,12 +43,13 @@ public class fishingButton : MonoBehaviour
                 {
                     Pond.currentLevel++;
                     GameFishing.floats[Pond.currentLevel - 2].SetActive(false);
-                    GameFishing.floats[Pond.currentLevel-1].SetActive(true);
+                    GameFishing.floats[Pond.currentLevel - 1].SetActive(true);
                     GameObject.FindWithTag("Pond").GetComponent<Pond>().Restart();
                 }
                 else
                 {
                     isSuccess = true;
+                    savePlayer.GetComponent<SavePlayer>().GetInvent(5 + GameLevel.level);
                     panel.GetComponent<GameOver>().Gameover();
                 }
             }

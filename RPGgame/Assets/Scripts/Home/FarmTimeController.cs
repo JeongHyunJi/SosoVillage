@@ -10,5 +10,6 @@ public class FarmTimeController:MonoBehaviour
     public int diffHour;
     public int diffMin;
     public int diffSec;
+    public double totalMin;
     public int score;
 }
