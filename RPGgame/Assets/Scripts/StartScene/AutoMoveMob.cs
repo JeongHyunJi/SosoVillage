@@ -26,7 +26,6 @@ public class AutoMoveMob : MonoBehaviour
         if (timegoing <= 8)
         {
             animator.SetBool("IsWalking", true);
-            Debug.Log("right start");
             animator.SetFloat("DirX", 1);
             render.flipX = false;
             movement2D.MoveTo(new Vector3(1, 0, 0));
@@ -41,7 +40,6 @@ public class AutoMoveMob : MonoBehaviour
         else if (timegoing <= 16)
         {
             animator.SetBool("IsWalking", true);
-            Debug.Log("left start");
             animator.SetFloat("DirX", -1);
             render.flipX = true;
             movement2D.MoveTo(new Vector3(-1, 0, 0));
