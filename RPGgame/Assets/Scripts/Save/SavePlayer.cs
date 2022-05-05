@@ -55,7 +55,7 @@ public class SavePlayer : MonoBehaviour
         Debug.Log("newgame name: "+newName);
         playerName = newName;
         coin = 5;
-        inventory = new int[] { 1, 1, 1, 1, 1, 0, 0, 0 };
+        inventory = new int[] { 1, 2, 1, 1, 1, 0, 0, 0 };
         times = new int[] { 1900, 1, 1, 9, 0 }; //yyyy,mm,dd,hh,mm -> 초기세팅 : 1900/1/1/ am 9:00 
         Hearts.heart = 5;
     }
@@ -101,7 +101,7 @@ public class SavePlayer : MonoBehaviour
     }
     public void UseCoins(int num) 
     {
-        if (coin - num <= 0)
+        if (coin - num < 0)
         {
             Debug.Log("coin 사용 불가");
         }
@@ -127,12 +127,16 @@ public class SavePlayer : MonoBehaviour
     {
         if(inventory[num - 1] == 0)
         {
-            Debug.Log("inventory사용 불가");
+            Debug.Log("inventory 사용 불가");
         }
         else
         {
             inventory[num - 1]--;
         }
+    }
+    public void UseCorn()
+    {
+        inventory[1] -= 2;
     }
     public void GetInvent(int num)
     {

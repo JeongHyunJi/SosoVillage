@@ -12,6 +12,7 @@ public class BuyObjects : MonoBehaviour
         //SavePlayer¿¡¼­ °¡Á®¿À±â
         SavePlayer inventorys = FindObjectOfType<SavePlayer>();
 
+        //----------------------- ±¸¸Å
         if (BtnName == "seed") //¾¾¾Ñ
         {
             inventorys.GetInvent(1);
@@ -21,7 +22,7 @@ public class BuyObjects : MonoBehaviour
         {
             inventorys.GetHeart();
             inventorys.UseCoins(300);
-        }
+        } //----------------------- ÆÇ¸Å
         else if (BtnName == "corn") //¿Á¼ö¼ö
         {
             inventorys.UseInvent(2);
