@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class TimerManager : MonoBehaviour
 {
     public GameObject GameManager;
+    //게임
+    bool GameStart = false;
     //버튼
     private int BtnChk = 0;
 
@@ -44,20 +46,21 @@ public class TimerManager : MonoBehaviour
     {
         //SavePlayer에서 가져오기
         SavePlayer inventorys = FindObjectOfType<SavePlayer>();
-        //int[] inv= inventorys.ReturnInvent();
+        int[] inv= inventorys.ReturnInvent();
         if (BtnChk == 1)
         {
             SetTimerOff();
         }
 
-        if (!btn_active && BtnChk==0)
+        if (!btn_active && BtnChk==0 &&inv[1]>=2)
         {
             SetTimerOn();
             btn_text.text = "Stop!";
             BtnChk = 1;
-            inventorys.UseInvent(2); //옥수수 사용
+            inventorys.UseCorn(); //옥수수 사용
+            GameStart = true;
         }
-        else
+        else if(GameStart)
         {
             SetTimerOff();
             if (cooking_time- rest_time <= time && time <= cooking_time+ rest_time)
