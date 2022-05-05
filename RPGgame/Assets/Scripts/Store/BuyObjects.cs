@@ -12,30 +12,50 @@ public class BuyObjects : MonoBehaviour
         //SavePlayer¿¡¼­ °¡Á®¿À±â
         SavePlayer inventorys = FindObjectOfType<SavePlayer>();
 
-        if (BtnName == "item1") //¾¾¾Ñ
+        if (BtnName == "seed") //¾¾¾Ñ
         {
             inventorys.GetInvent(1);
-            inventorys.UseCoins(1);
+            inventorys.UseCoins(30);
         }
-        else if (BtnName == "item2") //¿Á¼ö¼ö
+        else if (BtnName == "heart") //ÇÏÆ®
+        {
+            inventorys.GetHeart();
+            inventorys.UseCoins(300);
+        }
+        else if (BtnName == "corn") //¿Á¼ö¼ö
         {
             inventorys.UseInvent(2);
-            inventorys.GetCoins(3);
+            inventorys.GetCoins(50);
         }
-        else if (BtnName == "item3") //¾È±¸¿öÁø »§
+        else if (BtnName == "bread_not") //¾È±¸¿öÁø »§
         {
             inventorys.UseInvent(3);
-            inventorys.GetCoins(5);
+            inventorys.GetCoins(70);
         }
-        else if (BtnName == "item4") //Àß±¸¿öÁø »§
+        else if (BtnName == "bread_well") //Àß±¸¿öÁø »§
         {
             inventorys.UseInvent(4);
-            inventorys.GetCoins(10);
+            inventorys.GetCoins(130);
         }
-        else if (BtnName == "item5") //Åº »§
+        else if (BtnName == "bread_burn") //Åº »§
         {
             inventorys.UseInvent(5);
-            inventorys.GetCoins(3);
+            inventorys.GetCoins(40);
+        }
+        else if (BtnName == "fish_s") //ÀÛÀº ¹°°í±â
+        {
+            inventorys.UseInvent(6);
+            inventorys.GetCoins(10);
+        }
+        else if (BtnName == "fish_m") //Áß°£ ¹°°í±â
+        {
+            inventorys.UseInvent(7);
+            inventorys.GetCoins(20);
+        }
+        else if (BtnName == "fish_l") //Å« ¹°°í±â
+        {
+            inventorys.UseInvent(8);
+            inventorys.GetCoins(30);
         }
     }
 }

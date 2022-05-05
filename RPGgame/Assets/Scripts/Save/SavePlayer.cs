@@ -79,6 +79,21 @@ public class SavePlayer : MonoBehaviour
         inventory[1]++;
     }
 
+    public void GetHeart()
+    {
+        if (Hearts.heart == 5)
+        {
+            Debug.Log("하트 풀충전 완료!");
+        }
+        else
+        {
+            Hearts.heart++;
+        }
+    }
+    public int ReturnHeart()
+    {
+        return Hearts.heart;
+    }
     //coin
     public void GetCoins(int num)
     {
