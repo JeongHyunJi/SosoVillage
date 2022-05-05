@@ -86,7 +86,14 @@ public class SavePlayer : MonoBehaviour
     }
     public void UseCoins(int num) 
     {
-        coin -= num;
+        if (coin - num <= 0)
+        {
+            Debug.Log("coin 사용 불가");
+        }
+        else
+        {
+            coin -= num;
+        }
     }
     public int ReturnCoins()
     {
@@ -103,7 +110,14 @@ public class SavePlayer : MonoBehaviour
     //inventory
     public void UseInvent(int num)
     {
-        inventory[num - 1]--;
+        if(inventory[num - 1] == 0)
+        {
+            Debug.Log("inventory사용 불가");
+        }
+        else
+        {
+            inventory[num - 1]--;
+        }
     }
     public void GetInvent(int num)
     {

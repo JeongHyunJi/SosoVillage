@@ -14,27 +14,27 @@ public class BuyObjects : MonoBehaviour
 
         if (BtnName == "item1") //揪狙
         {
-            inventorys.UseInvent(1);
+            inventorys.GetInvent(1);
             inventorys.UseCoins(1);
         }
         else if (BtnName == "item2") //苛荐荐
         {
-            inventorys.GetInvent(2);
+            inventorys.UseInvent(2);
             inventorys.GetCoins(3);
         }
         else if (BtnName == "item3") //救备况柳 户
         {
-            inventorys.GetInvent(3);
+            inventorys.UseInvent(3);
             inventorys.GetCoins(5);
         }
         else if (BtnName == "item4") //肋备况柳 户
         {
-            inventorys.GetInvent(4);
+            inventorys.UseInvent(4);
             inventorys.GetCoins(10);
         }
         else if (BtnName == "item5") //藕 户
         {
-            inventorys.GetInvent(5);
+            inventorys.UseInvent(5);
             inventorys.GetCoins(3);
         }
     }
