@@ -22,6 +22,8 @@ public class ShootingManager : MonoBehaviour
     public GameObject ClearText;
     public GameObject FailText;
 
+    SavePlayer saveplayer;
+
     private bool gameGoing = true;
     // Start is called before the first frame update
     void Start()
@@ -35,6 +37,7 @@ public class ShootingManager : MonoBehaviour
         FailText.SetActive(false);
         RetryText.SetActive(false);
         ExitText.SetActive(false);
+        saveplayer = FindObjectOfType<SavePlayer>();
     }
 
     // Update is called once per frame
@@ -71,6 +74,7 @@ public class ShootingManager : MonoBehaviour
         {
             ClearText.SetActive(true);
             slider_enemyHP.gameObject.SetActive(false);
+            saveplayer.GetCoins(30);
         }
         else
         {

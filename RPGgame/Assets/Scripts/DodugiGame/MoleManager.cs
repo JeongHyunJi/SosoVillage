@@ -12,22 +12,24 @@ public class MoleManager : MonoBehaviour
     public Text startTime;
     public GameObject RetryText;
     public GameObject ExitText;
-    public GameObject ClearText;
+    public Text ClearText;
     public GameObject FailText;
 
     private float time;
     private float score;
+
+   SavePlayer saveplayer;
 
     // Start is called before the first frame update
     void Start()
     {
         score = 0;
         gameoverText.SetActive(false);
-        ClearText.SetActive(false);
         FailText.SetActive(false);
         RetryText.SetActive(false);
         ExitText.SetActive(false);
         StartCoroutine("TimeAttack");
+        saveplayer = FindObjectOfType<SavePlayer>();
     }
 
     private IEnumerator TimeAttack()
@@ -80,10 +82,14 @@ public class MoleManager : MonoBehaviour
         Hearts.HeartControll();
         if (score >= 70)
         {
-            ClearText.SetActive(true);
+            float coinF = score / 2;
+            int coinI = (int)coinF;
+            ClearText.text = "Clear! get " + coinI + "$";
+            saveplayer.GetCoins(coinI);
         }
        else
         {
+            ClearText.text = "";
             FailText.SetActive(true);
         }
     }

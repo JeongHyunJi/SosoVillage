@@ -14,7 +14,7 @@ public class MenuManager : MonoBehaviour
 
     public GameObject Map;
 
-    public Texture2D cursorImg;
+   // public Texture2D cursorImg;
 
     public Text playerName;
     public Text coins;
@@ -34,7 +34,7 @@ public class MenuManager : MonoBehaviour
     {
         sceneName = Variables.asName;
         Variables.asName = SceneManager.GetActiveScene().name;
-        Cursor.SetCursor(cursorImg, Vector2.zero, CursorMode.ForceSoftware);
+        //Cursor.SetCursor(cursorImg, Vector2.zero, CursorMode.ForceSoftware);
         playerName.text = "Name :   " + savePlayer.GetComponent<SavePlayer>().GetName();
         coin = savePlayer.GetComponent<SavePlayer>().ReturnCoins();
         coins.text = coin + " $";
