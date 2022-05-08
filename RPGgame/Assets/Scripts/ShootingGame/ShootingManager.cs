@@ -67,6 +67,7 @@ public class ShootingManager : MonoBehaviour
     {
         gameGoing = false;
         Hearts.heart--;
+        Hearts.HeartControll();
         gameoverText.SetActive(true);
         RetryText.SetActive(true);
         ExitText.SetActive(true);

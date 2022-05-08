@@ -2,27 +2,64 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
+using UnityEngine.UI;
 
 public class SceneController : MonoBehaviour
 {
+    public GameObject panel;
+    public Text TimeText;
+    private void Start()
+    {
+        panel.SetActive(false);
+    }
     public void GoToFishingGame()
     {
-        GameObject player = GameObject.FindWithTag("Player");
-        SavePosition.SaveCurrentPosition(player);
-        SceneManager.LoadScene("GameFishing");
+        if (Hearts.heart != 0)
+        {
+            SavePosition.SaveCurrentPosition(this.gameObject);
+            SceneManager.LoadScene("GameFishing");
+        }
+        else
+        {
+            panel.SetActive(true);
+            HeartZero();
+        }
+
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (Hearts.heart != 0)
         {
-            SavePosition.SaveCurrentPosition(this.gameObject);
             if (other.gameObject.CompareTag("treants"))
                 SceneManager.LoadScene("GameShooting");
             else if (other.gameObject.CompareTag("moles"))
                 SceneManager.LoadScene("GameDodugi");
         }
         else
-            Debug.Log("하트가 0개입니당. 게임을 할 수 없습니당.");
+            HeartZero();
+    }
+
+    void HeartZero()
+    {
+        string ClickTime = PlayerPrefs.GetString("Heart_time");
+        DateTime stTime = Convert.ToDateTime(ClickTime);
+
+        //current time과 start time의 차이 정의
+
+        DateTime st = DateTime.Now;
+        DateTime now = DateTime.Now;
+        TimeSpan span = now - st;
+        TimeSpan term = new TimeSpan(0, 5, 0);
+        TimeSpan timeDiff = term - (now - stTime);
+        while (span.TotalSeconds < 3)
+        {
+            TimeText.text = timeDiff.ToString();
+            now = DateTime.Now;
+            span = now - st;
+            timeDiff = term - (now - stTime);
+        }
+        panel.SetActive(false);
     }
 }

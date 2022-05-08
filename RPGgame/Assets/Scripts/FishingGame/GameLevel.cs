@@ -43,8 +43,5 @@ public class GameLevel : MonoBehaviour
             fishes[level-1].GetComponent<Image>().color = Color.white;
             GameObject.FindWithTag("Pond").GetComponent<Pond>().Restart();
         }
-        print(fishes[0].GetComponent<Image>().color);
-        print(fishes[1].GetComponent<Image>().color);
-        print(fishes[2].GetComponent<Image>().color);
     }
 }

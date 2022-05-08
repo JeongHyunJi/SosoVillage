@@ -30,6 +30,9 @@ public class GameOver : MonoBehaviour
 
     public void PlayAgain()
     {
+        GameLevel.level = 1;
+        GameLevel.size = 0.35f;
+        GameLevel.speed = 3f;
         SceneManager.LoadScene("GameFishing");
     }
 }

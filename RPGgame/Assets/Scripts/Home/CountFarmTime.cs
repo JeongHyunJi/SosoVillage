@@ -10,7 +10,7 @@ using UnityEngine.EventSystems;
 public class CountFarmTime : MonoBehaviour
 {
     public static FarmTimeController[] farmTimeControllers = new FarmTimeController[6];
-    static bool[] ClickCheck = { false, false, false, false, false, false };
+    static bool[] ClickCheck = new bool[6];
     int cur = 0;
 
     public GameObject savePlayer;
@@ -26,6 +26,10 @@ public class CountFarmTime : MonoBehaviour
             farmTimeControllers[3] = GameObject.FindGameObjectsWithTag("Farm")[3].GetComponent<FarmTimeController>();
             farmTimeControllers[4] = GameObject.FindGameObjectsWithTag("Farm")[4].GetComponent<FarmTimeController>();
             farmTimeControllers[5] = GameObject.FindGameObjectsWithTag("Farm")[5].GetComponent<FarmTimeController>();
+            for (int i = 0; i < 6; i++)
+            {
+                ClickCheck[i] = PlayerPrefs.HasKey("BtnClickTime" + i);
+            }
         }
     }
     public void BtnClick()
@@ -34,17 +38,17 @@ public class CountFarmTime : MonoBehaviour
 
         cur = (int)ThisButton.name[4] - 48;
         //이부분 수정 필요
-        if (farmTimeControllers[cur].score == 24)
+        if (farmTimeControllers[cur].score == 24) //24분 경과 후 => 옥수수 맺힌 후
         {
             savePlayer.GetComponent<SavePlayer>().GetCorn();
         }
-        else if (farmTimeControllers[cur].score == 0)
+        else if (farmTimeControllers[cur].score == 0) //초기화 상태
         {
             ClickCheck[cur] = true;
             farmTimeControllers[cur].stTime = DateTime.Now;
             PlayerPrefs.SetString("BtnClickTime" + cur, farmTimeControllers[cur].stTime.ToString());
         }
-        else
+        else //옥수수 익는 중
         {
             Reset(cur);
         }
@@ -55,6 +59,7 @@ public class CountFarmTime : MonoBehaviour
     {
         farmTimeControllers[i].diffSec = -1;
         ClickCheck[i] = false;
+        PlayerPrefs.DeleteKey("BtnClickTime" + cur);
     }
 
     public void Update()
