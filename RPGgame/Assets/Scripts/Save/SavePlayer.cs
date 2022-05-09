@@ -99,6 +99,10 @@ public class SavePlayer : MonoBehaviour
     {
         coin += num;
     }
+    public void GetCoinCheat()
+    {
+        coin += 10;
+    }
     public void UseCoins(int num) 
     {
         if (coin - num < 0)
