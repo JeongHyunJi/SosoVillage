@@ -9,9 +9,18 @@ public class SceneController : MonoBehaviour
 {
     public GameObject panel;
     public Text TimeText;
+    string ClickTime;
+    DateTime stTime;
+    TimeSpan timeDiff;
+    float TickTime = 0f;
+    TimeSpan term = new TimeSpan(0, 5, 0);
+
     private void Start()
     {
         panel.SetActive(false);
+        print(panel.activeSelf);
+        ClickTime = PlayerPrefs.GetString("Heart_time");
+        stTime = Convert.ToDateTime(ClickTime);
     }
     public void GoToFishingGame()
     {
@@ -23,7 +32,7 @@ public class SceneController : MonoBehaviour
         else
         {
             panel.SetActive(true);
-            HeartZero();
+            TickTime = 0;
         }
 
     }
@@ -38,28 +47,19 @@ public class SceneController : MonoBehaviour
                 SceneManager.LoadScene("GameDodugi");
         }
         else
-            HeartZero();
+            TickTime = 0;
     }
 
-    void HeartZero()
+    private void FixedUpdate()
     {
-        string ClickTime = PlayerPrefs.GetString("Heart_time");
-        DateTime stTime = Convert.ToDateTime(ClickTime);
-
-        //current time과 start time의 차이 정의
-
-        DateTime st = DateTime.Now;
-        DateTime now = DateTime.Now;
-        TimeSpan span = now - st;
-        TimeSpan term = new TimeSpan(0, 5, 0);
-        TimeSpan timeDiff = term - (now - stTime);
-        while (span.TotalSeconds < 3)
+        timeDiff = term - (DateTime.Now - stTime);
+        TimeText.text = timeDiff.Minutes + ":" + timeDiff.Seconds;
+        timeDiff = term - (DateTime.Now - stTime);
+        if (TickTime <= 2)
         {
-            TimeText.text = timeDiff.ToString();
-            now = DateTime.Now;
-            span = now - st;
-            timeDiff = term - (now - stTime);
+            TickTime += Time.deltaTime;
         }
-        panel.SetActive(false);
+        else
+            panel.SetActive(false);
     }
 }

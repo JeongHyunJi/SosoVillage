@@ -64,7 +64,7 @@ public class HeartController : MonoBehaviour
         {
             Hearts.heart++;
             stTime.AddMinutes(5);
-            PlayerPrefs.SetString("Heart_time", DateTime.Now.ToString());
+            PlayerPrefs.SetString("Heart_time", stTime.ToString());
         }
     }
 }
