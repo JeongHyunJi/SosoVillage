@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class TimerManager : MonoBehaviour
 {
     public GameObject GameManager;
+    public GameObject NoCornAlarm;
+    public GameObject exit;
+    public GameObject MenuOpenAlarm;
+
     //게임
     bool GameStart = false;
     //버튼
@@ -24,6 +29,10 @@ public class TimerManager : MonoBehaviour
     SpriteRenderer sr;
     public GameObject go;
 
+    public void ExitToHome()
+    {
+        SceneManager.LoadScene("Home");
+    }
     //버튼 활성화 메소드
     public void SetTimerOn() 
     {
@@ -39,8 +48,41 @@ public class TimerManager : MonoBehaviour
     {
         btn_active = false; //버튼 초기 상태 false로 만들기
         sr = go.GetComponent<SpriteRenderer>();
+        OffAlarm();
+        MenuOpenAlarm.SetActive(false);
     }
 
+    public void pauseCookingGame()
+    {
+        Time.timeScale = 0;
+        MenuOpenAlarm.SetActive(true);
+    }
+    public void ClickIsOpen()
+    {
+        string BtnName = EventSystem.current.currentSelectedGameObject.name;
+        if (BtnName == "openOkText")
+        {
+            MenuOpenAlarm.SetActive(false);
+            Time.timeScale = 1;
+            MenuController menuController = FindObjectOfType<MenuController>();
+            menuController.openMenu();
+        }
+        else if (BtnName == "openCancelText")
+        {
+            MenuOpenAlarm.SetActive(false);
+            Time.timeScale = 1;
+        }
+    }
+
+    public void OnAlarm()
+    {
+        NoCornAlarm.SetActive(true);
+    }
+
+    public void OffAlarm()
+    {
+        NoCornAlarm.SetActive(false);
+    }
     //버튼 클릭 이벤트
     public void Btn_Click() 
     {
@@ -52,6 +94,13 @@ public class TimerManager : MonoBehaviour
             SetTimerOff();
         }
 
+        if (inv[1] < 2&&GameStart==false)
+        {
+            //창이 뜨도록
+            OnAlarm();
+            Invoke("OffAlarm", 2f);
+        }
+
         if (!btn_active && BtnChk==0 &&inv[1]>=2)
         {
             SetTimerOn();
@@ -59,6 +108,7 @@ public class TimerManager : MonoBehaviour
             BtnChk = 1;
             inventorys.UseCorn(); //옥수수 사용
             GameStart = true;
+            exit.SetActive(false);
         }
         else if(GameStart)
         {

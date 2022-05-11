@@ -34,6 +34,11 @@ public class MenuController : MonoBehaviour
             ShootingManager shootingManager = FindObjectOfType<ShootingManager>();
             shootingManager.pauseShootingGame();
         }
+        else if (Variables.asName == "GameCookingReal")
+        {
+            TimerManager timerManager = FindObjectOfType<TimerManager>();
+            timerManager.pauseCookingGame();
+        }
         else
         {
             openMenu();
@@ -42,7 +47,7 @@ public class MenuController : MonoBehaviour
     public void openMenu()
     {
         GameObject player = GameObject.FindWithTag("Player");
-        if (Variables.asName != "Store" && player != null)
+        if (Variables.asName != "Store" && Variables.asName!="GameCookingReal"&& player != null)
             SavePosition.SaveCurrentPosition(player);
         SceneManager.LoadScene("MenuScene");
     }
