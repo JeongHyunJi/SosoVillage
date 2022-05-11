@@ -15,7 +15,7 @@ public class GameFishing : MonoBehaviour
     void Start()
     {
         if (Pond.currentLevel == 1)
-        {   floats = GameObject.FindGameObjectsWithTag("Player");
+        {   floats = GameObject.FindGameObjectsWithTag("Floats");
             floats[1].SetActive(false);
             floats[2].SetActive(false);
         }

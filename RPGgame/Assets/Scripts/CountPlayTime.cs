@@ -33,27 +33,12 @@ public class CountPlayTime : MonoBehaviour
         }
     }
 
-    //void Update()
-    //{
-    //    string timeStr = PlayerPrefs.GetString("stTime_1");
-    //    DateTime startTime = Convert.ToDateTime(timeStr);
-
-    //    //update current time
-    //    DateTime currentTime = DateTime.Now;
-    //    TimeSpan timeDiff = currentTime - startTime;
-
-    //    //int diffMinute = timeDiff.Minutes;
-    //    int diffSecond = timeDiff.Seconds;
-
-    //    textTimer.text = "초 차이: " + diffSecond.ToString();
-    //}
-
     private void FixedUpdate()
     {
         TimeController.TimeCount();
         if (textTimer)
         {
-            textTimer.text = "time " + TimeController.time.ToString("yyyy년 MM월 dd일\n tt hh:mm");
+            textTimer.text = "time " + TimeController.time.ToString("yyyy-MM-dd\n tt h:mm");
         }
     }
 }

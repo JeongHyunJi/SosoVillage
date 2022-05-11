@@ -18,7 +18,8 @@ public class SceneController : MonoBehaviour
     private void Start()
     {
         panel.SetActive(false);
-        print(panel.activeSelf);
+        if(!PlayerPrefs.HasKey("Heart_time"))
+            PlayerPrefs.SetString("Heart_time",TimeController.time.ToString());
         ClickTime = PlayerPrefs.GetString("Heart_time");
         stTime = Convert.ToDateTime(ClickTime);
     }

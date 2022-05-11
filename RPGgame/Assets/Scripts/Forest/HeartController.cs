@@ -38,9 +38,11 @@ public class HeartController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Hearts.heart < 5)
+        if (num == 1 && Hearts.heart < 5)
+        {
             HeartsIncrese();
-        if (num <= Hearts.heart) 
+        }
+        if (num <= Hearts.heart)
         {
             thisImg.sprite = Lheart;
         }
@@ -60,7 +62,7 @@ public class HeartController : MonoBehaviour
 
         //current time과 start time의 차이 정의
         TimeSpan timeDiff = curTime - stTime;
-        if (timeDiff.TotalMinutes > 5 && Hearts.heart < 5) //5분에 한개씩 충전
+        if (timeDiff.TotalMinutes > 5) //5분에 한개씩 충전
         {
             Hearts.heart++;
             stTime.AddMinutes(5);
