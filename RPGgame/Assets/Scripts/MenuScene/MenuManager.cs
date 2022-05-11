@@ -3,17 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class MenuManager : MonoBehaviour
 {
-    public GameObject player;
-
     public GameObject Paused;
-
     public GameObject Main;
-
     public GameObject Map;
-
+    public GameObject SaveCheckPanel;
    // public Texture2D cursorImg;
 
     public Text playerName;
@@ -46,6 +43,7 @@ public class MenuManager : MonoBehaviour
         inventory5.text = "x " + inventory[4];
         Paused.SetActive(false);
         Map.SetActive(false);
+        SaveCheckPanel.SetActive(false);
     }
 
     public void openPaused()
@@ -89,8 +87,22 @@ public class MenuManager : MonoBehaviour
     }
     public void ClickSave()
     {
-        Debug.Log("Save");
-        savePlayer.GetComponent<SavePlayer>().SaveContent();
+        SaveCheckPanel.SetActive(true);
+    }
+    public void ClickIsSave()
+    {
+        string BtnName = EventSystem.current.currentSelectedGameObject.name;
+        if(BtnName == "saveOkText")
+        {
+            Debug.Log("save");
+            savePlayer.GetComponent<SavePlayer>().SaveContent();
+            SaveCheckPanel.SetActive(false);
+        }
+        else if (BtnName == "saveCancelText")
+        {
+            SaveCheckPanel.SetActive(false);
+        }
+        
     }
     public void GameQuit()
     {
