@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class MoleManager : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class MoleManager : MonoBehaviour
     public GameObject ExitText;
     public Text ClearText;
     public GameObject FailText;
+
+    public GameObject IsOpenMenuPanel;
 
     private float time;
     private float score;
@@ -28,6 +31,7 @@ public class MoleManager : MonoBehaviour
         FailText.SetActive(false);
         RetryText.SetActive(false);
         ExitText.SetActive(false);
+        IsOpenMenuPanel.SetActive(false);
         StartCoroutine("TimeAttack");
         saveplayer = FindObjectOfType<SavePlayer>();
     }
@@ -58,6 +62,27 @@ public class MoleManager : MonoBehaviour
                 ExitText.SetActive(true);
                 CheckClear();
             }
+        }
+    }
+    public void pauseMoleGame()
+    {
+        Time.timeScale = 0;
+        IsOpenMenuPanel.SetActive(true);
+    }
+    public void ClickIsOpen()
+    {
+        string BtnName = EventSystem.current.currentSelectedGameObject.name;
+        if (BtnName == "openOkText")
+        {
+            IsOpenMenuPanel.SetActive(false);
+            Time.timeScale = 1;
+            MenuController menuController = FindObjectOfType<MenuController>();
+            menuController.openMenu();
+        }
+        else if (BtnName == "openCancelText")
+        {
+            IsOpenMenuPanel.SetActive(false);
+            Time.timeScale = 1;
         }
     }
     public void PlusScore()
