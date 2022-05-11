@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SavePlayer : MonoBehaviour
 {
@@ -103,15 +104,17 @@ public class SavePlayer : MonoBehaviour
     {
         coin += 10;
     }
-    public void UseCoins(int num) 
+    public int UseCoins(int num)
     {
         if (coin - num < 0)
         {
             Debug.Log("coin 사용 불가");
+            return -1;
         }
         else
         {
             coin -= num;
+            return 0;
         }
     }
     public int ReturnCoins()
@@ -127,15 +130,17 @@ public class SavePlayer : MonoBehaviour
     }
 
     //inventory
-    public void UseInvent(int num)
+    public int UseInvent(int num)
     {
         if(inventory[num - 1] == 0)
         {
             Debug.Log("inventory 사용 불가");
+            return -1;
         }
         else
         {
             inventory[num - 1]--;
+            return 0;
         }
     }
     public void UseCorn()
