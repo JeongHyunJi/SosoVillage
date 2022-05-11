@@ -11,6 +11,7 @@ public class Coin : MonoBehaviour
     private void Start()
     {
         savePlayer = GameObject.FindGameObjectWithTag("Player");
+        print(savePlayer);
     }
     void Update()
     {
