@@ -11,7 +11,7 @@ public class MenuManager : MonoBehaviour
     public GameObject Main;
     public GameObject Map;
     public GameObject SaveCheckPanel;
-   // public Texture2D cursorImg;
+    // public Texture2D cursorImg;
 
     public Text playerName;
     public Text coins;
@@ -76,7 +76,7 @@ public class MenuManager : MonoBehaviour
 
     public void GotoHome()
     {
-        if(sceneName!="Home")
+        if (sceneName != "Home")
             SavePosition.currentPosition = new Vector2(6, -16);
         SceneManager.LoadScene("Home");
     }
@@ -101,7 +101,7 @@ public class MenuManager : MonoBehaviour
     public void ClickIsSave()
     {
         string BtnName = EventSystem.current.currentSelectedGameObject.name;
-        if(BtnName == "saveOkText")
+        if (BtnName == "saveOkText")
         {
             Debug.Log("save");
             savePlayer.GetComponent<SavePlayer>().SaveContent();
@@ -111,7 +111,7 @@ public class MenuManager : MonoBehaviour
         {
             SaveCheckPanel.SetActive(false);
         }
-        
+
     }
     public void GameQuit()
     {
