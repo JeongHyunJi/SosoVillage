@@ -11,6 +11,7 @@ public class MenuManager : MonoBehaviour
     public GameObject Main;
     public GameObject Map;
     public GameObject SaveCheckPanel;
+    public GameObject QuitCheckPanel;
     // public Texture2D cursorImg;
 
     public Text playerName;
@@ -53,6 +54,7 @@ public class MenuManager : MonoBehaviour
         Paused.SetActive(false);
         Map.SetActive(false);
         SaveCheckPanel.SetActive(false);
+        QuitCheckPanel.SetActive(false);
     }
 
     public void openPaused()
@@ -113,10 +115,23 @@ public class MenuManager : MonoBehaviour
         }
 
     }
-    public void GameQuit()
+    public void ClickQuit()
     {
-        Debug.Log("Game Quit");
-        savePlayer.GetComponent<SavePlayer>().SaveContent();
-        Application.Quit();
+        QuitCheckPanel.SetActive(true);
+    }
+    public void IsQuit()
+    {
+        string BtnName = EventSystem.current.currentSelectedGameObject.name;
+        if (BtnName == "QuitOkText")
+        {
+            Debug.Log("Game Quit");
+            savePlayer.GetComponent<SavePlayer>().SaveContent();
+            Application.Quit();
+            QuitCheckPanel.SetActive(false);
+        }
+        else if (BtnName == "QuitCancelText")
+        {
+            QuitCheckPanel.SetActive(false);
+        }
     }
 }

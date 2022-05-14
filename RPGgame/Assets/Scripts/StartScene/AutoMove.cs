@@ -37,14 +37,14 @@ public class AutoMove : MonoBehaviour
             render.flipX = false;
             movement2D.MoveTo(new Vector3(0, 0, 0));
         }
-        else if (timegoing <= 16)
+        else if (timegoing <= 17)
         {
             animator.SetBool("Walking", true);
             animator.SetFloat("DirX", -1);
             render.flipX = false;
             movement2D.MoveTo(new Vector3(-1, 0, 0));
         }
-        else if (timegoing <= 17)
+        else if (timegoing <= 18)
         {
             animator.SetBool("Walking", false);
             animator.SetFloat("DirX", 0);

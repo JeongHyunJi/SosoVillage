@@ -34,7 +34,7 @@ public class StartManager : MonoBehaviour
         if(savePlayer.IsSaveExist())
         {
             NameOK.SetActive(true);
-            NameCheckText2.text = "Start Gmae with\n\"" + savePlayer.GetName() + "\" ?";
+            NameCheckText2.text = "Start Game  with\n\"" + savePlayer.GetName() + "\" ?";
         }
         else
         {
@@ -56,7 +56,7 @@ public class StartManager : MonoBehaviour
         {
             playerName = inputField_Name.text;
             NameScene.SetActive(false);
-            NameCheckText.text = "Would you like to set the character's name to\n\"" + playerName + "\" ?";
+            NameCheckText.text = "Would  you  like  to  set  the  character's name  to\n\"" + playerName + "\" ?";
             NameCheckScene.SetActive(true);
         };
     }
