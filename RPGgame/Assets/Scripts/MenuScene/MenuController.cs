@@ -24,23 +24,27 @@ public class MenuController : MonoBehaviour
     public void clickMenu()
     {
         Variables.asName = SceneManager.GetActiveScene().name;
-        if (Variables.asName == "GameDodugi")
+        //if (Variables.asName == "GameDodugi")
+        //{
+        //    MoleManager moleManager = FindObjectOfType<MoleManager>();
+        //    moleManager.pauseMoleGame();
+        //}
+        //else if (Variables.asName == "GameShooting")
+        //{
+        //    ShootingManager shootingManager = FindObjectOfType<ShootingManager>();
+        //    shootingManager.pauseShootingGame();
+        //}
+        //else if (Variables.asName == "GameCookingReal")
+        //{
+        //    TimerManager timerManager = FindObjectOfType<TimerManager>();
+        //    timerManager.pauseCookingGame();
+        //}
+        if(Variables.asName[0] == 'G')
         {
-            MoleManager moleManager = FindObjectOfType<MoleManager>();
-            moleManager.pauseMoleGame();
+            GamePause gamePause = FindObjectOfType<GamePause>();
+            gamePause.pauseGame();
         }
-        else if (Variables.asName == "GameShooting")
-        {
-            ShootingManager shootingManager = FindObjectOfType<ShootingManager>();
-            shootingManager.pauseShootingGame();
-        }
-        else if (Variables.asName == "GameCookingReal")
-        {
-            TimerManager timerManager = FindObjectOfType<TimerManager>();
-            timerManager.pauseCookingGame();
-        }
-        else
-        {
+        else {
             openMenu();
         }
     }

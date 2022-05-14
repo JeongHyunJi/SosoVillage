@@ -902,8 +902,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1933803971}
-        m_TargetAssemblyTypeName: ShootingManager, Assembly-CSharp
+      - m_Target: {fileID: 1933803976}
+        m_TargetAssemblyTypeName: GamePause, Assembly-CSharp
         m_MethodName: ClickIsOpen
         m_Mode: 1
         m_Arguments:
@@ -2181,7 +2181,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1020898080}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f24ffa4668f9be340abd1b0fc6d01130, type: 3}
+  m_Script: {fileID: 11500000, guid: 718c3381dcdd7df43af24837ab99ff4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   coinText: {fileID: 1559797652}
@@ -2260,7 +2260,7 @@ RectTransform:
   - {fileID: 1400817435}
   - {fileID: 1559797654}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2527,8 +2527,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1933803971}
-        m_TargetAssemblyTypeName: ShootingManager, Assembly-CSharp
+      - m_Target: {fileID: 1933803976}
+        m_TargetAssemblyTypeName: GamePause, Assembly-CSharp
         m_MethodName: ClickIsOpen
         m_Mode: 1
         m_Arguments:
@@ -12670,7 +12670,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 245, y: 149}
+  m_AnchoredPosition: {x: 191, y: 115}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &1400817436
@@ -12960,7 +12960,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: coin
+  m_Text: x10000
 --- !u!222 &1559797653
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12985,7 +12985,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 289, y: 147}
+  m_AnchoredPosition: {x: 235, y: 113}
   m_SizeDelta: {x: 59.1, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1569829360
@@ -13992,6 +13992,7 @@ GameObject:
   - component: {fileID: 1933803974}
   - component: {fileID: 1933803973}
   - component: {fileID: 1933803975}
+  - component: {fileID: 1933803976}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -14019,7 +14020,6 @@ MonoBehaviour:
   ExitText: {fileID: 460824960}
   ClearText: {fileID: 1101827554}
   FailText: {fileID: 612920684}
-  IsOpenMenuPanel: {fileID: 2145040930}
 --- !u!4 &1933803972
 Transform:
   m_ObjectHideFlags: 0
@@ -14032,7 +14032,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1933803973
 MonoBehaviour:
@@ -14043,7 +14043,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1933803970}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e767550b7f660448918cd54fe1c749c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d6548778645228478085621f941a6d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   textTimer: {fileID: 0}
@@ -14072,6 +14072,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346086444e1c97e48a8e365952ceff34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1933803976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933803970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d8e0d67e35cd0346a1d4d099a5f3590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsOpenMenuPanel: {fileID: 2145040930}
 --- !u!1 &1955222213
 GameObject:
   m_ObjectHideFlags: 0

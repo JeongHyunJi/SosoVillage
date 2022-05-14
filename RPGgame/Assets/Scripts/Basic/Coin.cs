@@ -6,15 +6,14 @@ using UnityEngine.UI;
 public class Coin : MonoBehaviour
 {
     public Text coinText;
-    GameObject savePlayer;
+    SavePlayer savePlayer;
 
     private void Start()
     {
-        savePlayer = GameObject.FindGameObjectWithTag("Player");
-        print(savePlayer);
+        savePlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<SavePlayer>();
     }
     void Update()
     {
-        coinText.text = "X " + savePlayer.GetComponent<SavePlayer>().ReturnCoins();
+        coinText.text = "X " + savePlayer.ReturnCoins();
     }
 }

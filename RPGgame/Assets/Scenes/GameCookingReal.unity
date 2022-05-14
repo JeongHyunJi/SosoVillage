@@ -2715,9 +2715,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameManager: {fileID: 0}
-  alarm: {fileID: 0}
+  NoCornAlarm: {fileID: 0}
   exit: {fileID: 0}
-  OpenMenu: {fileID: 0}
+  MenuOpenAlarm: {fileID: 0}
   text_time: []
   btn_text: {fileID: 1479906234}
   go: {fileID: 556661615}
@@ -2870,8 +2870,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ShootingManager, Assembly-CSharp
+      - m_Target: {fileID: 1417520728}
+        m_TargetAssemblyTypeName: GamePause, Assembly-CSharp
         m_MethodName: ClickIsOpen
         m_Mode: 1
         m_Arguments:
@@ -4307,8 +4307,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ShootingManager, Assembly-CSharp
+      - m_Target: {fileID: 1417520728}
+        m_TargetAssemblyTypeName: GamePause, Assembly-CSharp
         m_MethodName: ClickIsOpen
         m_Mode: 1
         m_Arguments:
@@ -4388,6 +4388,7 @@ GameObject:
   - component: {fileID: 1417520724}
   - component: {fileID: 1417520727}
   - component: {fileID: 1417520726}
+  - component: {fileID: 1417520728}
   m_Layer: 0
   m_Name: TimerManager
   m_TagString: Untagged
@@ -4408,9 +4409,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameManager: {fileID: 1417520723}
-  alarm: {fileID: 2014292738}
+  NoCornAlarm: {fileID: 2014292738}
   exit: {fileID: 2046744802}
-  OpenMenu: {fileID: 1774000604}
+  MenuOpenAlarm: {fileID: 1774000604}
   text_time:
   - {fileID: 1578172407}
   btn_text: {fileID: 1479906234}
@@ -4438,7 +4439,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1417520723}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e767550b7f660448918cd54fe1c749c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d6548778645228478085621f941a6d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   textTimer: {fileID: 0}
@@ -4455,6 +4456,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0c52a1e6c9fac248891c45be8caa9d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1417520728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417520723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d8e0d67e35cd0346a1d4d099a5f3590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsOpenMenuPanel: {fileID: 1774000604}
 --- !u!1 &1442223732
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,7 +22,7 @@ public class ShootingManager : MonoBehaviour
     public GameObject ExitText;
     public GameObject ClearText;
     public GameObject FailText;
-    public GameObject IsOpenMenuPanel;
+    //public GameObject IsOpenMenuPanel;
     SavePlayer saveplayer;
 
     private bool gameGoing = true;
@@ -38,7 +38,7 @@ public class ShootingManager : MonoBehaviour
         FailText.SetActive(false);
         RetryText.SetActive(false);
         ExitText.SetActive(false);
-        IsOpenMenuPanel.SetActive(false);
+        //IsOpenMenuPanel.SetActive(false);
         saveplayer = FindObjectOfType<SavePlayer>();
     }
 
@@ -64,27 +64,27 @@ public class ShootingManager : MonoBehaviour
             }
         }
     }
-    public void pauseShootingGame()
-    {
-        Time.timeScale = 0;
-        IsOpenMenuPanel.SetActive(true);
-    }
-    public void ClickIsOpen()
-    {
-        string BtnName = EventSystem.current.currentSelectedGameObject.name;
-        if (BtnName == "openOkText")
-        {
-            IsOpenMenuPanel.SetActive(false);
-            Time.timeScale = 1;
-            MenuController menuController = FindObjectOfType<MenuController>();
-            menuController.openMenu();
-        }
-        else if (BtnName == "openCancelText")
-        {
-            IsOpenMenuPanel.SetActive(false);
-            Time.timeScale = 1;
-        }
-    }
+    //public void pauseShootingGame()
+    //{
+    //    Time.timeScale = 0;
+    //    IsOpenMenuPanel.SetActive(true);
+    //}
+    //public void ClickIsOpen()
+    //{
+    //    string BtnName = EventSystem.current.currentSelectedGameObject.name;
+    //    if (BtnName == "openOkText")
+    //    {
+    //        IsOpenMenuPanel.SetActive(false);
+    //        Time.timeScale = 1;
+    //        MenuController menuController = FindObjectOfType<MenuController>();
+    //        menuController.openMenu();
+    //    }
+    //    else if (BtnName == "openCancelText")
+    //    {
+    //        IsOpenMenuPanel.SetActive(false);
+    //        Time.timeScale = 1;
+    //    }
+    //}
     public void GameOver(bool isPlayerWin)
     {
         gameGoing = false;
