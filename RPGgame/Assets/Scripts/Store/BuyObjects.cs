@@ -6,8 +6,11 @@ using UnityEngine.EventSystems;
 
 public class BuyObjects : MonoBehaviour
 {
+    public GameObject CheckPanel;
     public GameObject Alarm;
+    public Text CheckText;
     public Text AlarmText;
+    string ObjectName = "nothing";
     public void OffAlarm()
     {
         Alarm.SetActive(false);
@@ -25,6 +28,7 @@ public class BuyObjects : MonoBehaviour
             setTwo[i].SetActive(false);
         }
         OffAlarm();
+        CheckPanel.SetActive(false);
     }
 
     private void Update()
@@ -48,68 +52,85 @@ public class BuyObjects : MonoBehaviour
     public void BtnClick()
     {
         string BtnName = EventSystem.current.currentSelectedGameObject.name;
-        Debug.Log(BtnName);
-        int use;
-        //****************************버튼이름 다 수정***************//
-        //----------------------- 구매
-        if (BtnName == "seed_btn") //씨앗
+        ObjectName = BtnName.Substring(0, BtnName.Length - 4);
+        if (ObjectName == "seed" || ObjectName == "heart")
+            CheckText.text = "Do  you  want  to \nbuy  " + ObjectName + "?";
+        else
+            CheckText.text = "Do  you  want  to \nsell  " + ObjectName + "?";
+        CheckPanel.SetActive(true);
+    }
+    public void ClickIsOk()
+    {
+        string BtnOkName = EventSystem.current.currentSelectedGameObject.name;
+        if (BtnOkName== "OkBtn")
         {
-            inventorys.GetInvent(1);
-            use=inventorys.UseCoins(30);
-            PrintAlarm(use, "coin");
+            int use;
+            //----------------------- 구매
+            if (ObjectName == "seed") //씨앗
+            {
+                inventorys.GetInvent(1);
+                use = inventorys.UseCoins(30);
+                PrintAlarm(use, "coin");
+            }
+            else if (ObjectName == "heart") //하트
+            {
+                inventorys.GetHeart();
+                use = inventorys.UseCoins(300);
+                PrintAlarm(use, "coin");
+            } //----------------------- 판매
+            else if (ObjectName == "corn") //옥수수
+            {
+                use = inventorys.UseInvent(2);
+                PrintAlarm(use, "inv");
+                inventorys.GetCoins(50);
+            }
+            else if (ObjectName == "notBread") //안구워진 빵
+            {
+                use = inventorys.UseInvent(3);
+                PrintAlarm(use, "inv");
+                inventorys.GetCoins(70);
+            }
+            else if (ObjectName == "wellBread") //잘구워진 빵
+            {
+                use = inventorys.UseInvent(4);
+                PrintAlarm(use, "inv");
+                inventorys.GetCoins(130);
+            }
+            else if (ObjectName == "burnBread") //탄 빵
+            {
+                use = inventorys.UseInvent(5);
+                PrintAlarm(use, "inv");
+                inventorys.GetCoins(40);
+            }
+            else if (ObjectName == "fish(s)") //작은 물고기
+            {
+                use = inventorys.UseInvent(6);
+                PrintAlarm(use, "inv");
+                inventorys.GetCoins(10);
+            }
+            else if (ObjectName == "fish(m)") //중간 물고기
+            {
+                use = inventorys.UseInvent(7);
+                PrintAlarm(use, "inv");
+                inventorys.GetCoins(20);
+            }
+            else if (ObjectName == "fish(l)") //큰 물고기
+            {
+                use = inventorys.UseInvent(8);
+                PrintAlarm(use, "inv");
+                inventorys.GetCoins(30);
+            }
+            CheckPanel.SetActive(false);
+            ObjectName = "nothing";
         }
-        else if (BtnName == "heart_btn") //하트
+        else if (BtnOkName == "CancelBtn")
         {
-            inventorys.GetHeart();
-            use=inventorys.UseCoins(300);
-            PrintAlarm(use, "coin");
-        } //----------------------- 판매
-        else if (BtnName == "corn_btn") //옥수수
-        {
-            use=inventorys.UseInvent(2);
-            PrintAlarm(use, "inv");
-            inventorys.GetCoins(50);
-        }
-        else if (BtnName == "notBread_btn") //안구워진 빵
-        {
-            use=inventorys.UseInvent(3);
-            PrintAlarm(use, "inv");
-            inventorys.GetCoins(70);
-        }
-        else if (BtnName == "wellBread_btn") //잘구워진 빵
-        {
-            use=inventorys.UseInvent(4);
-            PrintAlarm(use, "inv");
-            inventorys.GetCoins(130);
-        }
-        else if (BtnName == "burnBread_btn") //탄 빵
-        {
-            use=inventorys.UseInvent(5);
-            PrintAlarm(use, "inv");
-            inventorys.GetCoins(40);
-        }
-        else if (BtnName == "Sfish_btn") //작은 물고기
-        {
-            use=inventorys.UseInvent(6);
-            PrintAlarm(use, "inv");
-            inventorys.GetCoins(10);
-        }
-        else if (BtnName == "Mfish_btn") //중간 물고기
-        {
-            use=inventorys.UseInvent(7);
-            PrintAlarm(use, "inv");
-            inventorys.GetCoins(20);
-        }
-        else if (BtnName == "Lfish_btn") //큰 물고기
-        {
-            use=inventorys.UseInvent(8);
-            PrintAlarm(use, "inv");
-            inventorys.GetCoins(30);
+            CheckPanel.SetActive(false);
+            ObjectName = "nothing";
         }
     }
     public void ClickLeftBtn()
     {
-        Debug.Log("clickleft");
         for (int i = 0; i < setOne.Length; i++)
         {
             setOne[i].SetActive(true);
