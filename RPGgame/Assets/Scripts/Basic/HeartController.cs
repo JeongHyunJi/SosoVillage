@@ -65,11 +65,10 @@ public class HeartController : MonoBehaviour
         if (curTime > stTime)
         {
             timeDiff = curTime - stTime;
-            if (timeDiff.TotalMinutes > 2) //5분에 한개씩 충전
+            if (timeDiff.TotalMinutes > 5) //5분에 한개씩 충전
             {
                 Hearts.heart++;
-                stTime.AddMinutes(5);
-                print(stTime);
+                stTime = stTime.AddMinutes(5);
                 PlayerPrefs.SetString("Heart_time", stTime.ToString());
             }
         }

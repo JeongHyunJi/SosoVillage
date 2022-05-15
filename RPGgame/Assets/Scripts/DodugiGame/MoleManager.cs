@@ -16,7 +16,6 @@ public class MoleManager : MonoBehaviour
     public Text ClearText;
     public GameObject FailText;
 
-    //public GameObject IsOpenMenuPanel;
 
     private float time;
     private float score;
@@ -26,6 +25,8 @@ public class MoleManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (Hearts.heart == 0)
+            SceneManager.LoadScene("Forest");
         score = 0;
         gameoverText.SetActive(false);
         FailText.SetActive(false);
@@ -64,27 +65,6 @@ public class MoleManager : MonoBehaviour
             }
         }
     }
-    //public void pauseMoleGame()
-    //{
-    //    Time.timeScale = 0;
-    //    IsOpenMenuPanel.SetActive(true);
-    //}
-    //public void ClickIsOpen()
-    //{
-    //    string BtnName = EventSystem.current.currentSelectedGameObject.name;
-    //    if (BtnName == "openOkText")
-    //    {
-    //        IsOpenMenuPanel.SetActive(false);
-    //        Time.timeScale = 1;
-    //        MenuController menuController = FindObjectOfType<MenuController>();
-    //        menuController.openMenu();
-    //    }
-    //    else if (BtnName == "openCancelText")
-    //    {
-    //        IsOpenMenuPanel.SetActive(false);
-    //        Time.timeScale = 1;
-    //    }
-    //}
     public void PlusScore()
     {
         score += 10;

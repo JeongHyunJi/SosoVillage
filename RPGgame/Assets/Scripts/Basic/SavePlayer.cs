@@ -9,7 +9,7 @@ public class SavePlayer : MonoBehaviour
     private static string playerName; //매 씬마다 값이 초기화 되는 것을 방지하기 위해 static으로 변수 선언
     private static int coin;
     private static int[] inventory = new int[8]; //씨앗, 옥수수, 빵(안익음), 빵(잘익음), 빵(탐)
-    private static int[] times = new int[5];
+    private static string times;
     private bool IsSave;
     // Start is called before the first frame update
     void Awake()
@@ -23,7 +23,8 @@ public class SavePlayer : MonoBehaviour
                 playerName = "guest"; //나중에 입력받도록 수정
                 coin = 5;
                 inventory = new int[] { 1, 1, 1, 1, 1, 0, 0, 0 };
-                times = new int[] { 1900, 1, 1, 9, 0 }; //yyyy,mm,dd,hh,mm -> 초기세팅 : 1900/1/1/ am 9:00 
+                DateTime startDate = new DateTime(1900, 1, 1, 9, 0, 0);
+                times = startDate.ToString(); //yyyy,mm,dd,hh,mm -> 초기세팅 : 1900/1/1/ am 9:00 
                 Hearts.heart = 5;
             }
             else
@@ -39,11 +40,7 @@ public class SavePlayer : MonoBehaviour
                 inventory[5] = PlayerPrefs.GetInt("saved_6"); // 작은 물고기
                 inventory[6] = PlayerPrefs.GetInt("saved_7"); // 중간 물고기
                 inventory[7] = PlayerPrefs.GetInt("saved_8"); // 큰 물고기
-                times[0] = PlayerPrefs.GetInt("saved_year");
-                times[1] = PlayerPrefs.GetInt("saved_month");
-                times[2] = PlayerPrefs.GetInt("saved_day");
-                times[3] = PlayerPrefs.GetInt("saved_hour");
-                times[4] = PlayerPrefs.GetInt("saved_minite");
+                times = PlayerPrefs.GetString("saved_time");
                 Hearts.heart = PlayerPrefs.GetInt("saved_hearts");
             }
         }
@@ -57,7 +54,8 @@ public class SavePlayer : MonoBehaviour
         playerName = newName;
         coin = 5;
         inventory = new int[] { 1, 2, 1, 1, 1, 0, 0, 0 };
-        times = new int[] { 1900, 1, 1, 9, 0 }; //yyyy,mm,dd,hh,mm -> 초기세팅 : 1900/1/1/ am 9:00 
+        DateTime startDate = new DateTime(1900, 1, 1, 9, 0, 0);
+        times = startDate.ToString(); //yyyy,mm,dd,hh,mm -> 초기세팅 : 1900/1/1/ am 9:00 
         Hearts.heart = 5;
     }
 
@@ -125,7 +123,7 @@ public class SavePlayer : MonoBehaviour
     //time
     public DateTime ReturnTime()
     {
-        DateTime tmpTime = new DateTime(times[0], times[1], times[2], times[3], times[4], 0);
+        DateTime tmpTime = Convert.ToDateTime(times);
         return tmpTime;
     }
 
@@ -168,11 +166,7 @@ public class SavePlayer : MonoBehaviour
         PlayerPrefs.SetInt("saved_6", inventory[5]);
         PlayerPrefs.SetInt("saved_7", inventory[6]);
         PlayerPrefs.SetInt("saved_8", inventory[7]);
-        PlayerPrefs.SetInt("saved_year", TimeController.time.Year);
-        PlayerPrefs.SetInt("saved_month", TimeController.time.Month);
-        PlayerPrefs.SetInt("saved_day", TimeController.time.Day);
-        PlayerPrefs.SetInt("saved_hour", TimeController.time.Hour);
-        PlayerPrefs.SetInt("saved_minite", TimeController.time.Minute);
+        PlayerPrefs.SetString("saved_time", TimeController.time.ToString());
         PlayerPrefs.SetInt("saved_hearts", Hearts.heart);
         PlayerPrefs.Save();
     }

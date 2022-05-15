@@ -7,7 +7,7 @@ using System;
 
 public static class TimeController
 {
-    public static DateTime time;
+    public static DateTime time = new DateTime(1900, 1, 1, 9, 0, 0);
     public static bool isStart = true;
 
     public static void TimeCount()
