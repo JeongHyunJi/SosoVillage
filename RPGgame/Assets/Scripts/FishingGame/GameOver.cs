@@ -16,7 +16,8 @@ public class GameOver : MonoBehaviour
     }
     public void Gameover()
     {
-        gameoverText.text = fishingButton.isSuccess ? "GAME CLEAR" : "GAMEOVER";
+        char[] levelChar = { 'S', 'M', 'L' }; 
+        gameoverText.text = fishingButton.isSuccess ? "GAME CLEAR\n<color=yellow>you got "+levelChar[GameLevel.level-1]+ " Fish!</color>" : "GAMEOVER";
         gameoverPanel.SetActive(true);
         Hearts.heart--;
         Hearts.HeartControll();

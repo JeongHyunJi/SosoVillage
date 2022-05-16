@@ -11,7 +11,6 @@ public class CountFarmTime : MonoBehaviour
 {
     public static FarmTimeController[] farmTimeControllers = new FarmTimeController[6];
     static bool[] ClickCheck = new bool[6];
-    int cur = 0;
 
     public GameObject savePlayer;
     private GameObject ThisButton;
@@ -36,7 +35,7 @@ public class CountFarmTime : MonoBehaviour
     {
         ThisButton = EventSystem.current.currentSelectedGameObject;
 
-        cur = (int)ThisButton.name[4] - 48;
+        int cur = (int)ThisButton.name[4] - 48;
         //이부분 수정 필요
         if (farmTimeControllers[cur].score == 24) //24분 경과 후 => 옥수수 맺힌 후
         {
@@ -57,9 +56,8 @@ public class CountFarmTime : MonoBehaviour
 
     public void Reset(int i)
     {
-        farmTimeControllers[i].diffSec = -1;
         ClickCheck[i] = false;
-        PlayerPrefs.DeleteKey("BtnClickTime" + cur);
+        PlayerPrefs.DeleteKey("BtnClickTime" + i);
     }
 
     public void Update()
@@ -78,9 +76,6 @@ public class CountFarmTime : MonoBehaviour
                 //current time과 start time의 차이 정의
                 TimeSpan timeDiff = farmTimeControllers[i].curTime - farmTimeControllers[i].stTime;
                 farmTimeControllers[i].totalMin = timeDiff.TotalMinutes;
-                farmTimeControllers[i].diffHour = timeDiff.Hours;
-                farmTimeControllers[i].diffMin = timeDiff.Minutes;
-                farmTimeControllers[i].diffSec = timeDiff.Seconds;
                 //시간차에 따른 Score 상승
                 //if (farmTimeControllers[i].diffHour == 0 && farmTimeControllers[i].diffMin == 0)
                 //{

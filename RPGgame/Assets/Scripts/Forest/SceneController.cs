@@ -48,7 +48,10 @@ public class SceneController : MonoBehaviour
                 SceneManager.LoadScene("GameDodugi");
         }
         else
+        {
+            panel.SetActive(true);
             TickTime = 0;
+        }
     }
 
     private void FixedUpdate()

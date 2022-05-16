@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameFishing : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class GameFishing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (Hearts.heart == 0)
+            SceneManager.LoadScene("Forest");
         if (Pond.currentLevel == 1)
         {   floats = GameObject.FindGameObjectsWithTag("Floats");
             floats[1].SetActive(false);

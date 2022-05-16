@@ -10,13 +10,9 @@ public class fishingButton : MonoBehaviour
     public GameObject button;
     public Text buttonText;
     public static bool isSuccess = false;
-    private Transform panel;
+    public Transform panel;
     public GameObject savePlayer;
 
-    private void Start()
-    {
-        panel = GameObject.Find("ToggleCanvas").transform.Find("Panel");
-    }
     public void stopButtonController()
     {
         GameObject ThisButton = EventSystem.current.currentSelectedGameObject; //방금 선택한 오브젝트(버튼)

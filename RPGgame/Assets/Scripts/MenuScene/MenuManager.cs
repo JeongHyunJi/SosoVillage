@@ -11,7 +11,8 @@ public class MenuManager : MonoBehaviour
     public GameObject Main;
     public GameObject Map;
     public GameObject SaveCheckPanel;
-   // public Texture2D cursorImg;
+    public GameObject QuitCheckPanel;
+    // public Texture2D cursorImg;
 
     public Text playerName;
     public Text coins;
@@ -53,6 +54,7 @@ public class MenuManager : MonoBehaviour
         Paused.SetActive(false);
         Map.SetActive(false);
         SaveCheckPanel.SetActive(false);
+        QuitCheckPanel.SetActive(false);
     }
 
     public void openPaused()
@@ -76,7 +78,7 @@ public class MenuManager : MonoBehaviour
 
     public void GotoHome()
     {
-        if(sceneName!="Home")
+        if (sceneName != "Home")
             SavePosition.currentPosition = new Vector2(6, -16);
         SceneManager.LoadScene("Home");
     }
@@ -101,7 +103,7 @@ public class MenuManager : MonoBehaviour
     public void ClickIsSave()
     {
         string BtnName = EventSystem.current.currentSelectedGameObject.name;
-        if(BtnName == "saveOkText")
+        if (BtnName == "saveOkText")
         {
             Debug.Log("save");
             savePlayer.GetComponent<SavePlayer>().SaveContent();
@@ -111,12 +113,25 @@ public class MenuManager : MonoBehaviour
         {
             SaveCheckPanel.SetActive(false);
         }
-        
+
     }
-    public void GameQuit()
+    public void ClickQuit()
     {
-        Debug.Log("Game Quit");
-        savePlayer.GetComponent<SavePlayer>().SaveContent();
-        Application.Quit();
+        QuitCheckPanel.SetActive(true);
+    }
+    public void IsQuit()
+    {
+        string BtnName = EventSystem.current.currentSelectedGameObject.name;
+        if (BtnName == "QuitOkText")
+        {
+            Debug.Log("Game Quit");
+            savePlayer.GetComponent<SavePlayer>().SaveContent();
+            Application.Quit();
+            QuitCheckPanel.SetActive(false);
+        }
+        else if (BtnName == "QuitCancelText")
+        {
+            QuitCheckPanel.SetActive(false);
+        }
     }
 }
