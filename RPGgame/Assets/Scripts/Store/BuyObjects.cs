@@ -68,57 +68,66 @@ public class BuyObjects : MonoBehaviour
             //----------------------- 구매
             if (ObjectName == "seed") //씨앗
             {
-                inventorys.GetInvent(1);
                 use = inventorys.UseCoins(30);
+                if(use!=-1)
+                    inventorys.GetInvent(1);
                 PrintAlarm(use, "coin");
             }
             else if (ObjectName == "heart") //하트
             {
-                inventorys.GetHeart();
                 use = inventorys.UseCoins(300);
+                if(use!=-1)
+                    inventorys.GetHeart();
                 PrintAlarm(use, "coin");
             } //----------------------- 판매
             else if (ObjectName == "corn") //옥수수
             {
                 use = inventorys.UseInvent(2);
+                if(use!=-1)
+                    inventorys.GetCoins(50);
                 PrintAlarm(use, "inv");
-                inventorys.GetCoins(50);
             }
             else if (ObjectName == "notBread") //안구워진 빵
             {
                 use = inventorys.UseInvent(3);
+                if(use!=-1)
+                    inventorys.GetCoins(70);
                 PrintAlarm(use, "inv");
-                inventorys.GetCoins(70);
             }
             else if (ObjectName == "wellBread") //잘구워진 빵
             {
                 use = inventorys.UseInvent(4);
+                if(use!=-1)
+                    inventorys.GetCoins(130);
                 PrintAlarm(use, "inv");
-                inventorys.GetCoins(130);
             }
             else if (ObjectName == "burnBread") //탄 빵
             {
                 use = inventorys.UseInvent(5);
+                if (use != -1)
+                    inventorys.GetCoins(40);
                 PrintAlarm(use, "inv");
-                inventorys.GetCoins(40);
             }
             else if (ObjectName == "fish(s)") //작은 물고기
             {
                 use = inventorys.UseInvent(6);
+                if (use != -1)
+                    inventorys.GetCoins(10);
                 PrintAlarm(use, "inv");
-                inventorys.GetCoins(10);
             }
             else if (ObjectName == "fish(m)") //중간 물고기
             {
                 use = inventorys.UseInvent(7);
+                if (use != -1)
+                    inventorys.GetCoins(20);
                 PrintAlarm(use, "inv");
-                inventorys.GetCoins(20);
             }
             else if (ObjectName == "fish(l)") //큰 물고기
             {
                 use = inventorys.UseInvent(8);
+                if (use != -1)
+                    inventorys.GetCoins(30);
                 PrintAlarm(use, "inv");
-                inventorys.GetCoins(30);
             }
             CheckPanel.SetActive(false);
             ObjectName = "nothing";
