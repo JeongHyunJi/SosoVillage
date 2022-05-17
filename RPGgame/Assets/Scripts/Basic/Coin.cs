@@ -14,6 +14,6 @@ public class Coin : MonoBehaviour
     }
     void Update()
     {
-        coinText.text = "X " + savePlayer.ReturnCoins();
+        coinText.text = savePlayer.ReturnCoins() + " $";
     }
 }
