@@ -17,7 +17,6 @@ public class BuyObjects : MonoBehaviour
     }
 
     private SavePlayer inventorys;
-    public Text coinText;
     public GameObject[] setOne;
     public GameObject[] setTwo;
     private void Start()
@@ -29,11 +28,6 @@ public class BuyObjects : MonoBehaviour
         }
         OffAlarm();
         CheckPanel.SetActive(false);
-    }
-
-    private void Update()
-    {
-        coinText.text = inventorys.ReturnCoins() + " $";
     }
 
     private void PrintAlarm(int use,string type)
