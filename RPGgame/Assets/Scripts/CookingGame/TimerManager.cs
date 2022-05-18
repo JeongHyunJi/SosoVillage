@@ -7,51 +7,34 @@ using UnityEngine.EventSystems;
 
 public class TimerManager : MonoBehaviour
 {
-    public GameObject GameManager;
-    public GameObject NoCornAlarm;
     public GameObject exit;
+    public GameObject NoCornAlarm;
     public GameObject MenuOpenAlarm;
+    private Button ClickButton;
+    public Text status_text;
+    public Text btn_text;
 
-    //게임
-    bool GameStart = false;
-    //버튼
-    private int BtnChk = 0;
+    //game
+    bool GameStart = false; //게임 시작 Y/N 검사
+    bool SetBtn = false; //버튼 활성화 Y/N 검사
 
-    //시간
-    bool btn_active; //버튼 활성화 상태 유무 검사
-    public Text[] text_time; //시간 표시할 text
-    public Text btn_text; //상태에 따라 버튼의 text 변경하기 위한 text
-    float time; //시간
+    //bread
+    SpriteRenderer breadSR;
+    public GameObject bread;
+
+    //time
+    float time; //전체 시간
     float cooking_time = 4.5f;
     float rest_time = 1.0f;
 
-    //빵
-    SpriteRenderer sr;
-    public GameObject go;
-
-    public void ExitToHome()
-    {
-        SceneManager.LoadScene("Home");
-    }
-    //버튼 활성화 메소드
-    public void SetTimerOn() 
-    {
-        btn_active = true;
-    }
-    //버튼 비활성화 메소드
-    public void SetTimerOff()
-    {
-        btn_active = false;
-    }
-
     void Start()
     {
-        btn_active = false; //버튼 초기 상태 false로 만들기
-        sr = go.GetComponent<SpriteRenderer>();
-        OffAlarm();
+        breadSR = bread.GetComponent<SpriteRenderer>();
+        NoCornAlarm.SetActive(false);
         MenuOpenAlarm.SetActive(false);
     }
 
+    //menu click
     public void pauseCookingGame()
     {
         Time.timeScale = 0;
@@ -74,45 +57,31 @@ public class TimerManager : MonoBehaviour
         }
     }
 
-    public void OnAlarm()
-    {
-        NoCornAlarm.SetActive(true);
-    }
-
-    public void OffAlarm()
-    {
-        NoCornAlarm.SetActive(false);
-    }
-    //버튼 클릭 이벤트
+    //button click
     public void Btn_Click() 
     {
-        //SavePlayer에서 가져오기
         SavePlayer inventorys = FindObjectOfType<SavePlayer>();
         int[] inv= inventorys.ReturnInvent();
-        if (BtnChk == 1)
-        {
-            SetTimerOff();
-        }
 
-        if (inv[1] < 2&&GameStart==false)
+        if (inv[1] < 2&&GameStart==false) //corn 부족해서 game 불가능
         {
-            //창이 뜨도록
-            OnAlarm();
+            NoCornAlarm.SetActive(true);
             Invoke("OffAlarm", 2f);
         }
 
-        if (!btn_active && BtnChk==0 &&inv[1]>=2)
+        if (inv[1] >= 2 && !SetBtn) //게임 시작
         {
-            SetTimerOn();
-            btn_text.text = "Stop!";
-            BtnChk = 1;
-            inventorys.UseCorn(); //옥수수 사용
-            GameStart = true;
+            inventorys.UseCorn();
             exit.SetActive(false);
+            GameStart = true;
+            SetBtn = true;
+            btn_text.text = "Stop!";
         }
-        else if(GameStart)
+        else if(GameStart) //게임 종료
         {
-            SetTimerOff();
+            SetBtn = false;
+            GameObject.FindGameObjectWithTag("cookingBtn").GetComponent<Button>().interactable = false;
+
             if (cooking_time- rest_time <= time && time <= cooking_time+ rest_time)
             {
                 btn_text.text = "<color=#ffe650> Game Complete! </color>";
@@ -138,30 +107,30 @@ public class TimerManager : MonoBehaviour
         }
     }
 
-    public void Update() //바뀌는 시간 text에 반영하는 update 생명주기
+    public void Update()
     {
-        if (btn_active)
+        if (SetBtn)
         {
             time += Time.deltaTime;
-            if (3.5f <= time && time <= 5.0f)
+            if (2.5f <= time && time <= 4.0f)
             {
-                text_time[0].text = "Nice Baking!";
-                sr.material.color = new Color(0.90f, 0.68f, 0.19f);
+                status_text.text = "Nice Baking!";
+                breadSR.material.color = new Color(0.90f, 0.68f, 0.19f);
             }
-            else if (time > 5.0f && time < 7.5f)
+            else if (time > 4.0f && time < 6.5f)
             {
-                text_time[0].text = "Bread is Burning!";
-                sr.material.color = new Color(0.49f, 0.35f, 0.04f);
+                status_text.text = "Bread is Burning!";
+                breadSR.material.color = new Color(0.49f, 0.35f, 0.04f);
             }
-            else if (time >= 7.5f)
+            else if (time >= 6.5f)
             {
-                text_time[0].text = "Bread is All Burned..";
-                sr.material.color = new Color(0.0f, 0.0f, 0.0f);
+                status_text.text = "Bread is All Burned..";
+                breadSR.material.color = new Color(0.0f, 0.0f, 0.0f);
             }
             else
             {
-                text_time[0].text = "Baking Now...";
-                sr.material.color = new Color(1f, 1f, 1f);
+                status_text.text = "Baking Now~";
+                breadSR.material.color = new Color(1f, 1f, 1f);
             }
         }
     }
@@ -182,6 +151,5 @@ public class TimerManager : MonoBehaviour
     public void SceneChange()
     {
         SceneManager.LoadScene("Home");
-        BtnChk = 0;
     }
 }
