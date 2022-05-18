@@ -2978,7 +2978,7 @@ GameObject:
   - component: {fileID: 556661617}
   - component: {fileID: 556661619}
   m_Layer: 0
-  m_Name: bread-pastry_1
+  m_Name: main_bread
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3061,13 +3061,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f37de3b31c0b664995a163ff4bf6368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameManager: {fileID: 0}
-  NoCornAlarm: {fileID: 0}
   exit: {fileID: 0}
+  NoCornAlarm: {fileID: 0}
   MenuOpenAlarm: {fileID: 0}
-  text_time: []
+  status_text: {fileID: 0}
   btn_text: {fileID: 1479906234}
-  go: {fileID: 556661615}
+  bread: {fileID: 0}
 --- !u!1 &570336247
 GameObject:
   m_ObjectHideFlags: 0
@@ -5415,14 +5414,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f37de3b31c0b664995a163ff4bf6368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameManager: {fileID: 1417520723}
-  NoCornAlarm: {fileID: 2014292738}
   exit: {fileID: 2046744802}
+  NoCornAlarm: {fileID: 2014292738}
   MenuOpenAlarm: {fileID: 1774000604}
-  text_time:
-  - {fileID: 1578172407}
+  status_text: {fileID: 1578172407}
   btn_text: {fileID: 1479906234}
-  go: {fileID: 556661615}
+  bread: {fileID: 556661615}
 --- !u!4 &1417520725
 Transform:
   m_ObjectHideFlags: 0
@@ -5574,7 +5571,7 @@ GameObject:
   - component: {fileID: 1479906239}
   m_Layer: 5
   m_Name: text_button
-  m_TagString: Untagged
+  m_TagString: cookingBtn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5680,7 +5677,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -5921,7 +5918,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 0.97547174, b: 0.97547174, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -6732,7 +6729,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1417520724}
         m_TargetAssemblyTypeName: TimerManager, Assembly-CSharp
-        m_MethodName: ExitToHome
+        m_MethodName: SceneChange
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
