@@ -18,8 +18,8 @@ public class MouseMove : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
 
-        hotSpot.x = cursorTexture.width / 2;
-        hotSpot.y = cursorTexture.height / 2;
+        hotSpot.x = cursorTexture.width / 99;
+        hotSpot.y = cursorTexture.height / 99;
 
         Cursor.SetCursor(cursorTexture, hotSpot, CursorMode.Auto);
     }
