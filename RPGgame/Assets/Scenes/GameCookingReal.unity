@@ -2797,9 +2797,11 @@ GameObject:
   m_Component:
   - component: {fileID: 581862231}
   - component: {fileID: 581862235}
+  - component: {fileID: 581862237}
   - component: {fileID: 581862234}
   - component: {fileID: 581862233}
   - component: {fileID: 581862232}
+  - component: {fileID: 581862236}
   m_Layer: 5
   m_Name: openOkText
   m_TagString: Untagged
@@ -2939,6 +2941,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 581862230}
   m_CullTransparentMesh: 1
+--- !u!65 &581862236
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581862230}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 40, y: 20, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &581862237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581862230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb7b9a7bef1a2549a164c912764d32b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetText: {fileID: 581862234}
 --- !u!1 &633044885
 GameObject:
   m_ObjectHideFlags: 0
@@ -4234,9 +4262,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1411802021}
   - component: {fileID: 1411802025}
+  - component: {fileID: 1411802027}
   - component: {fileID: 1411802024}
   - component: {fileID: 1411802023}
   - component: {fileID: 1411802022}
+  - component: {fileID: 1411802026}
   m_Layer: 5
   m_Name: openCancelText
   m_TagString: Untagged
@@ -4261,7 +4291,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 66.000015, y: -59.00004}
-  m_SizeDelta: {x: 130, y: 40}
+  m_SizeDelta: {x: 150, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1411802022
 MonoBehaviour:
@@ -4376,6 +4406,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1411802020}
   m_CullTransparentMesh: 1
+--- !u!65 &1411802026
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411802020}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 110, y: 20, z: 1}
+  m_Center: {x: -3, y: 0, z: 0}
+--- !u!114 &1411802027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411802020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb7b9a7bef1a2549a164c912764d32b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetText: {fileID: 1411802024}
 --- !u!1 &1417520723
 GameObject:
   m_ObjectHideFlags: 0
