@@ -40,6 +40,7 @@ public class MenuManager : MonoBehaviour
         for (int i = 0; i < 8; i++)
         {
             MainInv[i].GetComponent<UnityEngine.UI.Text>().text = "x " + inventory[i];
+            print(MainInv[i]);
         }
         Paused.SetActive(false);
         Map.SetActive(false);
