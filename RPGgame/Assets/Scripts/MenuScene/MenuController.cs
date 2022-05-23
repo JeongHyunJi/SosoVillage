@@ -51,7 +51,7 @@ public class MenuController : MonoBehaviour
     public void openMenu()
     {
         GameObject player = GameObject.FindWithTag("Player");
-        if (Variables.asName != "Store" && Variables.asName != "GameCookingReal" && player != null)
+        if (Variables.asName != "Store" && Variables.asName[0] != 'G' && player != null)
             SavePosition.SaveCurrentPosition(player);
         SceneManager.LoadScene("MenuScene");
     }
