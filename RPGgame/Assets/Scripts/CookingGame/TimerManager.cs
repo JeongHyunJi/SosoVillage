@@ -24,7 +24,7 @@ public class TimerManager : MonoBehaviour
 
     //time
     float time; //전체 시간
-    float cooking_time = 4.5f;
+    float cooking_time = 3.5f;
     float rest_time = 1.0f;
 
     void Start()
@@ -112,12 +112,12 @@ public class TimerManager : MonoBehaviour
         if (SetBtn)
         {
             time += Time.deltaTime;
-            if (2.5f <= time && time <= 4.0f)
+            if (2.5f <= time && time <= 4.5f)
             {
                 status_text.text = "Nice Baking!";
                 breadSR.material.color = new Color(0.90f, 0.68f, 0.19f);
             }
-            else if (time > 4.0f && time < 6.5f)
+            else if (time > 4.5f && time < 6.5f)
             {
                 status_text.text = "Bread is Burning!";
                 breadSR.material.color = new Color(0.49f, 0.35f, 0.04f);

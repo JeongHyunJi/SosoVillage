@@ -19,6 +19,7 @@ public class BuyObjects : MonoBehaviour
     private SavePlayer inventorys;
     public GameObject[] setOne;
     public GameObject[] setTwo;
+
     private void Start()
     {
         inventorys = FindObjectOfType<SavePlayer>();

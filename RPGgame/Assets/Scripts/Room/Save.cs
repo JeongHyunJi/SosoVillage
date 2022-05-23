@@ -6,11 +6,18 @@ using UnityEngine.EventSystems;
 public class Save : MonoBehaviour
 {
     public GameObject suggest;
+    public GameObject YesSave;
     Vector2 pos;
+
+    void OffSaveAlarm()
+    {
+        YesSave.SetActive(false);
+    }
 
     void Start()
     {
         suggest.SetActive(false);
+        YesSave.SetActive(false);
         pos = this.gameObject.transform.position;
         print(pos);
     }
@@ -21,6 +28,7 @@ public class Save : MonoBehaviour
         {
             suggest.SetActive(true);
             Time.timeScale = 0;
+            print("bed와 충돌");
         }
     }
 
@@ -34,6 +42,8 @@ public class Save : MonoBehaviour
             sp.SaveContent();
             print("저장완료");
             suggest.SetActive(false);
+            YesSave.SetActive(true);
+            Invoke("OffSaveAlarm", 0.5f);
         }
         else if (BtnName == "Button_n") //저장X
         {
@@ -41,7 +51,7 @@ public class Save : MonoBehaviour
             print("저장하지않음");
         }
         Time.timeScale = 1;
-        Vector2 changeXY = new Vector2(6.5f, -8.5f);
+        Vector2 changeXY = new Vector2(3.4f, -11.6f);
         this.gameObject.transform.position = changeXY;
         //Vector3(6.30131817,-8.10491562,0)
     }
