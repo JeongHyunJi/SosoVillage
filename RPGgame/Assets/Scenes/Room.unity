@@ -286,7 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2b62281912623e478c894e4c1cce5bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0
+  moveSpeed: 5
   moveDirection: {x: 0, y: 0, z: 0}
 --- !u!212 &14986091
 SpriteRenderer:
@@ -351,7 +351,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &14986093
 MonoBehaviour:
@@ -1407,7 +1407,7 @@ Camera:
   m_GameObject: {fileID: 294233380}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 4
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -1468,7 +1468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 14986092}
-  offset: {x: 0, y: 0, z: 0}
+  offset: {x: 0, y: 0, z: -10}
 --- !u!1 &322182907
 GameObject:
   m_ObjectHideFlags: 0
@@ -5256,8 +5256,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9759e0b723cb7d4e86e721e634fa862, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  suggest: {fileID: 0}
-  YesSave: {fileID: 0}
+  suggest: {fileID: 404870792}
+  YesSave: {fileID: 2045618509}
 --- !u!1 &1527322310
 GameObject:
   m_ObjectHideFlags: 0
@@ -18221,7 +18221,7 @@ Transform:
   - {fileID: 1780606926}
   - {fileID: 723307702}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1822603007
 GameObject:
