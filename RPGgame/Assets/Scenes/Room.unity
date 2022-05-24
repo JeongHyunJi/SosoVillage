@@ -258,7 +258,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.03}
@@ -286,7 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2b62281912623e478c894e4c1cce5bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0
+  moveSpeed: 6
   moveDirection: {x: 0, y: 0, z: 0}
 --- !u!212 &14986091
 SpriteRenderer:
@@ -351,7 +351,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &14986093
 MonoBehaviour:
@@ -1407,7 +1407,7 @@ Camera:
   m_GameObject: {fileID: 294233380}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 4
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -1468,7 +1468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 14986092}
-  offset: {x: 0, y: 0, z: 0}
+  offset: {x: 0, y: 0, z: -10}
 --- !u!1 &322182907
 GameObject:
   m_ObjectHideFlags: 0
@@ -3064,6 +3064,8 @@ GameObject:
   m_Component:
   - component: {fileID: 723307702}
   - component: {fileID: 723307701}
+  - component: {fileID: 723307703}
+  - component: {fileID: 723307700}
   m_Layer: 6
   m_Name: Bed
   m_TagString: Untagged
@@ -3071,6 +3073,32 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!61 &723307700
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723307699}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -1.0094776}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2.5625}
+    newSize: {x: 2, y: 2.5625}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2, y: 0.54354465}
+  m_EdgeRadius: 0
 --- !u!212 &723307701
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3110,7 +3138,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_Sprite: {fileID: 2590456727276172604, guid: 4158a23a6c6e959429dda3d43794849b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3130,13 +3158,39 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 723307699}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.85, y: -11.8, z: 0}
+  m_LocalPosition: {x: -1.65, y: -12, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 9682771}
   m_Father: {fileID: 1809555537}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &723307703
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723307699}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.94025624}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2.5625}
+    newSize: {x: 2, y: 2.5625}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2, y: 0.6819875}
+  m_EdgeRadius: 0
 --- !u!1 &767426578
 GameObject:
   m_ObjectHideFlags: 0
@@ -5256,8 +5310,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9759e0b723cb7d4e86e721e634fa862, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  suggest: {fileID: 0}
-  YesSave: {fileID: 0}
+  suggest: {fileID: 404870792}
+  YesSave: {fileID: 2045618509}
 --- !u!1 &1527322310
 GameObject:
   m_ObjectHideFlags: 0
@@ -18221,7 +18275,7 @@ Transform:
   - {fileID: 1780606926}
   - {fileID: 723307702}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1822603007
 GameObject:
