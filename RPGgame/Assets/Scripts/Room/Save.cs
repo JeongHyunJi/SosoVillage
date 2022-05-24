@@ -24,11 +24,14 @@ public class Save : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
+        print("충돌");
+
         if (other.tag == "bed")
         {
+            
             suggest.SetActive(true);
             Time.timeScale = 0;
-            print("bed와 충돌");
+            
         }
     }
 

@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9682771}
   - component: {fileID: 9682772}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: entrance
   m_TagString: bed
   m_Icon: {fileID: 0}
@@ -186,6 +186,7 @@ GameObject:
   - component: {fileID: 14986087}
   - component: {fileID: 14986086}
   - component: {fileID: 14986093}
+  - component: {fileID: 14986085}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -193,6 +194,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &14986085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14986084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9759e0b723cb7d4e86e721e634fa862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  suggest: {fileID: 404870792}
+  YesSave: {fileID: 2045618509}
 --- !u!114 &14986086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,7 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!50 &14986087
 Rigidbody2D:
   serializedVersion: 4
@@ -258,7 +273,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.03}
@@ -286,7 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2b62281912623e478c894e4c1cce5bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6
+  moveSpeed: 7
   moveDirection: {x: 0, y: 0, z: 0}
 --- !u!212 &14986091
 SpriteRenderer:
@@ -1187,7 +1202,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.1677894, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1198,7 +1213,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.3355787, y: 1}
   m_EdgeRadius: 0
 --- !u!1839735485 &236114661
 Tilemap:
@@ -1321,7 +1336,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 14986085}
         m_TargetAssemblyTypeName: Save, Assembly-CSharp
         m_MethodName: BtnClick
         m_Mode: 1
@@ -1957,7 +1972,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.8500061, y: 0.8500061}
+  m_AnchoredPosition: {x: -0.8499756, y: 0.8500061}
   m_SizeDelta: {x: 15.35, y: 15.35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &404870794
@@ -5250,7 +5265,6 @@ GameObject:
   - component: {fileID: 1510151330}
   - component: {fileID: 1510151329}
   - component: {fileID: 1510151331}
-  - component: {fileID: 1510151332}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -5298,20 +5312,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textTimer: {fileID: 434750867}
   savePlayer: {fileID: 14986084}
---- !u!114 &1510151332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1510151328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9759e0b723cb7d4e86e721e634fa862, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  suggest: {fileID: 404870792}
-  YesSave: {fileID: 2045618509}
 --- !u!1 &1527322310
 GameObject:
   m_ObjectHideFlags: 0
@@ -5947,7 +5947,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 14986085}
         m_TargetAssemblyTypeName: Save, Assembly-CSharp
         m_MethodName: BtnClick
         m_Mode: 1
@@ -6560,7 +6560,7 @@ GameObject:
   - component: {fileID: 1773428310}
   - component: {fileID: 1773428313}
   - component: {fileID: 1773428312}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Interior_302
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6606,7 +6606,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1789276335
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_Sprite: {fileID: -3598363702719934221, guid: 1789244684c2d804bbf2ff419f425c53, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6645,7 +6645,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.08805066, y: -0.12775442}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -6656,7 +6656,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.1761013, y: 0.74449116}
   m_EdgeRadius: 0
 --- !u!1839735485 &1773428313
 Tilemap:
@@ -18670,7 +18670,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.14262116, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -18681,7 +18681,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.2852422, y: 1}
   m_EdgeRadius: 0
 --- !u!1839735485 &1926864349
 Tilemap:
@@ -18818,7 +18818,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.10906342, y: 0.05872655}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -18829,7 +18829,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.5872638, y: 1.1174529}
   m_EdgeRadius: 0
 --- !u!1839735485 &1983916006
 Tilemap:
