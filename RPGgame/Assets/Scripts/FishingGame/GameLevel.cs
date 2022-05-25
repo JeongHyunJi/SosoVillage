@@ -12,6 +12,7 @@ public class GameLevel : MonoBehaviour
     private void Start()
     {
         fishes = GameObject.FindGameObjectsWithTag("Fish");
+        System.Array.Sort<GameObject>(fishes, (x, y) => string.Compare(x.name, y.name));
         fishes[0].GetComponent<Image>().color = Color.white;
     }
     public void SelectLevel()
