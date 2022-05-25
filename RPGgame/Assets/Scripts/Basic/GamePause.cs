@@ -2,20 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GamePause : MonoBehaviour
 {
     public GameObject IsOpenMenuPanel;
-    // Start is called before the first frame update
+
     void Start()
     {
         IsOpenMenuPanel.SetActive(false);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
     public void pauseGame()
     {
@@ -25,9 +21,11 @@ public class GamePause : MonoBehaviour
     public void ClickIsOpen()
     {
         string BtnName = EventSystem.current.currentSelectedGameObject.name;
+
         if (BtnName == "openOkText")
         {
-            Hearts.heart--;
+            if(SceneManager.GetActiveScene().name!="GameCookingReal")
+                Hearts.heart--;
             IsOpenMenuPanel.SetActive(false);
             Time.timeScale = 1;
             MenuController menuController = FindObjectOfType<MenuController>();
