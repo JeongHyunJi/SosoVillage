@@ -9,6 +9,7 @@ public class GrowPlant : MonoBehaviour
     public FarmTimeController farmTimeController;
 
     public Sprite zero;
+    public Sprite start;
     public Sprite one;
     public Sprite two;
     public Sprite three;
@@ -18,6 +19,7 @@ public class GrowPlant : MonoBehaviour
     public int cur;
 
     Vector2 v_zero = new Vector2(100, 100);
+    Vector2 v_start = new Vector2(100, 70);
     Vector2 v_one = new Vector2(140, 70);
     Vector2 v_two = new Vector2(140, 120);
     Vector2 v_three = new Vector2(120, 180);
@@ -59,6 +61,11 @@ public class GrowPlant : MonoBehaviour
         {
             transform.gameObject.GetComponent<RectTransform>().sizeDelta = v_one;
             Plant.GetComponent<Image>().sprite = one;
+        }
+        else if(farmTimeController.score > 0)
+        {
+            transform.gameObject.GetComponent<RectTransform>().sizeDelta = v_start;
+            Plant.GetComponent<Image>().sprite = start;
         }
         else
         {

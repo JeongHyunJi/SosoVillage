@@ -5,8 +5,6 @@ using UnityEngine.UI;
 using System;
 using UnityEngine.EventSystems;
 
-
-
 public class CountFarmTime : MonoBehaviour
 {
     public static FarmTimeController[] farmTimeControllers = new FarmTimeController[6];
@@ -14,17 +12,19 @@ public class CountFarmTime : MonoBehaviour
 
     public GameObject savePlayer;
     private GameObject ThisButton;
-
+    private GameObject[] farmList;
     private void Awake()
     {
         if (TimeController.isStart)
         {
-            farmTimeControllers[0] = GameObject.FindGameObjectsWithTag("Farm")[0].GetComponent<FarmTimeController>();
-            farmTimeControllers[1] = GameObject.FindGameObjectsWithTag("Farm")[1].GetComponent<FarmTimeController>();
-            farmTimeControllers[2] = GameObject.FindGameObjectsWithTag("Farm")[2].GetComponent<FarmTimeController>();
-            farmTimeControllers[3] = GameObject.FindGameObjectsWithTag("Farm")[3].GetComponent<FarmTimeController>();
-            farmTimeControllers[4] = GameObject.FindGameObjectsWithTag("Farm")[4].GetComponent<FarmTimeController>();
-            farmTimeControllers[5] = GameObject.FindGameObjectsWithTag("Farm")[5].GetComponent<FarmTimeController>();
+            farmList = GameObject.FindGameObjectsWithTag("Farm");
+            System.Array.Sort<GameObject>(farmList, (x, y) => string.Compare(x.name, y.name));
+            farmTimeControllers[0] = farmList[0].GetComponent<FarmTimeController>();
+            farmTimeControllers[1] = farmList[1].GetComponent<FarmTimeController>();
+            farmTimeControllers[2] = farmList[2].GetComponent<FarmTimeController>();
+            farmTimeControllers[3] = farmList[3].GetComponent<FarmTimeController>();
+            farmTimeControllers[4] = farmList[4].GetComponent<FarmTimeController>();
+            farmTimeControllers[5] = farmList[5].GetComponent<FarmTimeController>();
             for (int i = 0; i < 6; i++)
             {
                 ClickCheck[i] = PlayerPrefs.HasKey("BtnClickTime" + i);
@@ -85,7 +85,7 @@ public class CountFarmTime : MonoBehaviour
                     }
                     else
                     {
-                        farmTimeControllers[i].score=(int)farmTimeControllers[i].totalMin;
+                        farmTimeControllers[i].score=(float)farmTimeControllers[i].totalMin;
                     }
                 //}
             }

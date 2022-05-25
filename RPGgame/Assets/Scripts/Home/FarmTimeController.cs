@@ -8,5 +8,5 @@ public class FarmTimeController:MonoBehaviour
     public DateTime stTime;
     public DateTime curTime;
     public double totalMin;
-    public int score;
+    public float score;
 }

@@ -12,7 +12,8 @@ public class MenuManager : MonoBehaviour
     public GameObject Map;
     public GameObject SaveCheckPanel;
     public GameObject QuitCheckPanel;
-    private GameObject[] MainInv; //inventoryµé
+    public GameObject MainInv;
+    //private GameObject[] MainInv; //inventoryµé
     // public Texture2D cursorImg;
 
     public Text playerName;
@@ -36,11 +37,11 @@ public class MenuManager : MonoBehaviour
         heart = savePlayer.GetComponent<SavePlayer>().ReturnHeart();
         hearts.text = heart + " EA";
         inventory = savePlayer.GetComponent<SavePlayer>().ReturnInvent();
-        MainInv = GameObject.FindGameObjectsWithTag("MenuInv");
+        //MainInv = GameObject.FindGameObjectsWithTag("MenuInv");
         for (int i = 0; i < 8; i++)
         {
-            MainInv[i].GetComponent<UnityEngine.UI.Text>().text = "x " + inventory[i];
-            print(MainInv[i]);
+            MainInv.transform.GetChild(i).gameObject.GetComponent<UnityEngine.UI.Text>().text = "x " + inventory[i];
+            //print(MainInv[i]);
         }
         Paused.SetActive(false);
         Map.SetActive(false);
@@ -70,7 +71,7 @@ public class MenuManager : MonoBehaviour
     public void GotoHome()
     {
         if (sceneName != "Home")
-            SavePosition.currentPosition = new Vector2(6, -16);
+            SavePosition.currentPosition = new Vector2(6.5f, -16);
         SceneManager.LoadScene("Home");
     }
     public void GotoForest()
