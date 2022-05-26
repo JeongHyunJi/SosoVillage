@@ -24,7 +24,7 @@ public class GamePause : MonoBehaviour
 
         if (BtnName == "openOkText")
         {
-            if(SceneManager.GetActiveScene().name!="GameCookingReal")
+            if (SceneManager.GetActiveScene().name != "GameCookingReal")
                 Hearts.heart--;
             IsOpenMenuPanel.SetActive(false);
             Time.timeScale = 1;
