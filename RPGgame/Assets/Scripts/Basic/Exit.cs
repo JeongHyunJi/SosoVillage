@@ -7,6 +7,11 @@ public class Exit : MonoBehaviour
 {
     public void MoveToHome()
     {
-        SceneManager.LoadScene("Home");
+        if (SceneManager.GetActiveScene().name == "Store")
+        {
+            SceneManager.LoadScene(Variables.asName);
+        }
+        //SavePosition.currentPosition = new Vector2(6.5f, -16);
+        else { SceneManager.LoadScene("Home"); }
     }
 }

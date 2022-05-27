@@ -19,7 +19,6 @@ public class Save : MonoBehaviour
         suggest.SetActive(false);
         YesSave.SetActive(false);
         pos = this.gameObject.transform.position;
-        print(pos);
     }
 
     public void OnTriggerEnter2D(Collider2D other)
