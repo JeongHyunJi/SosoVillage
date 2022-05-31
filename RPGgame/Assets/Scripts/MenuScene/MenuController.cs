@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public static class Variables
 {
     public static string asName = "MenuScene";
+    public static bool IsGameGoing = false;
 }
 
 public class MenuController : MonoBehaviour

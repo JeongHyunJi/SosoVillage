@@ -37,6 +37,7 @@ public class GameFishing : MonoBehaviour
 
     public void Move() //fixedupdate 고정된 프레임마다 update
     {
+        Variables.IsGameGoing = true;
         if (transform.position.x > 4.5)
             direction = false;
         else if (transform.position.x < -5.5)
