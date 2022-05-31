@@ -52,7 +52,10 @@ public class ShootingManager : MonoBehaviour
         else if (TickTime <= 2)
             startTime.text = "1";
         else if (TickTime <= 3)
+        {
             startTime.text = "start";
+            Variables.IsGameGoing = true;
+        }  
         else if (TickTime >= DestroyTime)
         {
             startTime.text = "";
@@ -68,6 +71,7 @@ public class ShootingManager : MonoBehaviour
     public void GameOver(bool isPlayerWin)
     {
         gameGoing = false;
+        Variables.IsGameGoing = false;
         Hearts.heart--;
         Hearts.HeartControll();
         gameoverText.SetActive(true);

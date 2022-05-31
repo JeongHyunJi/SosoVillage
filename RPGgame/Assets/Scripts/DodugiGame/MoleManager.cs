@@ -15,6 +15,7 @@ public class MoleManager : MonoBehaviour
     public GameObject ExitText;
     public Text ClearText;
     public GameObject FailText;
+    public GameObject TutorialPanel;
 
 
     private float time;
@@ -32,6 +33,7 @@ public class MoleManager : MonoBehaviour
         FailText.SetActive(false);
         RetryText.SetActive(false);
         ExitText.SetActive(false);
+        TutorialPanel.SetActive(false);
         //IsOpenMenuPanel.SetActive(false);
         StartCoroutine("TimeAttack");
         saveplayer = FindObjectOfType<SavePlayer>();
@@ -48,6 +50,7 @@ public class MoleManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         startTime.text = "";
         time = 15;
+        Variables.IsGameGoing = true;
         while (true)
         {
             time -= Time.deltaTime;
@@ -56,6 +59,7 @@ public class MoleManager : MonoBehaviour
             if(time <= 0 )
             {
                 StopAllCoroutines();
+                Variables.IsGameGoing = false;
                 MoleSpawner moleSpawner = FindObjectOfType<MoleSpawner>();
                 moleSpawner.EndGame();
                 gameoverText.SetActive(true);
