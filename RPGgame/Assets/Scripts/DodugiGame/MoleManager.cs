@@ -15,7 +15,6 @@ public class MoleManager : MonoBehaviour
     public GameObject ExitText;
     public Text ClearText;
     public GameObject FailText;
-    public GameObject TutorialPanel;
 
 
     private float time;
@@ -33,7 +32,6 @@ public class MoleManager : MonoBehaviour
         FailText.SetActive(false);
         RetryText.SetActive(false);
         ExitText.SetActive(false);
-        TutorialPanel.SetActive(false);
         //IsOpenMenuPanel.SetActive(false);
         StartCoroutine("TimeAttack");
         saveplayer = FindObjectOfType<SavePlayer>();

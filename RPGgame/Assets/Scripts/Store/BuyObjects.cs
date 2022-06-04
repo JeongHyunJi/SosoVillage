@@ -11,7 +11,6 @@ public class BuyObjects : MonoBehaviour
     public Text CheckText;
     public Text AlarmText;
     string ObjectName = "nothing";
-    public GameObject TutorialPanel;
     public void OffAlarm()
     {
         Alarm.SetActive(false);
@@ -30,7 +29,6 @@ public class BuyObjects : MonoBehaviour
         }
         OffAlarm();
         CheckPanel.SetActive(false);
-        TutorialPanel.SetActive(false);
     }
 
     private void PrintAlarm(int use,string type)
