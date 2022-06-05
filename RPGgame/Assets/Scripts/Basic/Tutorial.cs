@@ -8,6 +8,8 @@ public class Tutorial : MonoBehaviour
     public GameObject tutorialPanel;
     public GameObject[] Page;
     private int curPage = 0;
+    public GameObject nextIcon;
+    public GameObject backIcon;
     private void Start()
     {
         tutorialPanel = GameObject.FindGameObjectWithTag("Tutorial");
@@ -17,6 +19,7 @@ public class Tutorial : MonoBehaviour
         {
             Page[i].SetActive(false);
         }
+        backIcon.SetActive(false);
     }
 
     public void TutorialClose()
@@ -31,6 +34,25 @@ public class Tutorial : MonoBehaviour
             Page[curPage].SetActive(false);
             curPage++;
             Page[curPage].SetActive(true);
+            backIcon.SetActive(true);
+        }
+        if (curPage+1 == Page.Length)
+        {
+            nextIcon.SetActive(false);
+        }
+    }
+    public void PreviousPage()
+    {
+        if (curPage >  0)
+        {
+            Page[curPage].SetActive(false);
+            curPage--;
+            Page[curPage].SetActive(true);
+            nextIcon.SetActive(true);
+        }
+        if (curPage == 0)
+        {
+            backIcon.SetActive(false);
         }
     }
 }

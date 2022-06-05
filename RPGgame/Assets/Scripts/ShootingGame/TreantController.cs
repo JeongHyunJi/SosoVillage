@@ -93,11 +93,10 @@ public class TreantController : MonoBehaviour
         StartCoroutine("HitColorAnimation");
         if (treantHP <= 0)
         {
-            Debug.Log("Treant Dead");
-            //treant Á×´ÂÈ¿°ú
+            Destroy(gameObject);
             player.StopMove();
             shootingManager.GameOver(true);
-            Destroy(gameObject);
+            
         }
     }
 

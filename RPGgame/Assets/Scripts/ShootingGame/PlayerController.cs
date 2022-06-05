@@ -76,11 +76,10 @@ public class PlayerController : MonoBehaviour
         StartCoroutine("HitColorAnimation");
         if(playerHP <= 0)
         {
-            //player ав╢б х©╟З
-            Debug.Log("Player Dead");
+            Destroy(gameObject);;
             enemy.StopEnemy();
             shootingManager.GameOver(false);
-            Destroy(gameObject);
+            
         }    
     }
 
