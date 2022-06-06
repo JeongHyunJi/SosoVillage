@@ -40,6 +40,7 @@ public class Tutorial : MonoBehaviour
         {
             nextIcon.SetActive(false);
         }
+        print("next");
     }
     public void PreviousPage()
     {

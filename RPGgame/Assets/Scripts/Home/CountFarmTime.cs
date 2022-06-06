@@ -13,8 +13,10 @@ public class CountFarmTime : MonoBehaviour
     public GameObject savePlayer;
     private GameObject ThisButton;
     private GameObject[] farmList;
+    public GameObject ResetAlarm;
     private void Awake()
     {
+        ResetAlarm.SetActive(false);
         if (TimeController.isStart)
         {
             farmList = GameObject.FindGameObjectsWithTag("Farm");
@@ -31,6 +33,7 @@ public class CountFarmTime : MonoBehaviour
             }
         }
     }
+
     public void BtnClick()
     {
         ThisButton = EventSystem.current.currentSelectedGameObject;
@@ -40,6 +43,7 @@ public class CountFarmTime : MonoBehaviour
         if (farmTimeControllers[cur].score == 24) //24분 경과 후 => 옥수수 맺힌 후
         {
             savePlayer.GetComponent<SavePlayer>().GetCorn();
+            //farmTimeControllers[cur].score = 0;
         }
         else if (farmTimeControllers[cur].score == 0) //초기화 상태
         {
@@ -49,6 +53,17 @@ public class CountFarmTime : MonoBehaviour
         }
         else //옥수수 익는 중
         {
+            //ResetAlarm.SetActive(true);
+            //if (ThisButton.name == "text_ok")
+            //{
+            //    ResetAlarm.SetActive(false);
+            //    Reset(cur);
+            //    farmTimeControllers[cur].score = 0;
+            //}
+            //else if (ThisButton.name == "text_cancel")
+            //{
+            //    ResetAlarm.SetActive(false);
+            //}
             Reset(cur);
         }
         farmTimeControllers[cur].score = 0;
