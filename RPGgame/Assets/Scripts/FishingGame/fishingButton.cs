@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class fishingButton : MonoBehaviour
 {
-    public static bool buttonControll = false; // true¸é Âî°¡ ¸ØÃã
+    public static bool buttonControll = true; // true¸é Âî°¡ ¸ØÃã
     public GameObject button;
     public Text buttonText;
     public static bool isSuccess = false;

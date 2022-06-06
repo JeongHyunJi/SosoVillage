@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Tutorial : MonoBehaviour
 {
@@ -10,16 +11,27 @@ public class Tutorial : MonoBehaviour
     private int curPage = 0;
     public GameObject nextIcon;
     public GameObject backIcon;
+    private SavePlayer savePlayer;
     private void Start()
     {
+        int sceneNum = SceneManager.GetActiveScene().buildIndex;
+        print(sceneNum);
+        savePlayer = FindObjectOfType<SavePlayer>();
         tutorialPanel = GameObject.FindGameObjectWithTag("Tutorial");
-        //if(savePlayer.tutorial)
-        tutorialPanel.SetActive(true);
-        for (int i = 1; i < Page.Length; i++)
+        if (savePlayer.GetTutorial(sceneNum))
         {
-            Page[i].SetActive(false);
+            tutorialPanel.SetActive(true);
+            for (int i = 1; i < Page.Length; i++)
+            {
+                Page[i].SetActive(false);
+            }
+            backIcon.SetActive(false);
+            savePlayer.SetTutorial(sceneNum);
         }
-        backIcon.SetActive(false);
+        else
+        {
+            tutorialPanel.SetActive(false);
+        }
     }
 
     public void TutorialClose()

@@ -20,7 +20,7 @@ public class CountPlayTime : MonoBehaviour
 {
     public Text textTimer;
     public GameObject savePlayer;
-
+    public GameObject filter;
     //처음 시작 시간을 카운트 할 수 있도록
     //public string check = "None";
 
@@ -39,6 +39,13 @@ public class CountPlayTime : MonoBehaviour
         if (textTimer)
         {
             textTimer.text = "time " + TimeController.time.ToString("yyyy-MM-dd\n tt h:mm");
+        }
+        if (filter)
+        {
+            if (TimeController.time.Hour < 6 || TimeController.time.Hour > 21) { filter.GetComponent<Image>().color = new Color(0, 0, 22, 181); } // 한밤중
+            else if (TimeController.time.Hour < 9) { filter.GetComponent<Image>().color = new Color(0, 0, 87, 174); } // 새벽녘
+            else if (TimeController.time.Hour < 18) { filter.GetComponent<Image>().color = new Color(255, 255, 255, 0); } // 낮
+            else if (TimeController.time.Hour < 21) { filter.GetComponent<Image>().color = new Color(135, 0, 0, 51); } //해질녘
         }
     }
 }

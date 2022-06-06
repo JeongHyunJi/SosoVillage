@@ -10,6 +10,7 @@ public class SavePlayer : MonoBehaviour
     private static int coin;
     private static int[] inventory = new int[8]; //æææ—, ø¡ºˆºˆ, ªß(æ»¿Õ¿Ω), ªß(¿ﬂ¿Õ¿Ω), ªß(≈Ω)
     private static string times;
+    private static string tutCheck;
     private bool IsSave;
     // Start is called before the first frame update
     void Awake()
@@ -26,6 +27,7 @@ public class SavePlayer : MonoBehaviour
                 DateTime startDate = new DateTime(1900, 1, 1, 9, 0, 0);
                 times = startDate.ToString(); //yyyy,mm,dd,hh,mm -> √ ±‚ºº∆√ : 1900/1/1/ am 9:00 
                 Hearts.heart = 5;
+                tutCheck = "000000000";
             }
             else
             {
@@ -42,6 +44,7 @@ public class SavePlayer : MonoBehaviour
                 inventory[7] = PlayerPrefs.GetInt("saved_8"); // ≈´ π∞∞Ì±‚
                 times = PlayerPrefs.GetString("saved_time");
                 Hearts.heart = PlayerPrefs.GetInt("saved_hearts");
+                tutCheck = PlayerPrefs.GetString("tutCheck");
             }
         }
     }
@@ -57,6 +60,7 @@ public class SavePlayer : MonoBehaviour
         DateTime startDate = new DateTime(1900, 1, 1, 9, 0, 0);
         times = startDate.ToString(); //yyyy,mm,dd,hh,mm -> √ ±‚ºº∆√ : 1900/1/1/ am 9:00 
         Hearts.heart = 5;
+        tutCheck = "000000000";
     }
 
     public bool IsSaveExist()
@@ -153,6 +157,16 @@ public class SavePlayer : MonoBehaviour
     {
         return inventory;
     }
+    public bool GetTutorial(int num)
+    {
+        print(tutCheck);
+        return tutCheck[num] == '0';
+    }
+    public void SetTutorial(int num)
+    {
+        tutCheck = string.Format("{0:D9}", int.Parse(tutCheck) + (int)Math.Pow(10,8-num));
+        print(tutCheck);
+    }
 
     public void SaveContent()
     {
@@ -168,6 +182,7 @@ public class SavePlayer : MonoBehaviour
         PlayerPrefs.SetInt("saved_8", inventory[7]);
         PlayerPrefs.SetString("saved_time", TimeController.time.ToString());
         PlayerPrefs.SetInt("saved_hearts", Hearts.heart);
+        PlayerPrefs.SetString("tutCheck", tutCheck);
         PlayerPrefs.Save();
     }
 }
