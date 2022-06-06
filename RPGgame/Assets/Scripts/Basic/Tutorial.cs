@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class Tutorial : MonoBehaviour
 {
@@ -52,6 +53,7 @@ public class Tutorial : MonoBehaviour
         {
             nextIcon.SetActive(false);
         }
+        print("next");
     }
     public void PreviousPage()
     {
