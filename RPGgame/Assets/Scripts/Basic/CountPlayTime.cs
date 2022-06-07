@@ -42,7 +42,7 @@ public class CountPlayTime : MonoBehaviour
         }
         if (filter)
         {
-            if (TimeController.time.Hour < 6 || TimeController.time.Hour > 21) { filter.GetComponent<Image>().color = new Color(0, 0, 22/255f, 181 / 255f); } // «—π„¡ﬂ
+            if (TimeController.time.Hour < 6 || TimeController.time.Hour >= 21) { filter.GetComponent<Image>().color = new Color(0, 0, 22 / 255f, 181 / 255f); } // «—π„¡ﬂ
             else if (TimeController.time.Hour < 9) { filter.GetComponent<Image>().color = new Color(0, 0, 87 / 255f, 174 / 255f); } // ªı∫Æ≥Ë
             else if (TimeController.time.Hour < 18) { filter.GetComponent<Image>().color = new Color(255, 255, 255, 0); } // ≥∑
             else if (TimeController.time.Hour < 21) { filter.GetComponent<Image>().color = new Color(135 / 255f, 0, 0, 51 / 255f); } //«ÿ¡˙≥Ë
