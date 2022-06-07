@@ -6,7 +6,6 @@ using UnityEngine.EventSystems;
 
 public class Tutorial : MonoBehaviour
 {
-    // Start is called before the first frame update
     public GameObject tutorialPanel;
     public GameObject[] Page;
     private int curPage = 0;
