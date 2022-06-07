@@ -25,7 +25,10 @@ public class Tutorial : MonoBehaviour
             {
                 Page[i].SetActive(false);
             }
-            backIcon.SetActive(false);
+            if(backIcon != null)
+            {
+                backIcon.SetActive(false);
+            }
             savePlayer.SetTutorial(sceneNum);
         }
         else
