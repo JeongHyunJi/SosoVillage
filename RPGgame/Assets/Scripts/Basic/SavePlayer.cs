@@ -27,7 +27,7 @@ public class SavePlayer : MonoBehaviour
                 DateTime startDate = new DateTime(1900, 1, 1, 9, 0, 0);
                 times = startDate.ToString(); //yyyy,mm,dd,hh,mm -> 초기세팅 : 1900/1/1/ am 9:00 
                 Hearts.heart = 5;
-                tutCheck = "000000000";
+                tutCheck = "0000000000";
             }
             else
             {
@@ -60,7 +60,7 @@ public class SavePlayer : MonoBehaviour
         DateTime startDate = new DateTime(1900, 1, 1, 9, 0, 0);
         times = startDate.ToString(); //yyyy,mm,dd,hh,mm -> 초기세팅 : 1900/1/1/ am 9:00 
         Hearts.heart = 5;
-        tutCheck = "000000000";
+        tutCheck = "0000000000";
     }
 
     public bool IsSaveExist()
@@ -164,7 +164,7 @@ public class SavePlayer : MonoBehaviour
     }
     public void SetTutorial(int num)
     {
-        tutCheck = string.Format("{0:D9}", int.Parse(tutCheck) + (int)Math.Pow(10,8-num));
+        tutCheck = string.Format("{0:D10}", int.Parse(tutCheck) + (int)Math.Pow(10,9-num));
         print(tutCheck);
     }
 
