@@ -67,9 +67,7 @@ public class CountFarmTime : MonoBehaviour
                 ResetAlarm.SetActive(false);
             }
             Time.timeScale = 1;
-            //Reset(cur);
         }
-        //farmTimeControllers[cur].score = 0;
     }
 
     public void Reset(int i)

@@ -137,15 +137,15 @@ public class TimerManager : MonoBehaviour
 
     public void PrintFinalY()
     {
-        btn_text.text = "You can get a bread!";
+        btn_text.text = "Get a Well baked bread!!";
     }
     public void PrintFinalN_Not()
     {
-        btn_text.text = "You get a Not Baked Bread!";
+        btn_text.text = "Get a Not Baked Bread..";
     }
     public void PrintFinalN_Burn()
     {
-        btn_text.text = "You get a Burned Bread!";
+        btn_text.text = "Get a Burned Bread!";
     }
 
     public void SceneChange()

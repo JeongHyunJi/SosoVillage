@@ -17,7 +17,6 @@ public class Tutorial : MonoBehaviour
         int sceneNum = SceneManager.GetActiveScene().buildIndex;
         print(sceneNum);
         savePlayer = FindObjectOfType<SavePlayer>();
-        //tutorialPanel = GameObject.FindGameObjectWithTag("Tutorial");
         if (savePlayer.GetTutorial(sceneNum))
         {
             tutorialPanel.SetActive(true);
@@ -66,7 +65,6 @@ public class Tutorial : MonoBehaviour
         {
             nextIcon.SetActive(false);
         }
-        print("next");
     }
     public void PreviousPage()
     {

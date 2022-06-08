@@ -8,11 +8,11 @@ public class SavePlayer : MonoBehaviour
 {
     private static string playerName; //매 씬마다 값이 초기화 되는 것을 방지하기 위해 static으로 변수 선언
     private static int coin;
-    private static int[] inventory = new int[8]; //씨앗, 옥수수, 빵(안익음), 빵(잘익음), 빵(탐)
+    private static int[] inventory = new int[8]; //씨앗, 옥수수, 빵(안익음), 빵(잘익음), 빵(탐), 물고기(소,중,대)
     private static string times;
     private static string tutCheck;
     private bool IsSave;
-    // Start is called before the first frame update
+
     void Awake()
     {
         IsSave = PlayerPrefs.HasKey("saved_name");

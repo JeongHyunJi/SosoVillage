@@ -19,6 +19,7 @@ public class SceneChange : MonoBehaviour
             print("baking");
             SavePosition.setPosition(this.gameObject);
             SceneManager.LoadScene("GameCookingReal");
+            print("베이킹 입장요");
         }
 
         if (other.tag == "store")

@@ -29,7 +29,6 @@ public class Tutorial_inform : MonoBehaviour
         print(BtnName);
         if (BtnName == "FarmInfo")
         {
-            print("µé¾î°¨");
             tutorialPanel.SetActive(true);
             Panel[0].SetActive(true);
         }
