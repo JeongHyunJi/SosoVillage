@@ -17,7 +17,7 @@ public class Tutorial : MonoBehaviour
         int sceneNum = SceneManager.GetActiveScene().buildIndex;
         print(sceneNum);
         savePlayer = FindObjectOfType<SavePlayer>();
-        tutorialPanel = GameObject.FindGameObjectWithTag("Tutorial");
+        //tutorialPanel = GameObject.FindGameObjectWithTag("Tutorial");
         if (savePlayer.GetTutorial(sceneNum))
         {
             tutorialPanel.SetActive(true);
@@ -36,12 +36,23 @@ public class Tutorial : MonoBehaviour
             tutorialPanel.SetActive(false);
         }
     }
-
+    public void TutorialOpen()
+    {
+        tutorialPanel.SetActive(true);
+        for (int i = 1; i < Page.Length; i++)
+        {
+            Page[i].SetActive(false);
+        }
+        if (backIcon != null)
+        {
+            backIcon.SetActive(false);
+        }
+    }
     public void TutorialClose()
     {
         tutorialPanel.SetActive(false);
     }
-
+    
     public void NextPage()
     {
         if (curPage + 1 < Page.Length)
