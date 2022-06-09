@@ -19,15 +19,7 @@ public class Tutorial : MonoBehaviour
         savePlayer = FindObjectOfType<SavePlayer>();
         if (savePlayer.GetTutorial(sceneNum))
         {
-            tutorialPanel.SetActive(true);
-            for (int i = 1; i < Page.Length; i++)
-            {
-                Page[i].SetActive(false);
-            }
-            if(backIcon != null)
-            {
-                backIcon.SetActive(false);
-            }
+            TutorialOpen();
             savePlayer.SetTutorial(sceneNum);
         }
         else
@@ -37,10 +29,20 @@ public class Tutorial : MonoBehaviour
     }
     public void TutorialOpen()
     {
+        if(Time.timeScale == 1)
+        {
+            Time.timeScale = 0;
+        }
         tutorialPanel.SetActive(true);
+        Page[0].SetActive(true);
+        curPage = 0;
         for (int i = 1; i < Page.Length; i++)
         {
             Page[i].SetActive(false);
+        }
+        if(nextIcon != null)
+        {
+            nextIcon.SetActive(true);
         }
         if (backIcon != null)
         {
@@ -50,6 +52,10 @@ public class Tutorial : MonoBehaviour
     public void TutorialClose()
     {
         tutorialPanel.SetActive(false);
+        if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        }
     }
     
     public void NextPage()
