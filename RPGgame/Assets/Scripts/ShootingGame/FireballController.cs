@@ -16,8 +16,6 @@ public class FireballController : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            //player animation 실행 - playercontroller
-            //player 피감 - playercontroller
             player.TakeDamage(1f);
             Destroy(gameObject);
         }

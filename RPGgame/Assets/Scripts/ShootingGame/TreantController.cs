@@ -113,8 +113,8 @@ public class TreantController : MonoBehaviour
 
     public void StopEnemy()
     {
-        movement2D.MoveTo(new Vector3(0, 0, 0));
         StopCoroutine("FollowPlayer");
+        movement2D.MoveTo(new Vector3(0, 0, 0));
         StopCoroutine("AttackPlayer");
     }
 

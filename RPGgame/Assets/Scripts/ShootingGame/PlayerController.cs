@@ -71,12 +71,13 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        shootingManager.playSound("Hit");
         playerHP -= damage;
         StopCoroutine("HitColorAnimation");
         StartCoroutine("HitColorAnimation");
         if(playerHP <= 0)
         {
-            Destroy(gameObject);;
+            Destroy(gameObject);
             enemy.StopEnemy();
             shootingManager.GameOver(false);
             

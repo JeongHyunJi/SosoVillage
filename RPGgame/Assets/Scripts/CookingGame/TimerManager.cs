@@ -13,6 +13,8 @@ public class TimerManager : MonoBehaviour
     private Button ClickButton;
     public Text status_text;
     public Text btn_text;
+    public AudioClip ovensound;
+    AudioSource audioSource;
 
     //game
     bool GameStart = false; //게임 시작 Y/N 검사
@@ -32,6 +34,7 @@ public class TimerManager : MonoBehaviour
         breadSR = bread.GetComponent<SpriteRenderer>();
         NoCornAlarm.SetActive(false);
         MenuOpenAlarm.SetActive(false);
+        this.audioSource = GetComponent<AudioSource>();
     }
 
     //menu click
@@ -151,5 +154,15 @@ public class TimerManager : MonoBehaviour
     public void SceneChange()
     {
         SceneManager.LoadScene("Home");
+    }
+
+    public void ovenSound()
+    {
+        if (GameStart)
+        {
+            audioSource.clip = ovensound;
+            audioSource.Play();
+            Debug.Log("ovensound");
+        }
     }
 }

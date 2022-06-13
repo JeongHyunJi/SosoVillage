@@ -15,6 +15,10 @@ public class MoleManager : MonoBehaviour
     public GameObject ExitText;
     public Text ClearText;
     public GameObject FailText;
+    public AudioClip dodugiAttack;
+    public AudioClip winSound;
+    public AudioClip loseSound;
+    AudioSource audioSource;
 
 
     private float time;
@@ -35,6 +39,7 @@ public class MoleManager : MonoBehaviour
         //IsOpenMenuPanel.SetActive(false);
         StartCoroutine("TimeAttack");
         saveplayer = FindObjectOfType<SavePlayer>();
+        this.audioSource = GetComponent<AudioSource>();
     }
 
     private IEnumerator TimeAttack()
@@ -69,6 +74,7 @@ public class MoleManager : MonoBehaviour
     }
     public void PlusScore()
     {
+        playSound("Attack");
         score += 10;
         scoreText.text = "Score: " + (int)score;
     }
@@ -89,6 +95,7 @@ public class MoleManager : MonoBehaviour
         Hearts.HeartControll();
         if (score >= 70)
         {
+            playSound("Win");
             float coinF = score / 2;
             int coinI = (int)coinF;
             ClearText.text = "Clear! get " + coinI + "$";
@@ -96,8 +103,27 @@ public class MoleManager : MonoBehaviour
         }
        else
         {
+            playSound("Lose");
             ClearText.text = "";
             FailText.SetActive(true);
         }
+    }
+    void playSound(string soundName)
+    {
+        audioSource.volume = 1f;
+        switch (soundName)
+        {
+            case "Attack":
+                audioSource.clip = dodugiAttack;
+                audioSource.volume = 0.3f;
+                break;
+            case "Win":
+                audioSource.clip = winSound;
+                break;
+            case "Lose":
+                audioSource.clip = loseSound;
+                break;
+        }
+        audioSource.Play();
     }
 }

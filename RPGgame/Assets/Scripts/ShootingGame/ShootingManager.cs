@@ -24,6 +24,11 @@ public class ShootingManager : MonoBehaviour
     public GameObject FailText;
     SavePlayer saveplayer;
 
+    public AudioClip hitFire;
+    public AudioClip winSound;
+    public AudioClip loseSound;
+    AudioSource audioSource;
+
     private bool gameGoing = true;
     // Start is called before the first frame update
     void Start()
@@ -41,6 +46,7 @@ public class ShootingManager : MonoBehaviour
         ExitText.SetActive(false);
         //IsOpenMenuPanel.SetActive(false);
         saveplayer = FindObjectOfType<SavePlayer>();
+        this.audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -79,17 +85,36 @@ public class ShootingManager : MonoBehaviour
         ExitText.SetActive(true);
         if (isPlayerWin)
         {
+            playSound("Win");
             ClearText.SetActive(true);
             slider_enemyHP.gameObject.SetActive(false);
             saveplayer.GetCoins(30);
         }
         else
         {
+            playSound("Lose");
             FailText.SetActive(true);
             slider_playerHP.gameObject.SetActive(false);
         }
     }
-
+    public void playSound(string soundName)
+    {
+        audioSource.volume = 1f;
+        switch (soundName)
+        {
+            case "Hit":
+                audioSource.clip = hitFire;
+                audioSource.volume = 0.2f;
+                break;
+            case "Win":
+                audioSource.PlayOneShot(winSound); //PlayOneShot => 소리 동시출력 가능하게하는 함수!
+                break;
+            case "Lose":
+                audioSource.PlayOneShot(loseSound);
+                break;
+        }
+        audioSource.Play();
+    }
     public void clickRetry()
     {
         SceneManager.LoadScene("GameShooting");
