@@ -24,7 +24,7 @@ public class MoleManager : MonoBehaviour
     private float time;
     private float score;
 
-   SavePlayer saveplayer;
+    SavePlayer saveplayer;
 
     // Start is called before the first frame update
     void Start()

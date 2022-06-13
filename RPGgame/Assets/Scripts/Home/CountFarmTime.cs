@@ -14,6 +14,10 @@ public class CountFarmTime : MonoBehaviour
     private GameObject ThisButton;
     private GameObject[] farmList;
     public GameObject ResetAlarm;
+    public AudioClip sowSound;
+    public AudioClip harvestSound;
+    public AudioClip alert;
+    AudioSource audioSource;
     private void Awake()
     {
         ResetAlarm.SetActive(false);
@@ -34,16 +38,24 @@ public class CountFarmTime : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        this.audioSource = GetComponent<AudioSource>();
+    }
+
     public void BtnClick()
     {
         ThisButton = EventSystem.current.currentSelectedGameObject;
 
         int cur = (int)ThisButton.name[4] - 48;
         //이부분 수정 필요
-        if (farmTimeControllers[cur].score == 24) //24분 경과 후 => 옥수수 맺힌 후
+        if (farmTimeControllers[cur].score >= 24) //24분 경과 후 => 옥수수 맺힌 후
         {
             savePlayer.GetComponent<SavePlayer>().GetCorn();
             farmTimeControllers[cur].score = 0;
+            ClickCheck[cur] = false;
+            PlayerPrefs.DeleteKey("BtnClickTime" + cur);
+            playSound("Harvest");
         }
         else if (farmTimeControllers[cur].score == 0) //초기화 상태
         {
@@ -51,15 +63,17 @@ public class CountFarmTime : MonoBehaviour
             farmTimeControllers[cur].stTime = DateTime.Now;
             PlayerPrefs.SetString("BtnClickTime" + cur, farmTimeControllers[cur].stTime.ToString());
             farmTimeControllers[cur].score = 0;
+            playSound("Sow");
         }
         else //옥수수 익는 중
         {
             ResetAlarm.SetActive(true);
+            playSound("Alert");
             Time.timeScale = 0;
             if (ThisButton.name == "text_ok")
             {
                 ResetAlarm.SetActive(false);
-                Reset(cur);
+                ClickCheck[cur] = false;
                 farmTimeControllers[cur].score = 0;
             }
             else if (ThisButton.name == "text_cancel")
@@ -68,12 +82,6 @@ public class CountFarmTime : MonoBehaviour
             }
             Time.timeScale = 1;
         }
-    }
-
-    public void Reset(int i)
-    {
-        ClickCheck[i] = false;
-        PlayerPrefs.DeleteKey("BtnClickTime" + i);
     }
 
     public void Update()
@@ -95,11 +103,7 @@ public class CountFarmTime : MonoBehaviour
                 //시간차에 따른 Score 상승
                 //if (farmTimeControllers[i].diffHour == 0 && farmTimeControllers[i].diffMin == 0)
                 //{
-                    if (farmTimeControllers[i].totalMin >= 25)
-                    {
-                        Reset(i);
-                    }
-                    else
+                    if (farmTimeControllers[i].totalMin < 25)
                     {
                         farmTimeControllers[i].score=(float)farmTimeControllers[i].totalMin;
                     }
@@ -107,5 +111,23 @@ public class CountFarmTime : MonoBehaviour
             }
         }
 
+    }
+    void playSound(string soundName)
+    {
+        audioSource.volume = 1f;
+        switch (soundName)
+        {
+            case "Harvest":
+                audioSource.clip = harvestSound;
+                audioSource.volume = 0.5f;
+                break;
+            case "Sow":
+                audioSource.clip = sowSound;
+                break;
+            case "Alert":
+                audioSource.clip = alert;
+                break;
+        }
+        audioSource.Play();
     }
 }

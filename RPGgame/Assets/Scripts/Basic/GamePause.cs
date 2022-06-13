@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class GamePause : MonoBehaviour
 {
     public GameObject IsOpenMenuPanel;
+    public AudioSource audioSource;
 
     void Start()
     {
@@ -17,6 +18,7 @@ public class GamePause : MonoBehaviour
     {
         Time.timeScale = 0;
         IsOpenMenuPanel.SetActive(true);
+        audioSource.Play();
     }
     public void ClickIsOpen()
     {
