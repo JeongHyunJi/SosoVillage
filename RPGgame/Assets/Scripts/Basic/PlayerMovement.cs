@@ -23,9 +23,12 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer render;
     private Animator animator;
     private BoxCollider2D boxCollider;
-
     public LayerMask layerMask;
-    // Start is called before the first frame update
+    public AudioClip step_home;
+    public AudioClip step_room;
+    public AudioClip step_forest;
+    AudioSource audioSource;
+
     void Start()
     {
         render = GetComponent<SpriteRenderer>();
@@ -33,9 +36,26 @@ public class PlayerMovement : MonoBehaviour
         movement2D = GetComponent<Movement2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         transform.position = SavePosition.currentPosition;
+        this.audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
+    void PlaySound(string name)
+    {
+        if (name == "Home")
+        {
+            audioSource.clip = step_home;
+        }
+        else if (name == "room")
+        {
+            audioSource.clip = step_room;
+        }
+        else if (name == "forest")
+        {
+            audioSource.clip = step_forest;
+        }
+        audioSource.Play();
+    }
+
     void Update()
     {
         float x = Input.GetAxisRaw("Horizontal");
@@ -66,8 +86,20 @@ public class PlayerMovement : MonoBehaviour
             animator.SetFloat("Right", 0);
             animator.SetFloat("Up", -1);
         }
+
         if (x == 0 && y == 0)
             animator.SetBool("Walking", false);
+        else
+        {
+            string SceneName = SceneManager.GetActiveScene().name;
+            if (SceneName == "Home")
+                PlaySound("Home");
+            else if (SceneName == "Room")
+                PlaySound("Room");
+            else if (SceneName == "Forest")
+                PlaySound("Forest");
+            
+        }
 
         RaycastHit2D hit;
         Vector2 start = transform.position;

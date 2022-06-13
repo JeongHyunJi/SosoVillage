@@ -5,13 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour
 {
+    public AudioClip entrance;
+    AudioSource audioSource;
+
     void OnTriggerEnter2D(Collider2D other)
     {
+        this.audioSource = GetComponent<AudioSource>();
         if (other.tag == "house")
         {
             print("house");
             SavePosition.setPosition(this.gameObject);
             SceneManager.LoadScene("Room");
+            audioSource.clip = entrance;
+            audioSource.Play();
         }
 
         if (other.tag == "baking")
@@ -19,7 +25,8 @@ public class SceneChange : MonoBehaviour
             print("baking");
             SavePosition.setPosition(this.gameObject);
             SceneManager.LoadScene("GameCookingReal");
-            print("베이킹 입장요");
+            audioSource.clip = entrance;
+            audioSource.Play();
         }
 
         if (other.tag == "store")
@@ -27,6 +34,8 @@ public class SceneChange : MonoBehaviour
             print("store");
             SavePosition.setPosition(this.gameObject);
             SceneManager.LoadScene("Store");
+            audioSource.clip = entrance;
+            audioSource.Play();
         }
     }
 }

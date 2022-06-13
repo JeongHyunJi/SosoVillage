@@ -13,6 +13,8 @@ public class TimerManager : MonoBehaviour
     private Button ClickButton;
     public Text status_text;
     public Text btn_text;
+
+    //sound
     public AudioClip ovensound;
     AudioSource audioSource;
 

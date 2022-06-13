@@ -6,25 +6,28 @@ using UnityEngine.SceneManagement;
 public class SceneButton : MonoBehaviour
 {
     private string sceneName;
-    // Start is called before the first frame update
+    public AudioClip move;
+    AudioSource audioSource;
+
     void Start()
     {
         sceneName = SceneManager.GetActiveScene().name;
         Variables.asName = sceneName;
+        this.audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void Play()
     {
-        
+        audioSource.clip = move;
+        audioSource.Play();
     }
-
     public void GotoHome()
     {
         if (sceneName != "Home")
         {
             SavePosition.currentPosition = new Vector2(6.5f, -16);
             SceneManager.LoadScene("Home");
+            Play();
         }
     }
     public void GotoForest()
@@ -33,6 +36,7 @@ public class SceneButton : MonoBehaviour
         {
             SavePosition.currentPosition = new Vector2(0, 0);
             SceneManager.LoadScene("Forest");
+            Play();
         }
     }
     public void GotoStore()
@@ -40,5 +44,6 @@ public class SceneButton : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         SavePosition.SaveCurrentPosition(player);
         SceneManager.LoadScene("Store");
+        Play();
     }
 }
