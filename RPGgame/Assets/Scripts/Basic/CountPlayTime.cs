@@ -12,7 +12,7 @@ public static class TimeController
 
     public static void TimeCount()
     {
-        time = time.AddSeconds(5);
+        time = time.AddSeconds(3);
     }
 }
 
