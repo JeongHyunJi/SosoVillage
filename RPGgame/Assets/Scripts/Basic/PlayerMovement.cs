@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     public AudioClip step_room;
     public AudioClip step_forest;
     AudioSource audioSource;
+    bool SoundOn = false;
 
     void Start()
     {
@@ -45,11 +46,11 @@ public class PlayerMovement : MonoBehaviour
         {
             audioSource.clip = step_home;
         }
-        else if (name == "room")
+        else if (name == "Room")
         {
             audioSource.clip = step_room;
         }
-        else if (name == "forest")
+        else if (name == "Forest")
         {
             audioSource.clip = step_forest;
         }
@@ -88,9 +89,13 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if (x == 0 && y == 0)
+        {
             animator.SetBool("Walking", false);
+            //SoundOn = false;
+        }
         else
         {
+            //SoundOn = true;
             string SceneName = SceneManager.GetActiveScene().name;
             if (SceneName == "Home")
                 PlaySound("Home");
@@ -98,7 +103,6 @@ public class PlayerMovement : MonoBehaviour
                 PlaySound("Room");
             else if (SceneName == "Forest")
                 PlaySound("Forest");
-            
         }
 
         RaycastHit2D hit;
