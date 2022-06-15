@@ -33,7 +33,7 @@ public class CountFarmTime : MonoBehaviour
             farmTimeControllers[5] = farmList[5].GetComponent<FarmTimeController>();
             for (int i = 0; i < 6; i++)
             {
-                ClickCheck[i] = PlayerPrefs.HasKey("BtnClickTime" + i);
+                ClickCheck[i] = PlayerPrefs.HasKey("BtnClickTime" + i); //클릭했는지 여부를 playerpref을 통해 저장
             }
         }
     }
@@ -54,14 +54,14 @@ public class CountFarmTime : MonoBehaviour
             savePlayer.GetComponent<SavePlayer>().GetCorn();
             farmTimeControllers[cur].score = 0;
             ClickCheck[cur] = false;
-            PlayerPrefs.DeleteKey("BtnClickTime" + cur);
+            PlayerPrefs.DeleteKey("BtnClickTime" + cur); //수확 후 삭제
             playSound("Harvest");
         }
         else if (farmTimeControllers[cur].score == 0) //초기화 상태
         {
             ClickCheck[cur] = true;
             farmTimeControllers[cur].stTime = DateTime.Now;
-            PlayerPrefs.SetString("BtnClickTime" + cur, farmTimeControllers[cur].stTime.ToString());
+            PlayerPrefs.SetString("BtnClickTime" + cur, farmTimeControllers[cur].stTime.ToString()); //현재시간으로 저장
             farmTimeControllers[cur].score = 0;
             playSound("Sow");
         }
@@ -70,7 +70,7 @@ public class CountFarmTime : MonoBehaviour
             ResetAlarm.SetActive(true);
             playSound("Alert");
             Time.timeScale = 0;
-            if (ThisButton.name == "text_ok")
+            if (ThisButton.name == "text_ok") // 새로운 함수를 만들어서 위치를 옮겨야 할 듯
             {
                 ResetAlarm.SetActive(false);
                 ClickCheck[cur] = false;
@@ -103,10 +103,10 @@ public class CountFarmTime : MonoBehaviour
                 //시간차에 따른 Score 상승
                 //if (farmTimeControllers[i].diffHour == 0 && farmTimeControllers[i].diffMin == 0)
                 //{
-                    if (farmTimeControllers[i].totalMin < 25)
-                    {
+                    //if (farmTimeControllers[i].totalMin < 25)
+                    //{
                         farmTimeControllers[i].score=(float)farmTimeControllers[i].totalMin;
-                    }
+                    //}
                 //}
             }
         }
