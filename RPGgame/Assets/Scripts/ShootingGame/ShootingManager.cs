@@ -23,6 +23,7 @@ public class ShootingManager : MonoBehaviour
     public GameObject ClearText;
     public GameObject FailText;
     SavePlayer saveplayer;
+    BGMcontroller bgmController;
 
     public AudioClip hitFire;
     public AudioClip winSound;
@@ -37,6 +38,7 @@ public class ShootingManager : MonoBehaviour
             SceneManager.LoadScene("Forest");
         player = GameObject.Find("player").GetComponent<PlayerController>();
         enemy = GameObject.Find("treant").GetComponent<TreantController>();
+        bgmController = GameObject.Find("bgm").GetComponent<BGMcontroller>();
         playerStartHP = player.playerHP;
         enemyStartHP = enemy.treantHP;
         gameoverText.SetActive(false);
@@ -96,6 +98,7 @@ public class ShootingManager : MonoBehaviour
             FailText.SetActive(true);
             slider_playerHP.gameObject.SetActive(false);
         }
+        bgmController.stopBGM();
     }
     public void playSound(string soundName)
     {
