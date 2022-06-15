@@ -18,6 +18,8 @@ public class CountFarmTime : MonoBehaviour
     public AudioClip harvestSound;
     public AudioClip alert;
     AudioSource audioSource;
+    int cur = 0;
+
     private void Awake()
     {
         ResetAlarm.SetActive(false);
@@ -46,8 +48,9 @@ public class CountFarmTime : MonoBehaviour
     public void BtnClick()
     {
         ThisButton = EventSystem.current.currentSelectedGameObject;
+        if (ThisButton.name[0] != 't')
+            cur = (int)ThisButton.name[4] - 48;
 
-        int cur = (int)ThisButton.name[4] - 48;
         //이부분 수정 필요
         if (farmTimeControllers[cur].score >= 24) //24분 경과 후 => 옥수수 맺힌 후
         {
