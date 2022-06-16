@@ -16,6 +16,7 @@ public class TimerManager : MonoBehaviour
 
     //sound
     public AudioClip ovensound;
+    public AudioClip timersound;
     AudioSource audioSource;
 
     //game
@@ -31,12 +32,15 @@ public class TimerManager : MonoBehaviour
     float cooking_time = 3.5f;
     float rest_time = 1.0f;
 
+    BGMcontroller bgmController;
+
     void Start()
     {
         breadSR = bread.GetComponent<SpriteRenderer>();
         NoCornAlarm.SetActive(false);
         MenuOpenAlarm.SetActive(false);
         this.audioSource = GetComponent<AudioSource>();
+        bgmController = GameObject.Find("bgm").GetComponent<BGMcontroller>();
     }
 
     //menu click
@@ -160,11 +164,16 @@ public class TimerManager : MonoBehaviour
 
     public void ovenSound()
     {
-        if (GameStart)
+        if(!GameStart)
+        {
+            audioSource.clip = timersound;
+            audioSource.Play();
+        }
+        else if (GameStart)
         {
             audioSource.clip = ovensound;
             audioSource.Play();
-            Debug.Log("ovensound");
+            bgmController.stopBGM();
         }
     }
 }

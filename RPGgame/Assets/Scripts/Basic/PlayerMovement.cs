@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     public AudioClip step_forest;
     AudioSource audioSource;
     bool SoundOn = false;
+    bool MoveFirst = false;
 
     void Start()
     {
@@ -91,18 +92,22 @@ public class PlayerMovement : MonoBehaviour
         if (x == 0 && y == 0)
         {
             animator.SetBool("Walking", false);
-            //SoundOn = false;
+            audioSource.Stop();
+            MoveFirst = false;
         }
         else
         {
-            //SoundOn = true;
             string SceneName = SceneManager.GetActiveScene().name;
-            if (SceneName == "Home")
-                PlaySound("Home");
-            else if (SceneName == "Room")
-                PlaySound("Room");
-            else if (SceneName == "Forest")
-                PlaySound("Forest");
+            if (MoveFirst == false) //처음 움직인 경우
+            {
+                if (SceneName == "Home")
+                    PlaySound("Home");
+                else if (SceneName == "Room")
+                    PlaySound("Room");
+                else if (SceneName == "Forest")
+                    PlaySound("Forest");
+                MoveFirst = true;
+            }
         }
 
         RaycastHit2D hit;

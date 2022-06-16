@@ -8,6 +8,12 @@ public class SceneChange : MonoBehaviour
     public AudioClip entrance;
     AudioSource audioSource;
 
+    void PlaySound()
+    {
+        audioSource.clip = entrance;
+        audioSource.Play();
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         this.audioSource = GetComponent<AudioSource>();
@@ -16,8 +22,7 @@ public class SceneChange : MonoBehaviour
             print("house");
             SavePosition.setPosition(this.gameObject);
             SceneManager.LoadScene("Room");
-            audioSource.clip = entrance;
-            audioSource.Play();
+            PlaySound();
         }
 
         if (other.tag == "baking")
@@ -25,8 +30,7 @@ public class SceneChange : MonoBehaviour
             print("baking");
             SavePosition.setPosition(this.gameObject);
             SceneManager.LoadScene("GameCookingReal");
-            audioSource.clip = entrance;
-            audioSource.Play();
+            PlaySound();
         }
 
         if (other.tag == "store")
@@ -34,8 +38,7 @@ public class SceneChange : MonoBehaviour
             print("store");
             SavePosition.setPosition(this.gameObject);
             SceneManager.LoadScene("Store");
-            audioSource.clip = entrance;
-            audioSource.Play();
+            PlaySound();
         }
     }
 }
