@@ -12,14 +12,11 @@ public class GameOver : MonoBehaviour
     public AudioClip loseSound;
     AudioSource audioSource;
 
-    BGMcontroller bgmController;
-
     // Start is called before the first frame update
     void Start()
     {
         gameoverPanel.SetActive(false);
         this.audioSource = GetComponent<AudioSource>();
-        bgmController = GameObject.Find("bgm").GetComponent<BGMcontroller>();
     }
     public void Gameover()
     {
@@ -29,7 +26,6 @@ public class GameOver : MonoBehaviour
             playSound("Win");
         else
             playSound("Lose");
-        bgmController.stopBGM();
         gameoverPanel.SetActive(true);
         Variables.IsGameGoing = false;
         Hearts.heart--;

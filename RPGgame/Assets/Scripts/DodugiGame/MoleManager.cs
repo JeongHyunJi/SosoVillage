@@ -25,7 +25,6 @@ public class MoleManager : MonoBehaviour
     private float score;
 
     SavePlayer saveplayer;
-    BGMcontroller bgmController;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +40,6 @@ public class MoleManager : MonoBehaviour
         StartCoroutine("TimeAttack");
         saveplayer = FindObjectOfType<SavePlayer>();
         this.audioSource = GetComponent<AudioSource>();
-        bgmController = GameObject.Find("bgm").GetComponent<BGMcontroller>();
     }
 
     private IEnumerator TimeAttack()
@@ -110,7 +108,6 @@ public class MoleManager : MonoBehaviour
             ClearText.text = "";
             FailText.SetActive(true);
         }
-        bgmController.stopBGM();
     }
     void playSound(string soundName)
     {
