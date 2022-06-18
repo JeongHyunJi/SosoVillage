@@ -122,7 +122,6 @@ public class CountFarmTime : MonoBehaviour
         {
             case "Harvest":
                 audioSource.clip = harvestSound;
-                audioSource.volume = 0.5f;
                 break;
             case "Sow":
                 audioSource.clip = sowSound;
