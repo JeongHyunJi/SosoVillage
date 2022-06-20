@@ -43,9 +43,15 @@ public class SceneController : MonoBehaviour
         if (Hearts.heart != 0)
         {
             if (other.gameObject.CompareTag("treants"))
+            {
+                SavePosition.currentPosition = new Vector2(0, 0);
                 SceneManager.LoadScene("GameShooting");
+            }
             else if (other.gameObject.CompareTag("moles"))
+            {
+                SavePosition.currentPosition = new Vector2(0, 0);
                 SceneManager.LoadScene("GameDodugi");
+            }
         }
         else
         {

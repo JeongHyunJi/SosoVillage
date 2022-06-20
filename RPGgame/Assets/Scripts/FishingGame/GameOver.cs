@@ -22,11 +22,11 @@ public class GameOver : MonoBehaviour
     {
         char[] levelChar = { 'S', 'M', 'L' }; 
         gameoverText.text = fishingButton.isSuccess ? "GAME CLEAR\n<color=yellow>you got "+levelChar[GameLevel.level-1]+ " Fish!</color>" : "GAMEOVER";
+        gameoverPanel.SetActive(true);
         if (fishingButton.isSuccess)
             playSound("Win");
         else
             playSound("Lose");
-        gameoverPanel.SetActive(true);
         Variables.IsGameGoing = false;
         Hearts.heart--;
         Hearts.HeartControll();
