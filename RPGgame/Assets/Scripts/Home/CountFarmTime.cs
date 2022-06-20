@@ -14,6 +14,7 @@ public class CountFarmTime : MonoBehaviour
     private GameObject ThisButton;
     private GameObject[] farmList;
     public GameObject ResetAlarm;
+    public GameObject NoSeed;
     public AudioClip sowSound;
     public AudioClip harvestSound;
     public AudioClip alert;
@@ -23,6 +24,7 @@ public class CountFarmTime : MonoBehaviour
     private void Awake()
     {
         ResetAlarm.SetActive(false);
+        NoSeed.SetActive(false);
         if (TimeController.isStart)
         {
             farmList = GameObject.FindGameObjectsWithTag("Farm");
@@ -45,6 +47,11 @@ public class CountFarmTime : MonoBehaviour
         this.audioSource = GetComponent<AudioSource>();
     }
 
+    public void OffAlarm()
+    {
+        NoSeed.SetActive(false);
+    }
+
     public void BtnClick()
     {
         ThisButton = EventSystem.current.currentSelectedGameObject;
@@ -62,11 +69,20 @@ public class CountFarmTime : MonoBehaviour
         }
         else if (farmTimeControllers[cur].score == 0) //초기화 상태
         {
-            ClickCheck[cur] = true;
-            farmTimeControllers[cur].stTime = DateTime.Now;
-            PlayerPrefs.SetString("BtnClickTime" + cur, farmTimeControllers[cur].stTime.ToString()); //현재시간으로 저장
-            farmTimeControllers[cur].score = 0;
-            playSound("Sow");
+            if (savePlayer.GetComponent<SavePlayer>().UseInvent(1) != -1)
+            {
+                ClickCheck[cur] = true;
+                farmTimeControllers[cur].stTime = DateTime.Now;
+                PlayerPrefs.SetString("BtnClickTime" + cur, farmTimeControllers[cur].stTime.ToString()); //현재시간으로 저장
+                farmTimeControllers[cur].score = 0;
+                playSound("Sow");
+            }
+            else
+            {
+                playSound("Alert");
+                NoSeed.SetActive(true);
+                Invoke("OffAlarm", 3);
+            }
         }
         else //옥수수 익는 중
         {
